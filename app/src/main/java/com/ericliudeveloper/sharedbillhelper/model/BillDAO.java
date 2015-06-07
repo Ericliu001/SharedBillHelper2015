@@ -1,0 +1,133 @@
+package com.ericliudeveloper.sharedbillhelper.model;
+
+import android.content.AsyncQueryHandler;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
+
+import com.ericliudeveloper.sharedbillhelper.database.DatabaseConstants;
+import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
+
+/**
+ * Created by liu on 7/06/15.
+ */
+public class BillDAO implements Dao {
+    private Context mContext;
+    private ContentResolver mContentResolver;
+    String[] projection = BillContract.Bills.PROJECTION;
+    Uri billsUri = BillContract.Bills.CONTENT_URI;
+
+
+    public BillDAO(Context context) {
+        mContext = context;
+        mContentResolver = mContext.getContentResolver();
+    }
+
+    /**
+     * retrieve a Bill Object from DB and return it by using Handler to send a Message
+     *
+     * @param id
+     * @param handler
+     */
+    public void getBill(long id, final Handler handler) {
+        Uri uri = BillContract.Bills.buildBillUri(String.valueOf(id));
+
+//        Cursor cursor = mContentResolver.query(uri, projection, null, null, null);
+
+        new AsyncQueryHandler(mContentResolver) {
+            @Override
+            protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
+                if (handler != null) {
+
+                    Bill bill = getBillFromCursor(cursor);
+                    Message message = Message.obtain();
+                    message.what = MESSAGE_WHAT_GET_BILL;
+                    message.obj = bill;
+                    handler.sendMessage(message);
+                }
+            }
+        }.startQuery(0, null, uri, projection, null, null, null);
+    }
+
+    private Bill getBillFromCursor(Cursor cursor) {
+        if (cursor.moveToFirst()) {
+            Bill bill = new Bill();
+            bill.setId(cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_ROWID)));
+            bill.setType(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_TYPE)));
+            bill.setAmount(cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_AMOUNT)));
+            bill.setStartDate(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_BILLING_START)));
+            bill.setEndDate(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_BILLING_END)));
+            bill.setDueDate(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_DUE_DATE)));
+            bill.setPaid(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_PAID)));
+//            bill.setDeleted(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_DELETED)));
+
+            return bill;
+        }
+        return null;
+    }
+
+    public void saveBill(final Bill bill, final Handler handler) {
+        long id = bill.getId();
+        final ContentValues values = contentValuesFromBillInstance(bill);
+
+        if (id >= 0) { // this might be an update
+            // to test if it already exits in the db
+            final Uri billUriWithId = BillContract.Bills.buildBillUri(String.valueOf(id));
+            String[] idColumn = {DatabaseConstants.BillColumns.COL_ROWID};
+
+            final AsyncQueryHandler updateExistingBillHandler = new AsyncQueryHandler(mContentResolver) {
+            };
+
+            AsyncQueryHandler checkIfExistHandler = new AsyncQueryHandler(mContentResolver) {
+                @Override
+                protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
+                    if (cursor.moveToFirst()) {
+                        // the record exists in DB, start update operation
+
+                        updateExistingBillHandler.startUpdate(0, null, billUriWithId, values, null, null);
+                    }
+                }
+            };
+            checkIfExistHandler.startQuery(0, null, billUriWithId, idColumn, null, null, null);
+
+            // does the checking and updating in the background, we can return now
+            return;
+        }
+
+
+        AsyncQueryHandler insertBillHandler = new AsyncQueryHandler(mContentResolver) {
+            @Override
+            protected void onInsertComplete(int token, Object cookie, Uri uri) {
+                if (handler != null) {
+
+                    Message message = Message.obtain();
+                    message.what = MESSAGE_WHAT_SAVED_BILL_URL;
+                    message.obj = uri;
+                    handler.sendMessage(message);
+                }
+            }
+        };
+
+        insertBillHandler.startInsert(0, null, billsUri, values);
+
+
+    }
+
+
+    public static ContentValues contentValuesFromBillInstance(Bill bill) {
+        ContentValues values = new ContentValues();
+        values.put(DatabaseConstants.BillColumns.COL_TYPE, bill.getType());
+        values.put(DatabaseConstants.BillColumns.COL_AMOUNT, bill.getAmount());
+        values.put(DatabaseConstants.BillColumns.COL_BILLING_START, bill.getStartDate());
+        values.put(DatabaseConstants.BillColumns.COL_BILLING_END, bill.getEndDate());
+        values.put(DatabaseConstants.BillColumns.COL_DUE_DATE, bill.getDueDate());
+        values.put(DatabaseConstants.BillColumns.COL_PAID, bill.getPaid());
+        values.put(DatabaseConstants.BillColumns.COL_DELETED, bill.getDeleted());
+        return values;
+    }
+
+}

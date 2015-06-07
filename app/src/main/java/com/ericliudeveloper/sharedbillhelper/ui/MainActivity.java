@@ -1,10 +1,12 @@
 package com.ericliudeveloper.sharedbillhelper.ui;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ericliudeveloper.sharedbillhelper.R;
+import com.ericliudeveloper.sharedbillhelper.adapter.PagerAdapter;
 
 
 public class MainActivity extends BaseActivity {
@@ -15,6 +17,15 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.nav_drawer);
 
 
+    }
+
+
+    @Override
+    protected void setupViewPager(ViewPager viewPager) {
+        PagerAdapter pagerAdapter = new PagerAdapter(getFragmentManager());
+        pagerAdapter.addFragment(new BillListFragment(), "Bill");
+        pagerAdapter.addFragment(new MemberListFragment(), "Member");
+        viewPager.setAdapter(pagerAdapter);
     }
 
     @Override

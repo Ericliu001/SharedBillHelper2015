@@ -10,7 +10,6 @@ import com.ericliudeveloper.sharedbillhelper.database.DatabaseConstants;
 public class BillContract {
 
 
-
     public static final String CONTENT_AUTHORITY = "com.ericliudeveloper.sharedbillhelper.provdier";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
@@ -27,6 +26,18 @@ public class BillContract {
         public static Uri buildBillUri(String billId) {
             return CONTENT_URI.buildUpon().appendPath(billId).build();
         }
+
+
+        public static String[] PROJECTION = {
+                COL_ROWID
+                , COL_TYPE
+                , COL_AMOUNT
+                , COL_BILLING_START
+                , COL_BILLING_END
+                , COL_DUE_DATE
+                , COL_PAID
+                , COL_DELETED
+        };
     }
 
 
@@ -56,7 +67,6 @@ public class BillContract {
             return CONTENT_URI.buildUpon().appendPath(paymentInfoId).build();
         }
     }
-
 
 
 }

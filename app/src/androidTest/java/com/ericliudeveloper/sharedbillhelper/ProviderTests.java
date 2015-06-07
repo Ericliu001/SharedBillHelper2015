@@ -1,14 +1,19 @@
 package com.ericliudeveloper.sharedbillhelper;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.test.ProviderTestCase2;
 import android.test.mock.MockContentResolver;
 import android.util.Log;
 
 import com.ericliudeveloper.sharedbillhelper.database.DatabaseConstants;
+import com.ericliudeveloper.sharedbillhelper.model.Bill;
+import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.provider.BillProvider;
 
@@ -17,6 +22,7 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillProvider;
  */
 public class ProviderTests extends ProviderTestCase2<BillProvider> {
 
+    private Context mContext;
     private MockContentResolver mResolver;
     // Contains an SQLite database, used as test data
     private SQLiteDatabase mDb;
@@ -43,6 +49,7 @@ public class ProviderTests extends ProviderTestCase2<BillProvider> {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        mContext = getMockContext();
         mResolver = getMockContentResolver();
 
     }
@@ -141,6 +148,44 @@ public class ProviderTests extends ProviderTestCase2<BillProvider> {
 
         assertEquals("Type is wrong", "internet", updatedType);
         assertEquals("Amount is wrong", "73.4", updatedAmount);
+    }
+
+    public void testBillDao(){
+        BillDAO billDAO = new BillDAO(mContext);
+        Bill bill = new Bill();
+        bill.setType("tank cannon");
+        bill.setAmount(2342.45);
+
+        billDAO.saveBill(bill, new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                Uri uri = (Uri) msg.obj;
+                Log.d("eric", "suprise " +uri.toString());
+                assertNotNull("returned uri is null", uri);
+            }
+        });
+
+
+
+        Cursor cursor = mResolver.query(billUri, projectionBill, null, null, null);
+        String updatedType = "";
+        String updatedAmount = "";
+        if (cursor.moveToFirst()) {
+            updatedType = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_TYPE));
+            updatedAmount = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_AMOUNT));
+        }
+
+        assertEquals("Type is wrong", "tank cannon", updatedType);
+        assertEquals("Amount is wrong", "2342.45", updatedAmount);
+
+        bill.setId(1);
+        bill.setAmount(100);
+        billDAO.saveBill(bill, null);
+
+
+
+
     }
 
 
