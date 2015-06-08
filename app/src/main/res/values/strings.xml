@@ -11,4 +11,13 @@
     <string name="title_activity_test">TestActivity</string>
     <string name="paid">Paid</string>
     <string name="unpaid">Unpaid</string>
+    <string name="title_activity_edit_bill">EditBillActivity</string>
+    <string name="bill_type">Bill Type</string>
+    <string name="amount">Amount</string>
+    <string name="required">Required</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="billing_start_date">Billing Start Date</string>
+    <string name="billing_end_date">Billing End Date</string>
+    <string name="due_date">Due Date</string>
+    <string name="not_supplied">Not Supplied</string>
 </resources>

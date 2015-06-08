@@ -30,7 +30,8 @@ public class TableBill implements DatabaseConstants.BillColumns, DatabaseConstan
 			+ COL_BILLING_START + " , "
 			+ COL_BILLING_END + " , "
 			+ COL_DUE_DATE + " ,  "
-			+ COL_PAID 
+			+ COL_PAID  + " , "
+			+ COL_DELETED
 			+ " from  "
 			+ TABLE_BILL
 			+ " where  " + COL_DELETED + " = 0"

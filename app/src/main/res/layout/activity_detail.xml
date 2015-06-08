@@ -30,13 +30,7 @@
                 android:src="@drawable/view_of_melbourne"
                 app:layout_collapseMode="parallax" />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:layout_scrollFlags="enterAlwaysCollapsed"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+           <include layout="@layout/tool_bar"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 

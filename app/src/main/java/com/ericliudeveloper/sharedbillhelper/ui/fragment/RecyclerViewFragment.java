@@ -44,7 +44,7 @@ public abstract class RecyclerViewFragment extends Fragment {
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 View itemView;
                 RecyclerView.ViewHolder holder;
-                itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
+                itemView = getRowView(parent, viewType);
                 holder = mPresenter.getCustomViewHolder(itemView);
                 return holder;
             }
@@ -59,6 +59,8 @@ public abstract class RecyclerViewFragment extends Fragment {
 
         mRecyclerView.setAdapter(mAdapter);
     }
+
+    protected abstract View getRowView(ViewGroup parent, int viewType);
 
 
 }

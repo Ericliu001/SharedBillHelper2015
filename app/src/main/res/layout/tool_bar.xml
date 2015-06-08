@@ -7,4 +7,5 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     app:layout_scrollFlags="scroll|enterAlways"
+    app:theme="@style/ToolbarTheme"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />

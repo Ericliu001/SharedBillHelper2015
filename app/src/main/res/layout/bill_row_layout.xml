@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:layout_gravity="center"
+    android:layout_margin="2dp"
     card_view:cardCornerRadius="4dp">
 
     <LinearLayout
@@ -56,9 +57,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center" />
 
-            <View
-                android:layout_height="10dip"
-                android:background="@android:color/background_light" />
+
 
         </TableLayout>
     </LinearLayout>

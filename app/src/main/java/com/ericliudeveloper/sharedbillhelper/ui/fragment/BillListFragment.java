@@ -8,8 +8,11 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.BillListPresenter;
 
@@ -57,5 +60,10 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
+    }
+
+    @Override
+    protected View getRowView(ViewGroup parent, int viewType) {
+        return LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
     }
 }

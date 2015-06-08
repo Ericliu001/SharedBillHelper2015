@@ -12,17 +12,20 @@ import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.adapter.PagerAdapter;
 import com.ericliudeveloper.sharedbillhelper.ui.fragment.BillListFragment;
 import com.ericliudeveloper.sharedbillhelper.ui.fragment.MemberListFragment;
+import com.ericliudeveloper.sharedbillhelper.util.Router;
 
 
 public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
     FloatingActionButton mFAB;
     View.OnClickListener createMemberClickListener, createBillClickListener;
+    Router mRouter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
         setupFloatActionButton();
+        mRouter = new Router(MainActivity.this);
     }
 
     private void setupFloatActionButton() {
@@ -30,9 +33,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         createBillClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, EditBillActivity.class);
-//                startActivity(intent);
-
+                mRouter.startActivity(EditBillActivity.class, null);
                 Snackbar.make(v, "Create Bill", Snackbar.LENGTH_SHORT).show();
             }
         };

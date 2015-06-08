@@ -33,10 +33,11 @@ public class TableMember implements MemberColumns, TableAndView{
 				+ COL_FIRSTNAME + " , "
 				+ COL_LASTNAME +  " , "
 				+ COL_PHONE + " , "
-				+ COL_EMAIL + " text, "
+				+ COL_EMAIL + " , "
 				+ COL_MOVE_IN_DATE + " ,  "
 				+ COL_MOVE_OUT_DATE + " , "
-				+ COL_CURRENT_MEMBER + "  "
+				+ COL_CURRENT_MEMBER + " , "
+			    + COL_DELETED
 				+ " from  "
 				+ TABLE_MEMBER
 				+ " where  " + COL_DELETED + " = 0"
