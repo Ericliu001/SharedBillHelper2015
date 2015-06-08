@@ -1,0 +1,38 @@
+package com.ericliudeveloper.sharedbillhelper.ui.fragment;
+
+import android.app.Fragment;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+
+import com.ericliudeveloper.sharedbillhelper.R;
+
+/**
+ * Created by liu on 8/06/15.
+ */
+public class BaseFragment extends Fragment {
+    protected Toolbar mToolbar;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+        setRetainInstance(true);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
+
+        if (mToolbar != null) {
+
+            AppCompatActivity activity = ((AppCompatActivity) getActivity());
+            activity.setSupportActionBar(mToolbar);
+            activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            activity.getSupportActionBar().setHomeButtonEnabled(true);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_rows">
+        <item >Home</item>
+        <item >Bills</item>
+        <item >Roommates</item>
+        <item >Quick Even Division</item>
+        <item >Calculate by Days</item>
+        <item >Payment History</item>
+    </string-array>
+    <string-array name="bill_type_spinner_items">
+        <item >Rent</item>
+        <item >Electricity</item>
+        <item >Water</item>
+        <item >Gas</item>
+        <item >Internet</item>
+        <item >Telephone</item>
+        <item >Other</item>
+    </string-array>
+
+</resources>

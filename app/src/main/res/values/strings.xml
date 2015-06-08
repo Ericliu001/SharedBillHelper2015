@@ -20,4 +20,5 @@
     <string name="billing_end_date">Billing End Date</string>
     <string name="due_date">Due Date</string>
     <string name="not_supplied">Not Supplied</string>
+    <string name="done">Done</string>
 </resources>
