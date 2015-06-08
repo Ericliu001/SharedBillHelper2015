@@ -5,13 +5,28 @@ package com.ericliudeveloper.sharedbillhelper.model;
  */
 public class Bill {
 
-    private long id = -1L;
+    private final long id;
     private String type;
     private double amount;
     private String startDate;
     private String endDate;
     private String dueDate;
     private int paid;
+
+
+    private int deleted;
+
+
+    public Bill(){
+        id = - 100L;
+    }
+
+    public Bill(long id) {
+        this.id = id;
+    }
+
+
+
 
     public int getDeleted() {
         return deleted;
@@ -20,21 +35,10 @@ public class Bill {
     public void setDeleted(int deleted) {
         this.deleted = deleted;
     }
-
-    private int deleted;
-
-
-
-
-
-
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getType() {
         return type;

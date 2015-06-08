@@ -5,20 +5,26 @@ package com.ericliudeveloper.sharedbillhelper.model;
  */
 public class Member {
 
-    private long id = -1L;
+    private final long id;
     private String firstName = null;
     private String lastName;
     private String phone;
     private String email;
     private String moveInDate;
 
+
+    public Member() {
+        id = - 100L;
+    }
+
+    public Member(long id) {
+        this.id = id;
+    }
+
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;

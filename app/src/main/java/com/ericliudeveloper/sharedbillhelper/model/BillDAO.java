@@ -53,15 +53,14 @@ public class BillDAO implements Dao {
 
     public static Bill getBillFromCursor(Cursor cursor) {
         if (cursor != null && cursor.moveToFirst()) {
-            Bill bill = new Bill();
-            bill.setId(cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_ROWID)));
+            long billId = cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_ROWID));
+            Bill bill = new Bill(billId);
             bill.setType(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_TYPE)));
             bill.setAmount(cursor.getDouble(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_AMOUNT)));
             bill.setStartDate(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_BILLING_START)));
             bill.setEndDate(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_BILLING_END)));
             bill.setDueDate(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_DUE_DATE)));
             bill.setPaid(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_PAID)));
-//            bill.setDeleted(cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_DELETED)));
 
             return bill;
         }
@@ -72,27 +71,10 @@ public class BillDAO implements Dao {
         long id = bill.getId();
         final ContentValues values = getContentValuesFromBillInstance(bill);
 
-        if (id >= 0) { // this might be an update
-            // to test if it already exits in the db
+        if (id >= 0) { // this is an update
             final Uri billUriWithId = BillContract.Bills.buildBillUri(String.valueOf(id));
-            String[] idColumn = {DatabaseConstants.BillColumns.COL_ROWID};
 
-            final AsyncQueryHandler updateExistingBillHandler = new AsyncQueryHandler(mContentResolver) {
-            };
-
-            AsyncQueryHandler checkIfExistHandler = new AsyncQueryHandler(mContentResolver) {
-                @Override
-                protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
-                    if (cursor.moveToFirst()) {
-                        // the record exists in DB, start update operation
-
-                        updateExistingBillHandler.startUpdate(0, null, billUriWithId, values, null, null);
-                    }
-                }
-            };
-            checkIfExistHandler.startQuery(0, null, billUriWithId, idColumn, null, null, null);
-
-            // does the checking and updating in the background, we can return now
+            new AsyncQueryHandler(mContentResolver) {}.startUpdate(0, null, billUriWithId, values, null, null);
             return;
         }
 
@@ -116,9 +98,14 @@ public class BillDAO implements Dao {
     }
 
 
+    /**
+     * Create ContentValues from a Bill Instance, the id field is ignored.
+     * @param bill
+     * @return
+     */
     public static ContentValues getContentValuesFromBillInstance(Bill bill) {
         if (bill == null) {
-            return  null;
+            return null;
         }
         ContentValues values = new ContentValues();
         values.put(DatabaseConstants.BillColumns.COL_TYPE, bill.getType());

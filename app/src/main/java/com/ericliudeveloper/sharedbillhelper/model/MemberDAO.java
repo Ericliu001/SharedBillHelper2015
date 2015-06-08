@@ -28,8 +28,8 @@ public class MemberDAO implements Dao {
 
     public static Member getMemberFromCursor(Cursor cursor) {
         if (cursor != null && cursor.moveToFirst()) {
-            Member member = new Member();
-            member.setId(cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_ROWID)));
+            long membrId = cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_ROWID));
+            Member member = new Member(membrId);
             member.setFirstName(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_FIRSTNAME)));
             member.setLastName(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_LASTNAME)));
             member.setPhone(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_PHONE)));
@@ -44,6 +44,12 @@ public class MemberDAO implements Dao {
         return null;
     }
 
+    /**
+     * generate ContentValues from a Member instance, the id field is ignored.
+     *
+     * @param member
+     * @return
+     */
     public static ContentValues getContentValuesFromMemberInstance(Member member) {
         if (member == null) {
             return null;
@@ -64,23 +70,12 @@ public class MemberDAO implements Dao {
         final ContentValues values = getContentValuesFromMemberInstance(member);
 
         if (id >= 0) {
-            // might be an update
+            // This is an update
             final Uri memberUriWithId = BillContract.Members.buildMemberUri(String.valueOf(id));
-            String[] idColumn = {DatabaseConstants.MemberColumns.COL_ROWID};
 
-            final AsyncQueryHandler updateExistingMemberHandler = new AsyncQueryHandler(mContentResolver) {
-            };
+            new AsyncQueryHandler(mContentResolver) {
+            }.startUpdate(0, null, memberUriWithId, values, null, null);
 
-            AsyncQueryHandler checkIfExistHandler = new AsyncQueryHandler(mContentResolver) {
-                @Override
-                protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
-                    if (cursor.moveToFirst()) {
-                        updateExistingMemberHandler.startUpdate(0, null, memberUriWithId, values, null, null);
-                    }
-                }
-            };
-
-            checkIfExistHandler.startQuery(0, null, memberUriWithId, idColumn, null, null, null);
             return;
         }
 
