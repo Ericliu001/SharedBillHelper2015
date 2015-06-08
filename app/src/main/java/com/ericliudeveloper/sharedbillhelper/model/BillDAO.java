@@ -3,12 +3,12 @@ package com.ericliudeveloper.sharedbillhelper.model;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 
+import com.ericliudeveloper.sharedbillhelper.MyApplication;
 import com.ericliudeveloper.sharedbillhelper.database.DatabaseConstants;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 
@@ -16,15 +16,13 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
  * Created by liu on 7/06/15.
  */
 public class BillDAO implements Dao {
-    private Context mContext;
     private ContentResolver mContentResolver;
     String[] projection = BillContract.Bills.PROJECTION;
     Uri billsUri = BillContract.Bills.CONTENT_URI;
 
 
-    public BillDAO(Context context) {
-        mContext = context;
-        mContentResolver = mContext.getContentResolver();
+    public BillDAO() {
+        mContentResolver = MyApplication.getAppContentResolver();
     }
 
     /**
@@ -53,8 +51,8 @@ public class BillDAO implements Dao {
         }.startQuery(0, null, uri, projection, null, null, null);
     }
 
-    private Bill getBillFromCursor(Cursor cursor) {
-        if (cursor.moveToFirst()) {
+    public static Bill getBillFromCursor(Cursor cursor) {
+        if (cursor != null && cursor.moveToFirst()) {
             Bill bill = new Bill();
             bill.setId(cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_ROWID)));
             bill.setType(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_TYPE)));
@@ -72,7 +70,7 @@ public class BillDAO implements Dao {
 
     public void saveBill(final Bill bill, final Handler handler) {
         long id = bill.getId();
-        final ContentValues values = contentValuesFromBillInstance(bill);
+        final ContentValues values = getContentValuesFromBillInstance(bill);
 
         if (id >= 0) { // this might be an update
             // to test if it already exits in the db
@@ -118,7 +116,10 @@ public class BillDAO implements Dao {
     }
 
 
-    public static ContentValues contentValuesFromBillInstance(Bill bill) {
+    public static ContentValues getContentValuesFromBillInstance(Bill bill) {
+        if (bill == null) {
+            return  null;
+        }
         ContentValues values = new ContentValues();
         values.put(DatabaseConstants.BillColumns.COL_TYPE, bill.getType());
         values.put(DatabaseConstants.BillColumns.COL_AMOUNT, bill.getAmount());

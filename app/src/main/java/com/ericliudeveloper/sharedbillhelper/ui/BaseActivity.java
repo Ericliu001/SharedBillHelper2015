@@ -14,11 +14,11 @@ import com.ericliudeveloper.sharedbillhelper.R;
  * Created by liu on 6/06/15.
  */
 public class BaseActivity extends AppCompatActivity {
-    private android.support.v4.widget.DrawerLayout mDrawerLayout;
-    private Toolbar mToolbar;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-    private ViewPager mViewPager;
-    private TabLayout mTabLayout;
+    protected android.support.v4.widget.DrawerLayout mDrawerLayout;
+    protected Toolbar mToolbar;
+    protected ActionBarDrawerToggle actionBarDrawerToggle;
+    protected ViewPager mViewPager;
+    protected TabLayout mTabLayout;
 
 
 

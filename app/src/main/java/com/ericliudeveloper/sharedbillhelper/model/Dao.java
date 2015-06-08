@@ -7,4 +7,6 @@ public interface Dao {
     int MESSAGE_WHAT_SAVED_BILL_URL = 40;
     int MESSAGE_WHAT_GET_BILL = 41;
 
+    int MESSAGE_WHAT_SAVED_MEMBER_URL = 42;
+
 }

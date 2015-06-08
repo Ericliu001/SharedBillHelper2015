@@ -47,6 +47,18 @@ public class BillContract {
         public static Uri buildMemberUri(String memberId) {
             return CONTENT_URI.buildUpon().appendPath(memberId).build();
         }
+
+        public static String[] PROJECTION = {
+                COL_ROWID
+                , COL_FIRSTNAME
+                , COL_LASTNAME
+                , COL_PHONE
+                , COL_EMAIL
+                , COL_MOVE_IN_DATE
+                , COL_MOVE_OUT_DATE
+                , COL_CURRENT_MEMBER
+                , COL_DELETED
+        };
     }
 
     public static class Payments implements DatabaseConstants.PaymentColumns {

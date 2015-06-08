@@ -1,22 +1,55 @@
 package com.ericliudeveloper.sharedbillhelper.ui;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.adapter.PagerAdapter;
+import com.ericliudeveloper.sharedbillhelper.ui.fragment.BillListFragment;
+import com.ericliudeveloper.sharedbillhelper.ui.fragment.MemberListFragment;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
+    FloatingActionButton mFAB;
+    View.OnClickListener createMemberClickListener, createBillClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+        setupFloatActionButton();
+    }
+
+    private void setupFloatActionButton() {
+        mFAB = (FloatingActionButton) findViewById(R.id.fab);
+        createBillClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, EditBillActivity.class);
+//                startActivity(intent);
+
+                Snackbar.make(v, "Create Bill", Snackbar.LENGTH_SHORT).show();
+            }
+        };
+
+        createMemberClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, EditMemberActivity.class);
+//                startActivity(intent);
+
+                Snackbar.make(v, "Create Member", Snackbar.LENGTH_SHORT).show();
+            }
+        };
 
 
+        mFAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_note_add_white_24dp));
+        mFAB.setOnClickListener(createBillClickListener);
     }
 
 
@@ -26,6 +59,7 @@ public class MainActivity extends BaseActivity {
         pagerAdapter.addFragment(new BillListFragment(), "Bill");
         pagerAdapter.addFragment(new MemberListFragment(), "Member");
         viewPager.setAdapter(pagerAdapter);
+        viewPager.addOnPageChangeListener(this);
     }
 
     @Override
@@ -48,5 +82,29 @@ public class MainActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        if (position == 0) {
+
+            mFAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_note_add_white_24dp));
+            mFAB.setOnClickListener(createBillClickListener);
+        }
+
+        if (position == 1) {
+            mFAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_person_add_white_24dp));
+            mFAB.setOnClickListener(createMemberClickListener);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }
