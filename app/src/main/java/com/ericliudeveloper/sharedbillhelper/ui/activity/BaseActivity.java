@@ -1,4 +1,4 @@
-package com.ericliudeveloper.sharedbillhelper.ui;
+package com.ericliudeveloper.sharedbillhelper.ui.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;

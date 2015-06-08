@@ -1,4 +1,4 @@
-package com.ericliudeveloper.sharedbillhelper.ui;
+package com.ericliudeveloper.sharedbillhelper.ui.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;

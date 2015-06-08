@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.ericliudeveloper.sharedbillhelper.R;
@@ -20,6 +21,7 @@ public class BaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         setRetainInstance(true);
+
     }
 
     @Override
@@ -33,6 +35,21 @@ public class BaseFragment extends Fragment {
             activity.setSupportActionBar(mToolbar);
             activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             activity.getSupportActionBar().setHomeButtonEnabled(true);
+            activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+            int id = item.getItemId();
+            switch (id) {
+                case android.R.id.home:
+                    getActivity().finish();
+                    break;
+                default:
+                    break;
+            }
+        return super.onOptionsItemSelected(item);
     }
 }
