@@ -32,7 +32,7 @@ public class MemberDAO implements Dao {
      * @return
      */
     public static Member getMemberFromCursor(Cursor cursor) {
-        if (cursor != null && cursor.moveToFirst()) {
+        if (cursor != null) {
             long membrId = cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_ROWID));
             Member member = new Member(membrId);
             member.setFirstName(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_FIRSTNAME)));

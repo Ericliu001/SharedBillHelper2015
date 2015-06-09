@@ -58,7 +58,7 @@ public class BillDAO implements Dao {
      * @return
      */
     public static Bill getBillFromCursor(Cursor cursor) {
-        if (cursor != null && cursor.moveToFirst()) {
+        if (cursor != null) {
             long billId = cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_ROWID));
             Bill bill = new Bill(billId);
             bill.setType(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_TYPE)));

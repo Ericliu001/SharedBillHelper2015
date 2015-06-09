@@ -91,78 +91,50 @@ public class BillProvider extends ContentProvider implements DatabaseConstants.T
 
         switch (uriMatch) {
             case BILLS:
-
-                sb.table(TABLE_BILL);
+                sb.table(VIEW_BILL);
                 break;
 
             case BILL_ID:
-
-//			qb.setTables(TABLE_BILL);
-//			qb.appendWhere(COL_ROWID + " = " + uri.getLastPathSegment() );
-
-                sb.table(TABLE_BILL);
+                sb.table(VIEW_BILL);
                 sb.where(COL_ROWID + "=?", uri.getLastPathSegment());
                 break;
 
 
             case HOUSEMATES:
-
-//			qb.setTables(VIEW_MEMBER);
                 sb.table(VIEW_MEMBER);
                 break;
 
             case HOUSEMATE_ID:
-
-//			qb.setTables(TABLE_MEMBER);
-//			qb.appendWhere(COL_ROWID + " = " + uri.getLastPathSegment() );
-
-                sb.table(TABLE_MEMBER).where(COL_ROWID + "=?", uri.getLastPathSegment());
-
+                sb.table(VIEW_MEMBER).where(COL_ROWID + "=?", uri.getLastPathSegment());
                 break;
 
 
             case PAYMENTS:
-
-//			qb.setTables(TABLE_PAYMENT);
-
                 sb.table(TABLE_PAYMENT);
                 break;
 
             case PAYMENT_ID:
-
-//			qb.setTables(TABLE_PAYMENT);
-//			qb.appendWhere(COL_ROWID + " = " + uri.getLastPathSegment() );
-
                 sb.table(TABLE_PAYMENT).where(COL_ROWID + "=?", uri.getLastPathSegment());
                 break;
 
             case PAYMENT_INFO:
-//			qb.setTables(VIEW_PAYMENT_INFO);
-
-                sb.table(TABLE_PAYMENT);
+                sb.table(VIEW_PAYMENT_INFO);
                 break;
 
             case PAYMENT_INFO_ID:
-//			qb.setTables(TABLE_PAYMENT_INFO);
-//			qb.appendWhere(COL_ROWID + "=" + uri.getLastPathSegment());
-
-                sb.table(TABLE_PAYMENT_INFO).where(COL_ROWID + "=?", uri.getLastPathSegment());
+                sb.table(VIEW_PAYMENT_INFO).where(COL_ROWID + "=?", uri.getLastPathSegment());
                 break;
 
 
             case DIALOG_BILL:
-//			qb.setTables(VIEW_BILL_NAME);
                 sb.table(VIEW_BILL_NAME);
                 break;
 
             case DIALOG_MEMBER:
-//			qb.setTables(VIEW_MEMBER_NAME);
                 sb.table(VIEW_MEMBER_NAME);
                 break;
 
             case PAYMENT_FULL:
-
-//			qb.setTables(VIEW_PAYMENT_FULL);
                 sb.table(VIEW_PAYMENT_FULL);
                 break;
 
@@ -171,11 +143,12 @@ public class BillProvider extends ContentProvider implements DatabaseConstants.T
                 throw new IllegalArgumentException(" Unknow URL " + uri);
         }
 
-//		Cursor c = qb.query(dbHelper.getReadableDatabase(), projection,
-//				selection, selectionArgs, null, null, sortOrder);
-//		c.setNotificationUri(getContext().getContentResolver(), uri);
 
-        return sb.query(db, projection, sortOrder);
+        Cursor cursor = sb.query(db, projection, sortOrder);
+
+        // MUST NOT MISS this line or the CursorLoader won't be able to automatically reload. 
+        cursor.setNotificationUri(getContext().getContentResolver(), uri);
+        return cursor;
     }
 
     @Override
@@ -221,7 +194,7 @@ public class BillProvider extends ContentProvider implements DatabaseConstants.T
 
 
         getContext().getContentResolver().notifyChange(uri, null);
-        return rowID > 0 ? newUri : null;
+        return rowID >= 0 ? newUri : null;
 
     }
 

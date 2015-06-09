@@ -1,6 +1,7 @@
 package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -42,10 +43,17 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
         // Required empty public constructor
     }
 
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        // the presenter needs to be re-created every time this Fragment is attached to an Activity
+        mPresenter = new EditBillPresenter(getActivity(), this);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = new EditBillPresenter(getActivity(), this);
     }
 
     @Override
@@ -155,5 +163,20 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     @Override
     public void showPickedDueDate(String pickedDate) {
         btDueDate.setText(pickedDate);
+    }
+
+    @Override
+    public String getBillTypeInput() {
+        return spType.getSelectedItem().toString();
+    }
+
+    @Override
+    public String getAmountInput() {
+        return etAmount.getText().toString();
+    }
+
+    @Override
+    public boolean getIsPaidInput() {
+        return cbPaid.isChecked();
     }
 }

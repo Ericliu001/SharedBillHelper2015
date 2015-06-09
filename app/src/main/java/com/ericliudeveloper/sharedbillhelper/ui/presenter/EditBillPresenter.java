@@ -6,6 +6,7 @@ import android.text.TextUtils;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
+import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
 import com.ericliudeveloper.sharedbillhelper.ui.dialog.DatePickerFragment;
 import com.ericliudeveloper.sharedbillhelper.ui.dialog.DateWrongDialog;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
@@ -124,10 +125,23 @@ public class EditBillPresenter {
 
 
     public void startActionDone() {
+        String type = mCallback.getBillTypeInput();
+        double amount = Double.valueOf(mCallback.getAmountInput());
+        int isPaid = mCallback.getIsPaidInput() ? 1 : 0;
+
+        mBill.setType(type);
+        mBill.setAmount(amount);
+        mBill.setPaid(isPaid);
+
+        saveBillInstanceToDB(mBill);
+    }
+
+    private void saveBillInstanceToDB(Bill bill) {
+        new BillDAO().saveBill(bill, null);
     }
 
     public void startActionCancel() {
-
+        mActivity.finish();
     }
 
 
@@ -138,6 +152,10 @@ public class EditBillPresenter {
 
         void showPickedDueDate(String pickedDate);
 
-        String getAmount();
+        String getBillTypeInput();
+
+        String getAmountInput();
+
+        boolean getIsPaidInput();
     }
 }
