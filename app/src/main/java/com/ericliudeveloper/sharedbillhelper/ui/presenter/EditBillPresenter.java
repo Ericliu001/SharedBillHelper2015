@@ -144,6 +144,19 @@ public class EditBillPresenter {
         mActivity.finish();
     }
 
+    public void restoreDisplayFromConfigurationChange() {
+        String type = mBill.getType();
+        double amount = mBill.getAmount();
+        String start = mBill.getStartDate();
+        String end = mBill.getEndDate();
+        String due = mBill.getDueDate();
+        boolean isPaid = mBill.getPaid() > 0;
+
+        mCallback.showPickedStartDate(start);
+        mCallback.showPickedEndDate(end);
+        mCallback.showPickedDueDate(due);
+    }
+
 
     public interface EditBillFace {
         void showPickedStartDate(String pickedDate);

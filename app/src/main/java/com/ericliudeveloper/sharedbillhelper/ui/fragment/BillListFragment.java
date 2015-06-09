@@ -1,7 +1,6 @@
 package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
@@ -32,22 +31,19 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     }
 
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        mPresenter = new BillListPresenter();
-        getLoaderManager().initLoader(mBillQueryToken, null, this);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        mPresenter = new BillListPresenter();
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        getLoaderManager().initLoader(mBillQueryToken, null, this);
     }
 
     @Override

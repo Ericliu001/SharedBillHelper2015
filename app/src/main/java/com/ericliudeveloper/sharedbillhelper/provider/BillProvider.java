@@ -146,7 +146,7 @@ public class BillProvider extends ContentProvider implements DatabaseConstants.T
 
         Cursor cursor = sb.query(db, projection, sortOrder);
 
-        // MUST NOT MISS this line or the CursorLoader won't be able to automatically reload. 
+        // MUST NOT MISS this line or the CursorLoader won't be able to automatically reload.
         cursor.setNotificationUri(getContext().getContentResolver(), uri);
         return cursor;
     }

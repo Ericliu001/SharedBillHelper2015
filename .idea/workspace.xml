@@ -29,41 +29,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CursorRecyclerAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/adapter/CursorRecyclerAdapter.java">
+      <file leaf-file-name="EditBillFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditBillFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+              <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java">
+      <file leaf-file-name="EditBillPresenter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+            <state vertical-scroll-proportion="1.104322">
+              <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/MemberDAO.java">
+      <file leaf-file-name="BillListFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillProvider.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/provider/BillProvider.java">
+      <file leaf-file-name="BillListPresenter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/BillListPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6199702">
-              <caret line="148" column="94" selection-start-line="148" selection-start-column="94" selection-end-line="148" selection-end-column="94" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1416,13 +1416,13 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/dialog/DateWrongDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/CustomEvents.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditBillFragment.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/ericliudeveloper/sharedbillhelper/ProviderTests.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/MemberDAO.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/provider/BillProvider.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditBillFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java" />
       </list>
     </option>
   </component>
@@ -1798,7 +1798,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="04d3333d0220298e" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_22_x86" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="OverrideImplement.combined" value="true" />
@@ -2063,7 +2063,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32853025" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32853025" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949087" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2493044" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2127,9 +2127,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#4304#4305#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2303,6 +2301,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6544916">
           <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2354,24 +2355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56367224">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding>
-            <element signature="e#4304#4305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/BillListPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17734724">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/ListPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27868852">
@@ -2385,8 +2368,8 @@
         <state vertical-scroll-proportion="0.72131145">
           <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
           <folding>
-            <element signature="e#1449#1450#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="false" />
+            <element signature="e#1522#1523#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2399,53 +2382,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditBillFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/provider/BillProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7242921">
-          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
-          <folding>
-            <element signature="e#1812#1813#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/adapter/CursorRecyclerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.8894373">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/MemberDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.42152023">
           <caret line="38" column="64" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/provider/BillProvider.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6199702">
-          <caret line="148" column="94" selection-start-line="148" selection-start-column="94" selection-end-line="148" selection-end-column="94" />
+        <state vertical-scroll-proportion="0.24481738">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/adapter/CursorRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79072064">
+          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/BillListPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditBillFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.104322">
+          <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
           <folding />
         </state>
       </provider>

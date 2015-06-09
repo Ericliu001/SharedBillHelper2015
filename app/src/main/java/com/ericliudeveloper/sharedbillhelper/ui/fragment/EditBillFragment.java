@@ -1,7 +1,6 @@
 package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -44,16 +43,11 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        // the presenter needs to be re-created every time this Fragment is attached to an Activity
-        mPresenter = new EditBillPresenter(getActivity(), this);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mPresenter = new EditBillPresenter(getActivity(), this);
     }
 
     @Override
@@ -62,6 +56,7 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_edit_bill, container, false);
         setupViews(root);
+        mPresenter.restoreDisplayFromConfigurationChange();
         return root;
     }
 
