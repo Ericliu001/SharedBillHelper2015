@@ -23,4 +23,5 @@
     <string name="done">Done</string>
     <string name="date_picking_mistake">Wrong Date</string>
     <string name="start_date_must_be_before_end_date">Start Date must be earlier than End Date</string>
+    <string name="title_activity_view_bill_details">ViewBillDetailsActivity</string>
 </resources>

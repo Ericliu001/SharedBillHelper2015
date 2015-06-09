@@ -134,6 +134,8 @@ public class EditBillPresenter {
         mBill.setPaid(isPaid);
 
         saveBillInstanceToDB(mBill);
+
+        mActivity.finish();
     }
 
     private void saveBillInstanceToDB(Bill bill) {

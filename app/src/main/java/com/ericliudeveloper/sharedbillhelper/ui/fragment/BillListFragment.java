@@ -4,6 +4,7 @@ package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -14,7 +15,11 @@ import android.view.ViewGroup;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
+import com.ericliudeveloper.sharedbillhelper.ui.activity.ViewBillDetailsActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.BillListPresenter;
+import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+
+import de.greenrobot.event.EventBus;
 
 
 /**
@@ -44,6 +49,29 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
         super.onViewCreated(view, savedInstanceState);
 
         getLoaderManager().initLoader(mBillQueryToken, null, this);
+    }
+
+
+    @Override
+    public void onResume() {
+        EventBus.getDefault().register(this);
+        super.onResume();
+    }
+
+    /**
+     * Handle user click on List items
+     * @param eventViewBill
+     */
+    public void onEvent(CustomEvents.EventViewBill eventViewBill) {
+        Intent viewBillDetailsIntent = new Intent(getActivity(), ViewBillDetailsActivity.class);
+        getActivity().startActivity(viewBillDetailsIntent);
+    }
+
+
+    @Override
+    public void onPause() {
+        EventBus.getDefault().unregister(this);
+        super.onPause();
     }
 
     @Override

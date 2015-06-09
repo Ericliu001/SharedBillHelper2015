@@ -32,4 +32,13 @@ public final class CustomEvents {
 
     public static class EventWrongDatePicked{
     }
+
+
+    public static class EventViewBill{
+        public final Bill bill;
+
+        public EventViewBill(Bill bill) {
+            this.bill = bill;
+        }
+    }
 }

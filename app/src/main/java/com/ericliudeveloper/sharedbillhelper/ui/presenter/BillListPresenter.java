@@ -1,6 +1,5 @@
 package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -9,12 +8,17 @@ import android.widget.TextView;
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
+import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by liu on 8/06/15.
  */
 public class BillListPresenter implements ListPresenter {
-    Context mContext;
+
+    public BillListPresenter() {
+    }
 
     @Override
     public RecyclerView.ViewHolder getCustomViewHolder(View itemView) {
@@ -69,7 +73,10 @@ public class BillListPresenter implements ListPresenter {
 
         @Override
         public void onClick(View v) {
-            // TODO: handle bill list click
+            CustomEvents.EventViewBill eventViewBill = new CustomEvents.EventViewBill(mBill);
+
+            // send an sticky event to the view detail Fragment
+            EventBus.getDefault().postSticky(eventViewBill);
         }
     }
 }
