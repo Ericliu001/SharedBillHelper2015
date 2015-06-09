@@ -16,13 +16,12 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
  * Created by liu on 7/06/15.
  */
 public class BillDAO implements Dao {
-    private ContentResolver mContentResolver;
-    String[] projection = BillContract.Bills.PROJECTION;
-    Uri billsUri = BillContract.Bills.CONTENT_URI;
 
+    static ContentResolver mContentResolver = MyApplication.getAppContentResolver();
+    static String[] projection = BillContract.Bills.PROJECTION;
+    static Uri billsUri = BillContract.Bills.CONTENT_URI;
 
     public BillDAO() {
-        mContentResolver = MyApplication.getAppContentResolver();
     }
 
     /**
@@ -31,7 +30,7 @@ public class BillDAO implements Dao {
      * @param id
      * @param handler
      */
-    public void getBill(long id, final Handler handler) {
+    public static void getBill(long id, final Handler handler) {
         Uri uri = BillContract.Bills.buildBillUri(String.valueOf(id));
 
 //        Cursor cursor = mContentResolver.query(uri, projection, null, null, null);
@@ -54,6 +53,7 @@ public class BillDAO implements Dao {
 
     /**
      * Create a Bill instance from a cursor, assumed the cursor is retrieved from DB thus id field is not null.
+     *
      * @param cursor
      * @return
      */
@@ -73,14 +73,15 @@ public class BillDAO implements Dao {
         return null;
     }
 
-    public void saveBill(final Bill bill, final Handler handler) {
+    public static void saveBill(final Bill bill, final Handler handler) {
         long id = bill.getId();
         final ContentValues values = getContentValuesFromBillInstance(bill);
 
         if (id >= 0) { // this is an update
             final Uri billUriWithId = BillContract.Bills.buildBillUri(String.valueOf(id));
 
-            new AsyncQueryHandler(mContentResolver) {}.startUpdate(0, null, billUriWithId, values, null, null);
+            new AsyncQueryHandler(mContentResolver) {
+            }.startUpdate(0, null, billUriWithId, values, null, null);
             return;
         }
 
@@ -106,6 +107,7 @@ public class BillDAO implements Dao {
 
     /**
      * Create ContentValues from a Bill Instance, the id field is ignored.
+     *
      * @param bill
      * @return
      */

@@ -17,9 +17,9 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
  */
 public class MemberDAO implements Dao {
 
-    private ContentResolver mContentResolver;
-    String[] projection = BillContract.Members.PROJECTION;
-    Uri membersUri = BillContract.Members.CONTENT_URI;
+    static ContentResolver mContentResolver;
+    static String[] projection = BillContract.Members.PROJECTION;
+    static Uri membersUri = BillContract.Members.CONTENT_URI;
 
 
     public MemberDAO() {
@@ -70,7 +70,7 @@ public class MemberDAO implements Dao {
         return values;
     }
 
-    public void saveMember(Member member, final Handler handler) {
+    public static void saveMember(Member member, final Handler handler) {
         long id = member.getId();
         final ContentValues values = getContentValuesFromMemberInstance(member);
 

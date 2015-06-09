@@ -139,7 +139,7 @@ public class EditBillPresenter {
     }
 
     private void saveBillInstanceToDB(Bill bill) {
-        new BillDAO().saveBill(bill, null);
+        BillDAO.saveBill(bill, null);
     }
 
     public void startActionCancel() {
