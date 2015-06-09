@@ -54,6 +54,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
                         android:text="@string/amount"
                         android:textSize="30sp" />
 
@@ -66,7 +67,6 @@
                         android:imeOptions="actionDone"
                         android:inputType="numberDecimal">
 
-                        <requestFocus />
                     </EditText>
                 </TableRow>
 
@@ -75,18 +75,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_today_white_24dp"
+                        android:background="@color/primary"
+                        />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_column="0"
                         android:text="@string/billing_start_date" />
 
-                    <TextView
-                        android:id="@+id/tvStartDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_column="2"
-                        android:hint="@string/required" />
+
                 </TableRow>
 
                 <Button
@@ -104,17 +107,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_today_white_24dp"
+                        android:background="@color/primary"
+                        />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/billing_end_date" />
 
-                    <TextView
-                        android:id="@+id/tvEndDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_column="2"
-                        android:hint="@string/required" />
+
                 </TableRow>
 
                 <Button
@@ -131,17 +137,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+
+                    <ImageView
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_today_white_24dp"
+                        android:background="@color/primary"
+                        />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/due_date" />
 
-                    <TextView
-                        android:id="@+id/tvDueDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_column="2"
-                        android:hint="@string/not_supplied" />
+
                 </TableRow>
 
                 <Button

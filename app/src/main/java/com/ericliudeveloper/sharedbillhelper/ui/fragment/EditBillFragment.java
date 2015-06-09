@@ -23,7 +23,7 @@ import com.ericliudeveloper.sharedbillhelper.ui.presenter.EditBillPresenter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EditBillFragment extends BaseFragment implements View.OnClickListener {
+public class EditBillFragment extends BaseFragment implements View.OnClickListener, EditBillPresenter.EditBillFace {
 
     EditBillPresenter mPresenter;
 
@@ -45,7 +45,7 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = new EditBillPresenter(getActivity());
+        mPresenter = new EditBillPresenter(getActivity(), this);
     }
 
     @Override
@@ -74,9 +74,6 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
         spType = (Spinner) rootView.findViewById(R.id.spType);
         etAmount = (EditText) rootView.findViewById(R.id.etAmount);
         cbPaid = (CheckBox) rootView.findViewById(R.id.cbPaid);
-        tvStartDate = (TextView) rootView.findViewById(R.id.tvStartDate);
-        tvEndDate = (TextView) rootView.findViewById(R.id.tvEndDate);
-        tvDueDate = (TextView) rootView.findViewById(R.id.tvDueDate);
         btStartDate = (Button) rootView.findViewById(R.id.btStartDate);
         btEndDate = (Button) rootView.findViewById(R.id.btEndDate);
         btDueDate = (Button) rootView.findViewById(R.id.btDueDate);
@@ -143,5 +140,20 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void showPickedStartDate(String pickedDate) {
+        btStartDate.setText(pickedDate);
+    }
+
+    @Override
+    public void showPickedEndDate(String pickedDate) {
+        btEndDate.setText(pickedDate);
+    }
+
+    @Override
+    public void showPickedDueDate(String pickedDate) {
+        btDueDate.setText(pickedDate);
     }
 }

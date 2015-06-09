@@ -26,6 +26,11 @@ public class MemberDAO implements Dao {
         mContentResolver = MyApplication.getAppContentResolver();
     }
 
+    /**
+     * Create a Member instance from a cursor, assumed the cursor is retrieved from DB thus id field is not null.
+     * @param cursor
+     * @return
+     */
     public static Member getMemberFromCursor(Cursor cursor) {
         if (cursor != null && cursor.moveToFirst()) {
             long membrId = cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.MemberColumns.COL_ROWID));

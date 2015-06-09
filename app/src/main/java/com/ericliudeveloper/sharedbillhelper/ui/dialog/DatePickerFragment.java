@@ -38,7 +38,7 @@ public class DatePickerFragment extends DialogFragment implements
         Bundle args = getArguments();
         Date date = new Date(year - 1900, monthOfYear, dayOfMonth);
 
-        EventBus.getDefault().post(new CustomEvents.DatePickedEvent(date));
+        EventBus.getDefault().post(new CustomEvents.EventDatePicked(date));
     }
 
 

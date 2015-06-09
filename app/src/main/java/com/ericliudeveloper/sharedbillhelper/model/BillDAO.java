@@ -39,7 +39,7 @@ public class BillDAO implements Dao {
         new AsyncQueryHandler(mContentResolver) {
             @Override
             protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
-                if (handler != null) {
+                if (handler != null && cursor != null) {
 
                     Bill bill = getBillFromCursor(cursor);
                     Message message = Message.obtain();
@@ -51,6 +51,12 @@ public class BillDAO implements Dao {
         }.startQuery(0, null, uri, projection, null, null, null);
     }
 
+
+    /**
+     * Create a Bill instance from a cursor, assumed the cursor is retrieved from DB thus id field is not null.
+     * @param cursor
+     * @return
+     */
     public static Bill getBillFromCursor(Cursor cursor) {
         if (cursor != null && cursor.moveToFirst()) {
             long billId = cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseConstants.BillColumns.COL_ROWID));

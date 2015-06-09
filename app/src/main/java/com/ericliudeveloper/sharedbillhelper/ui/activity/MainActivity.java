@@ -34,7 +34,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             @Override
             public void onClick(View v) {
                 mRouter.startActivity(EditBillActivity.class, null);
-                Snackbar.make(v, "Create Bill", Snackbar.LENGTH_SHORT).show();
             }
         };
 
@@ -43,7 +42,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             public void onClick(View v) {
 //                Intent intent = new Intent(MainActivity.this, EditMemberActivity.class);
 //                startActivity(intent);
-
+                //TODO: create member here
                 Snackbar.make(v, "Create Member", Snackbar.LENGTH_SHORT).show();
             }
         };
