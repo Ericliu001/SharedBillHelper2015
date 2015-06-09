@@ -21,4 +21,6 @@
     <string name="due_date">Due Date</string>
     <string name="not_supplied">Not Supplied</string>
     <string name="done">Done</string>
+    <string name="date_picking_mistake">Wrong Date</string>
+    <string name="start_date_must_be_before_end_date">Start Date must be earlier than End Date</string>
 </resources>

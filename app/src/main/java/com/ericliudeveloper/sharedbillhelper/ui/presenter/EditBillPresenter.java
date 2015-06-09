@@ -1,9 +1,13 @@
 package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.text.TextUtils;
 
+import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.ui.dialog.DatePickerFragment;
+import com.ericliudeveloper.sharedbillhelper.ui.dialog.DateWrongDialog;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.MyDateUtils;
 
@@ -13,6 +17,7 @@ import de.greenrobot.event.EventBus;
  * Created by liu on 8/06/15.
  */
 public class EditBillPresenter {
+    private static final String DATE_WRONG = "date_wrong";
     Activity mActivity;
     Bill mBill;
     EditBillFace mCallback;
@@ -29,7 +34,7 @@ public class EditBillPresenter {
         mBill = new Bill();
     }
 
-    public void registerEventbusListener(){
+    public void registerEventbusListener() {
         EventBus.getDefault().register(this);
     }
 
@@ -51,7 +56,7 @@ public class EditBillPresenter {
 
         switch (selectActionType) {
             case ACTION_SELECT_START_DATE:
-                //todo: handle start date after end date input
+
                 mBill.setStartDate(pickedDate);
                 mCallback.showPickedStartDate(pickedDate);
                 break;
@@ -72,10 +77,30 @@ public class EditBillPresenter {
             default:
                 break;
         }
+        checkIfStartDateAfterEndDate();
+    }
+
+    public void onEvent(CustomEvents.EventWrongDatePicked eventWrongDatePicked) {
+        showDatePickDialog();
     }
 
     public void unregisterEventbusListener() {
         EventBus.getDefault().unregister(this);
+    }
+
+
+    private void checkIfStartDateAfterEndDate() {
+        String start = mBill.getStartDate();
+        String end = mBill.getEndDate();
+        if (!TextUtils.isEmpty(start) && !TextUtils.isEmpty(end)) {
+            if (MyDateUtils.compareDates(start, end) < 0) {
+                Bundle args = new Bundle();
+                args.putString(DateWrongDialog.TITLE, mActivity.getResources().getString(R.string.date_picking_mistake));
+                args.putString(DateWrongDialog.MESSAGE, mActivity.getResources().getString(R.string.start_date_must_be_before_end_date));
+                DateWrongDialog dateWrongdialog = DateWrongDialog.newInstance(args);
+                dateWrongdialog.show(mActivity.getFragmentManager(), DATE_WRONG);
+            }
+        }
     }
 
     public void startDateButtonClicked() {
@@ -108,7 +133,11 @@ public class EditBillPresenter {
 
     public interface EditBillFace {
         void showPickedStartDate(String pickedDate);
+
         void showPickedEndDate(String pickedDate);
+
         void showPickedDueDate(String pickedDate);
+
+        String getAmount();
     }
 }
