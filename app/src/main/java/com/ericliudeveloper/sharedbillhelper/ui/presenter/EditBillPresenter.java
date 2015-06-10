@@ -51,6 +51,7 @@ public class EditBillPresenter {
 
         mBill = eventEditBill.bill;
         refreshDisplayFromBillInstance(mBill);
+        EventBus.getDefault().removeStickyEvent(CustomEvents.EventEditBill.class);
     }
 
     public void onEvent(CustomEvents.EventDatePicked event) {

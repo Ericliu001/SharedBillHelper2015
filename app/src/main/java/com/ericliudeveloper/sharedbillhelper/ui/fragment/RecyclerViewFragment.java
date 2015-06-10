@@ -25,6 +25,12 @@ public abstract class RecyclerViewFragment extends Fragment {
 
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        setRetainInstance(true);  // causes crashes, wati for google to fix it
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment

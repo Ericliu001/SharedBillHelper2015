@@ -41,7 +41,6 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setRetainInstance(true); // causes crashes, wati for google to fix it
         mPresenter = new BillListPresenter();
     }
 

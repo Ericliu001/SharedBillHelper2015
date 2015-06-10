@@ -30,11 +30,7 @@ public class MemberListFragment extends RecyclerViewFragment implements LoaderMa
     }
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setRetainInstance(true);  // causes crashes, wati for google to fix it
-    }
+
 
     @Override
     protected View getRowView(ViewGroup parent, int viewType) {
