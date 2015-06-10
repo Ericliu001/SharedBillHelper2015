@@ -21,8 +21,9 @@ public class BaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 //        setRetainInstance(true); // causes crashes, wait for google to fix it
-
     }
+
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
