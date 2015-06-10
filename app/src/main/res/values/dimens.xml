@@ -11,6 +11,6 @@
     <dimen name="list_item_avatar_size">40dp</dimen>
     <dimen name="edit_area_margin_side">15dp</dimen>
     <dimen name="tabrow_margin">15dp</dimen>
-    <dimen name="minimum_heigh_of_scrollview">500dp</dimen>
+    <dimen name="minimum_heigh_of_scrollview">800dp</dimen>
     <dimen name="detail_content_padding">25dp</dimen>
 </resources>
