@@ -5,6 +5,12 @@
     <dimen name="activity_horizontal_margin">64dp</dimen>
     <dimen name="edit_area_margin_side">15dp</dimen>
     <dimen name="tabrow_margin">35dp</dimen>
+    <dimen name="minimum_heigh_of_scrollview">500dp</dimen>
+
+
+    <!-- The height of detail view and image -->
+    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="detail_content_padding">45dp</dimen>
 
 
 </resources>
