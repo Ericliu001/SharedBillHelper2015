@@ -4,4 +4,7 @@
     <color name="primary">#009688</color>
     <color name="primaryDark">#00796B</color>
     <color name="accent">#1DE9B6</color>
+
+
+    <color name="appbar_photo_scrim">#00A393</color>
 </resources>

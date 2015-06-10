@@ -33,7 +33,6 @@ public class BaseFragment extends Fragment {
 
             AppCompatActivity activity = ((AppCompatActivity) getActivity());
             activity.setSupportActionBar(mToolbar);
-            activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             activity.getSupportActionBar().setHomeButtonEnabled(true);
             activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
