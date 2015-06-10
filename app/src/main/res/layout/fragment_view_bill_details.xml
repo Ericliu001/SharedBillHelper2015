@@ -2,93 +2,114 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TableLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="1">
+        android:layout_marginLeft="@dimen/detail_content_padding"
+        android:layout_marginRight="@dimen/detail_content_padding">
 
-
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View BIll details" />
+            android:layout_height="match_parent"
+            android:minHeight="500dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="@dimen/detail_content_padding"
+            android:layout_marginRight="@dimen/detail_content_padding"
+            >
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <TextView
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Bill Type" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="right"
-                android:text="No Value" />
+                android:stretchColumns="1">
 
 
-        </TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View BIll details" />
 
-        <TableRow android:layout_height="match_parent">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Billing Start Date" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Bill Type" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:text="No Value" />
-        </TableRow>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right"
+                        android:text="No Value" />
 
-        <TableRow android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Billing End Date" />
+                </TableRow>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:text="No Value" />
-        </TableRow>
+                <TableRow android:layout_height="match_parent">
 
-        <TableRow android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Billing Start Date" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Due Date" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="No Value" />
+                </TableRow>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:text="No Value" />
-        </TableRow>
+                <TableRow android:layout_height="match_parent">
 
-        <TableRow android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Billing End Date" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Paid" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="No Value" />
+                </TableRow>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:text="No Value" />
-        </TableRow>
+                <TableRow android:layout_height="match_parent">
 
-    </TableLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Due Date" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="No Value" />
+                </TableRow>
+
+                <TableRow android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Paid" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="No Value" />
+                </TableRow>
+
+            </TableLayout>
+
+
+        </FrameLayout>
+
+    </android.support.v7.widget.CardView>
 
 
 </FrameLayout>
