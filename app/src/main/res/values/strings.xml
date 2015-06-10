@@ -11,7 +11,7 @@
     <string name="title_activity_test">TestActivity</string>
     <string name="paid">Paid</string>
     <string name="unpaid">Unpaid</string>
-    <string name="title_activity_edit_bill">EditBillActivity</string>
+    <string name="title_activity_edit_bill">Edit Bill</string>
     <string name="bill_type">Bill Type</string>
     <string name="amount">Amount</string>
     <string name="required">Required</string>

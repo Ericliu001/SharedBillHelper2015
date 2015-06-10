@@ -20,7 +20,7 @@ public class BaseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        setRetainInstance(true);
+//        setRetainInstance(true); // causes crashes, wait for google to fix it
 
     }
 
@@ -44,7 +44,7 @@ public class BaseFragment extends Fragment {
             int id = item.getItemId();
             switch (id) {
                 case android.R.id.home:
-                    getActivity().finish();
+//                    getActivity().finish(); //Never do this!!! getActivity may return null when the Fragment is detached
                     break;
                 default:
                     break;

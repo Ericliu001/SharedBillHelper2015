@@ -130,8 +130,9 @@ public class EditBillPresenter {
 
 
     public void startActionDone() {
+        //todo: handle empty input
         String type = mCallback.getBillTypeInput();
-        double amount = Double.valueOf(mCallback.getAmountInput());
+        double amount = TextUtils.isEmpty(mCallback.getAmountInput()) ? 0d : Double.valueOf(mCallback.getAmountInput());
         int isPaid = mCallback.getIsPaidInput() ? 1 : 0;
 
         mBill.setType(type);
@@ -140,7 +141,7 @@ public class EditBillPresenter {
 
         saveBillInstanceToDB(mBill);
 
-        mActivity.finish();
+//        mActivity.finish(); // Never do this!!!
     }
 
     private void saveBillInstanceToDB(Bill bill) {
@@ -148,7 +149,7 @@ public class EditBillPresenter {
     }
 
     public void startActionCancel() {
-        mActivity.finish();
+//        mActivity.finish(); // Never do this!
     }
 
     public void refreshDisplayFromBillInstance(Bill bill) {

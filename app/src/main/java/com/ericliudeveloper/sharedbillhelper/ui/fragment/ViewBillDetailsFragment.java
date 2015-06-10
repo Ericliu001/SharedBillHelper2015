@@ -109,7 +109,7 @@ public class ViewBillDetailsFragment extends BaseFragment {
                 EventBus.getDefault().postSticky(new CustomEvents.EventEditBill(mBill));
                 Intent gotoEditIntent = new Intent(getActivity(), EditBillActivity.class);
                 getActivity().startActivity(gotoEditIntent);
-                getActivity().finish();
+//                getActivity().finish();
                 break;
             default:
                 break;

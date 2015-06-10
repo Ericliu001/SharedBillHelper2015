@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.adapter.CursorRecyclerAdapter;
@@ -20,6 +21,7 @@ public abstract class RecyclerViewFragment extends Fragment {
     protected RecyclerView mRecyclerView;
     protected CursorRecyclerAdapter mAdapter;
     protected ListPresenter mPresenter;
+    protected FrameLayout mEmptyView;
 
 
     @Override
@@ -33,6 +35,8 @@ public abstract class RecyclerViewFragment extends Fragment {
     }
 
     protected void setupViews(View root) {
+        mEmptyView = (FrameLayout) root.findViewById(R.id.emptyViewContainer);
+
         mRecyclerView = (RecyclerView) root.findViewById(R.id.list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);

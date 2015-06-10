@@ -14,6 +14,7 @@
 
     <dimen name="detail_content_padding">45dp</dimen>
     <dimen name="content_row_margin_top">10dp</dimen>
+    <dimen name="empty_list_view">450dp</dimen>
 
 
 </resources>

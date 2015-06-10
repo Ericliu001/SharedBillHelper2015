@@ -9,4 +9,13 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
 
+    <FrameLayout
+        android:id="@+id/emptyViewContainer"
+        android:visibility="gone"
+        android:layout_width="@dimen/empty_list_view"
+        android:layout_height="@dimen/empty_list_view"
+        android:layout_gravity="center_horizontal"
+
+        />
+
 </FrameLayout>

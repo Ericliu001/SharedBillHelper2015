@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
@@ -40,7 +41,7 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+//        setRetainInstance(true); // causes crashes, wati for google to fix it
         mPresenter = new BillListPresenter();
     }
 
@@ -48,7 +49,20 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         getLoaderManager().initLoader(mBillQueryToken, null, this);
+    }
+
+
+    private void checkListEmpty() {
+        if (mAdapter.getItemCount() == 0) {
+            ImageView ivEmptyBillList = new ImageView(getActivity());
+            ivEmptyBillList.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_assignment));
+            mEmptyView.addView(ivEmptyBillList);
+            mEmptyView.setVisibility(View.VISIBLE);
+        } else {
+            mEmptyView.setVisibility(View.GONE);
+        }
     }
 
 
@@ -86,6 +100,7 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mAdapter.swapCursor(data);
+        checkListEmpty();
     }
 
     @Override

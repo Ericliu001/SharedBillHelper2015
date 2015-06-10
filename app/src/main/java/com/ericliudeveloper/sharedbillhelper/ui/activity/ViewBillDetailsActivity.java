@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
@@ -40,6 +41,15 @@ public class ViewBillDetailsActivity extends ContainerActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_edit) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
 
