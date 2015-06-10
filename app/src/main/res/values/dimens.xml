@@ -13,4 +13,5 @@
     <dimen name="tabrow_margin">15dp</dimen>
     <dimen name="minimum_heigh_of_scrollview">800dp</dimen>
     <dimen name="detail_content_padding">25dp</dimen>
+    <dimen name="content_row_margin_top">10dp</dimen>
 </resources>

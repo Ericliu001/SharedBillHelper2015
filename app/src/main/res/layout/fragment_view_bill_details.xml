@@ -11,12 +11,11 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:minHeight="500dp"
-            android:layout_marginTop="40dp"
             android:layout_marginBottom="60dp"
             android:layout_marginLeft="@dimen/detail_content_padding"
             android:layout_marginRight="@dimen/detail_content_padding"
-            >
+            android:layout_marginTop="40dp"
+            android:minHeight="500dp">
 
 
             <TableLayout
@@ -28,11 +27,15 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="View BIll details" />
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="Bill details"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -40,15 +43,36 @@
                         android:text="Bill Type" />
 
                     <TextView
+                        android:id="@+id/tvType"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="right"
-                        android:text="No Value" />
+                        android:text="@string/no_value" />
 
 
                 </TableRow>
 
-                <TableRow android:layout_height="match_parent">
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Amount" />
+
+                    <TextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:textStyle="bold"
+                        android:text="@string/no_value" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -56,13 +80,16 @@
                         android:text="Billing Start Date" />
 
                     <TextView
+                        android:id="@+id/tvStartDate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="right"
-                        android:text="No Value" />
+                        android:text="@string/no_value" />
                 </TableRow>
 
-                <TableRow android:layout_height="match_parent">
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -70,13 +97,16 @@
                         android:text="Billing End Date" />
 
                     <TextView
+                        android:id="@+id/tvEndDate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="right"
-                        android:text="No Value" />
+                        android:text="@string/no_value" />
                 </TableRow>
 
-                <TableRow android:layout_height="match_parent">
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -84,13 +114,16 @@
                         android:text="Due Date" />
 
                     <TextView
+                        android:id="@+id/tvDueDay"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="right"
                         android:text="No Value" />
                 </TableRow>
 
-                <TableRow android:layout_height="match_parent">
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -98,6 +131,7 @@
                         android:text="Paid" />
 
                     <TextView
+                        android:id="@+id/tvIsPaid"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="right"
