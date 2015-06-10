@@ -1,6 +1,7 @@
 package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,7 +26,7 @@ import com.ericliudeveloper.sharedbillhelper.ui.presenter.EditBillPresenter;
  */
 public class EditBillFragment extends BaseFragment implements View.OnClickListener, EditBillPresenter.EditBillFace {
 
-    EditBillPresenter mPresenter;
+    EditBillPresenter mPresenter = new EditBillPresenter(this);
 
     private Spinner spType;
     private EditText etAmount;
@@ -43,11 +44,11 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     }
 
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mPresenter = new EditBillPresenter(getActivity(), this);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        // any Activity instance must be passed into Presenter in onAttach method
+        mPresenter.setActivity(activity);
     }
 
     @Override

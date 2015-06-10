@@ -29,11 +29,15 @@ public class EditBillPresenter {
     private int selectActionType = -1;
 
 
-    public EditBillPresenter(Activity activity, EditBillFace callback) {
-        mActivity = activity;
+    public EditBillPresenter(EditBillFace callback) {
         mCallback = callback;
         mBill = new Bill();
     }
+
+    public void setActivity(Activity activity) {
+        mActivity = activity;
+    }
+
 
     public void registerEventbusListener() {
         EventBus.getDefault().register(this);
