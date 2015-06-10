@@ -9,7 +9,9 @@
 
 
     <!-- The height of detail view and image -->
-    <dimen name="detail_backdrop_height">256dp</dimen>
+    <dimen name="detail_backdrop_height">300dp</dimen>
+
+
     <dimen name="detail_content_padding">45dp</dimen>
     <dimen name="content_row_margin_top">10dp</dimen>
 

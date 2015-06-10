@@ -25,4 +25,7 @@
     <string name="start_date_must_be_before_end_date">Start Date must be earlier than End Date</string>
     <string name="title_activity_view_bill_details">ViewBillDetailsActivity</string>
     <string name="no_value">No Value</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="action_edit">Edit</string>
 </resources>

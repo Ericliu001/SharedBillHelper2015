@@ -38,6 +38,7 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     private Button btStartDate;
     private Button btEndDate;
     private Button btDueDate;
+    private String[] mSpinnerItemArray;
 
     public EditBillFragment() {
         // Required empty public constructor
@@ -49,6 +50,8 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
         super.onAttach(activity);
         // any Activity instance must be passed into Presenter in onAttach method
         mPresenter.setActivity(activity);
+        mSpinnerItemArray = activity.getResources().getStringArray(
+                R.array.bill_type_spinner_items);
     }
 
     @Override
@@ -57,7 +60,6 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_edit_bill, container, false);
         setupViews(root);
-        mPresenter.restoreDisplayFromConfigurationChange();
         return root;
     }
 
@@ -88,8 +90,7 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
 
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(
                 getActivity(), android.R.layout.simple_spinner_item,
-                getResources().getStringArray(
-                        R.array.bill_type_spinner_items));
+                mSpinnerItemArray);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spType.setAdapter(adapter);
@@ -147,6 +148,22 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     }
 
     @Override
+    public void showBillType(String type) {
+        int position = 0;
+        for (int i = 0; i < mSpinnerItemArray.length; i++) {
+            if (type.equals(mSpinnerItemArray[i])) {
+                position = i;
+            }
+        }
+        spType.setSelection(position);
+    }
+
+    @Override
+    public void showAmount(String amount) {
+        etAmount.setText(amount);
+    }
+
+    @Override
     public void showPickedStartDate(String pickedDate) {
         btStartDate.setText(pickedDate);
     }
@@ -159,6 +176,11 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     @Override
     public void showPickedDueDate(String pickedDate) {
         btDueDate.setText(pickedDate);
+    }
+
+    @Override
+    public void showIsPaid(boolean isPaid) {
+        cbPaid.setChecked(isPaid);
     }
 
     @Override

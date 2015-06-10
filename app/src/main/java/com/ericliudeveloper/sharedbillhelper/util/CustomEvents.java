@@ -21,23 +21,25 @@ public final class CustomEvents {
     }
 
 
-    public static class EventSendBill{
+
+
+
+    public static class EventWrongDatePicked {
+    }
+
+
+    public static class EventViewBill {
         public final Bill bill;
 
-        public EventSendBill(Bill bill) {
+        public EventViewBill(Bill bill) {
             this.bill = bill;
         }
     }
 
-
-    public static class EventWrongDatePicked{
-    }
-
-
-    public static class EventViewBill{
+    public static class EventEditBill {
         public final Bill bill;
 
-        public EventViewBill(Bill bill) {
+        public EventEditBill(Bill bill) {
             this.bill = bill;
         }
     }

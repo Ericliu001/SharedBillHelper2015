@@ -2,14 +2,19 @@ package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
+import com.ericliudeveloper.sharedbillhelper.ui.activity.EditBillActivity;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 
 import butterknife.ButterKnife;
@@ -20,6 +25,8 @@ import de.greenrobot.event.EventBus;
  * A simple {@link Fragment} subclass.
  */
 public class ViewBillDetailsFragment extends BaseFragment {
+
+    Bill mBill;
 
     @InjectView(R.id.tvType)
     TextView tvType;
@@ -57,8 +64,8 @@ public class ViewBillDetailsFragment extends BaseFragment {
     }
 
     public void onEvent(CustomEvents.EventViewBill eventViewBill) {
-        Bill bill = eventViewBill.bill;
-        refreshDisplay(bill);
+        mBill = eventViewBill.bill;
+        refreshDisplay(mBill);
     }
 
 
@@ -75,8 +82,8 @@ public class ViewBillDetailsFragment extends BaseFragment {
         String start = bill.getStartDate();
         String end = bill.getEndDate();
         String due = bill.getDueDate();
-        String yes = getActivity().getResources().getString(android.R.string.yes);
-        String no = getActivity().getResources().getString(android.R.string.no);
+        String yes = getActivity().getResources().getString(R.string.yes);
+        String no = getActivity().getResources().getString(R.string.no);
         String isPaid = (bill.getPaid() > 0) ? yes : no;
 
         tvType.setText(type);
@@ -85,6 +92,29 @@ public class ViewBillDetailsFragment extends BaseFragment {
         tvEndDate.setText(end);
         tvDueDay.setText(due);
         tvIsPaid.setText(isPaid);
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_view_bill_details, menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.action_edit:
+                EventBus.getDefault().postSticky(new CustomEvents.EventEditBill(mBill));
+                Intent gotoEditIntent = new Intent(getActivity(), EditBillActivity.class);
+                getActivity().startActivity(gotoEditIntent);
+                getActivity().finish();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

@@ -40,16 +40,17 @@ public class EditBillPresenter {
 
 
     public void registerEventbusListener() {
-        EventBus.getDefault().register(this);
+        EventBus.getDefault().registerSticky(this);
     }
 
 
-    public void onEvent(CustomEvents.EventSendBill eventSendBill) {
-        if (eventSendBill.bill == null) {
+    public void onEvent(CustomEvents.EventEditBill eventEditBill) {
+        if (eventEditBill.bill == null) {
             return;
         }
 
-        mBill = eventSendBill.bill;
+        mBill = eventEditBill.bill;
+        refreshDisplayFromBillInstance(mBill);
     }
 
     public void onEvent(CustomEvents.EventDatePicked event) {
@@ -150,26 +151,36 @@ public class EditBillPresenter {
         mActivity.finish();
     }
 
-    public void restoreDisplayFromConfigurationChange() {
-        String type = mBill.getType();
-        double amount = mBill.getAmount();
-        String start = mBill.getStartDate();
-        String end = mBill.getEndDate();
-        String due = mBill.getDueDate();
-        boolean isPaid = mBill.getPaid() > 0;
+    public void refreshDisplayFromBillInstance(Bill bill) {
+        String type = bill.getType();
+        String amount = String.valueOf( bill.getAmount());
+        String start = bill.getStartDate();
+        String end = bill.getEndDate();
+        String due = bill.getDueDate();
+        boolean isPaid = bill.getPaid() > 0;
 
+        mCallback.showBillType(type);
+        mCallback.showAmount(amount);
         mCallback.showPickedStartDate(start);
         mCallback.showPickedEndDate(end);
         mCallback.showPickedDueDate(due);
+        mCallback.showIsPaid(isPaid);
     }
 
 
     public interface EditBillFace {
+
+        void showBillType(String type);
+
+        void showAmount(String amount);
+
         void showPickedStartDate(String pickedDate);
 
         void showPickedEndDate(String pickedDate);
 
         void showPickedDueDate(String pickedDate);
+
+        void showIsPaid(boolean isPaid);
 
         String getBillTypeInput();
 
