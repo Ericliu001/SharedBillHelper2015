@@ -30,6 +30,8 @@
             android:name=".ui.activity.ViewBillDetailsActivity"
             android:label="@string/title_activity_view_bill_details" >
         </activity>
+
+        <activity android:name=".ui.activity.ViewMemberDetailsActivity"/>
     </application>
 
 </manifest>

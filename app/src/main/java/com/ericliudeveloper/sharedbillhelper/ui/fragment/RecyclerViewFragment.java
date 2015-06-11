@@ -24,11 +24,18 @@ public abstract class RecyclerViewFragment extends Fragment {
     protected FrameLayout mEmptyView;
 
 
+    protected abstract ListPresenter getPresenter();
+    protected abstract View getRowView(ViewGroup parent, int viewType);
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setRetainInstance(true);  // causes crashes, wati for google to fix it
+
+        mPresenter = getPresenter();
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,7 +77,6 @@ public abstract class RecyclerViewFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    protected abstract View getRowView(ViewGroup parent, int viewType);
 
 
 }

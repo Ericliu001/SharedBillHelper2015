@@ -4,6 +4,7 @@ package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 import android.app.Fragment;
 import android.app.LoaderManager;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -15,6 +16,12 @@ import android.widget.ImageView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
+import com.ericliudeveloper.sharedbillhelper.ui.activity.ViewMemberDetailsActivity;
+import com.ericliudeveloper.sharedbillhelper.ui.presenter.ListPresenter;
+import com.ericliudeveloper.sharedbillhelper.ui.presenter.MemberListPresenter;
+import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+
+import de.greenrobot.event.EventBus;
 
 
 /**
@@ -30,7 +37,10 @@ public class MemberListFragment extends RecyclerViewFragment implements LoaderMa
     }
 
 
-
+    @Override
+    protected ListPresenter getPresenter() {
+        return new MemberListPresenter();
+    }
 
     @Override
     protected View getRowView(ViewGroup parent, int viewType) {
@@ -53,6 +63,7 @@ public class MemberListFragment extends RecyclerViewFragment implements LoaderMa
             mEmptyView.setVisibility(View.VISIBLE);
         } else {
             mEmptyView.setVisibility(View.GONE);
+            mEmptyView.removeAllViews();
         }
     }
 
@@ -75,5 +86,29 @@ public class MemberListFragment extends RecyclerViewFragment implements LoaderMa
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
+    }
+
+
+
+    @Override
+    public void onResume() {
+        EventBus.getDefault().register(this);
+        super.onResume();
+    }
+
+    /**
+     * Handle user click on List items
+     * @param eventViewMember
+     */
+    public void onEvent(CustomEvents.EventViewMember eventViewMember) {
+        Intent viewMemberDetailsIntent = new Intent(getActivity(), ViewMemberDetailsActivity.class);
+        getActivity().startActivity(viewMemberDetailsIntent);
+    }
+
+
+    @Override
+    public void onPause() {
+        EventBus.getDefault().unregister(this);
+        super.onPause();
     }
 }

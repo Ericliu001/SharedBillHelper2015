@@ -8,7 +8,11 @@ import android.widget.ImageView;
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.ui.fragment.ViewBillDetailsFragment;
 
-public class ViewBillDetailsActivity extends ContainerActivity {
+/**
+ * Created by eric.liu on 11/06/15.
+ */
+public class ViewMemberDetailsActivity extends ContainerActivity {
+
 
 
     @Override
@@ -26,20 +30,15 @@ public class ViewBillDetailsActivity extends ContainerActivity {
         return getClass().getName();
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         ImageView imageView = (ImageView) findViewById(R.id.backdrop);
-        Drawable appbarImage = getResources().getDrawable(R.drawable.bills_appbar);
+        Drawable appbarImage = getResources().getDrawable(R.drawable.housemates_appbar);
         imageView.setImageDrawable(appbarImage);
 
 
     }
 
-
-
-
 }
-

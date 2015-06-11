@@ -18,6 +18,7 @@ import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.ViewBillDetailsActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.BillListPresenter;
+import com.ericliudeveloper.sharedbillhelper.ui.presenter.ListPresenter;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 
 import de.greenrobot.event.EventBus;
@@ -31,6 +32,16 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
 
 
 
+    @Override
+    protected ListPresenter getPresenter() {
+        return new BillListPresenter();
+    }
+
+    @Override
+    protected View getRowView(ViewGroup parent, int viewType) {
+        return LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
+    }
+
 
     public BillListFragment() {
         // Required empty public constructor
@@ -41,7 +52,7 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = new BillListPresenter();
+//        mPresenter = new BillListPresenter();
     }
 
     @Override
@@ -108,8 +119,5 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
         mAdapter.swapCursor(null);
     }
 
-    @Override
-    protected View getRowView(ViewGroup parent, int viewType) {
-        return LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
-    }
+
 }

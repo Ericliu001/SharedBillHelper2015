@@ -3,7 +3,6 @@ package com.ericliudeveloper.sharedbillhelper.ui.activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -12,7 +11,7 @@ import com.ericliudeveloper.sharedbillhelper.R;
 /**
  * Created by liu on 8/06/15.
  */
-public abstract class ContainerActivity extends AppCompatActivity {
+public abstract class ContainerActivity extends BaseActivity {
 
     protected abstract Fragment getFragment();
 

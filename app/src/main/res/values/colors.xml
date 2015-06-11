@@ -7,4 +7,6 @@
 
 
     <color name="appbar_photo_scrim">#769B</color>
+
+    <color name="fab_another_color">#1c0078</color>
 </resources>
