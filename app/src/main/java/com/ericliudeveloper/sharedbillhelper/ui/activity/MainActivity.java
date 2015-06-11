@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        View decorView = getWindow().getDecorView();
+//        View decorView = getWindow().getDecorView();
 
       //  Sticky flag — This is the UI you see if you use the IMMERSIVE_STICKY flag,
       // and the user swipes to display the system bars. Semi-transparent bars
@@ -48,10 +48,10 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         // one or the other, but it's common to hide both the status and the navigation bar when
         // you're implementing "full immersion" mode.
 
-        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-        decorView.setSystemUiVisibility(uiOptions);
+//        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                | View.SYSTEM_UI_FLAG_FULLSCREEN
+//                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+//        decorView.setSystemUiVisibility(uiOptions);
     }
 
     private void setupFloatActionButton() {
