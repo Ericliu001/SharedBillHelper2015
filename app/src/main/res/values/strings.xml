@@ -28,4 +28,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="confirm_delete">Confirm Delete</string>
+    <string name="delete_bill">This bill is going to be deleted!</string>
 </resources>

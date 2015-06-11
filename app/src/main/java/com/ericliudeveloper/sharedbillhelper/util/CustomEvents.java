@@ -43,4 +43,7 @@ public final class CustomEvents {
             this.bill = bill;
         }
     }
+
+    public static class EventDeleteBill {
+    }
 }

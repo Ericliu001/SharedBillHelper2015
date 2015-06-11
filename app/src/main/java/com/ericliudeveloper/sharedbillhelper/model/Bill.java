@@ -12,13 +12,11 @@ public class Bill {
     private String endDate;
     private String dueDate;
     private int paid = 0;
+    private int deleted = 0;
 
 
-    private int deleted;
-
-
-    public Bill(){
-        id = - 100L;
+    public Bill() {
+        id = -100L;
     }
 
     public Bill(long id) {
@@ -26,6 +24,9 @@ public class Bill {
     }
 
 
+    public long getId() {
+        return id;
+    }
 
 
     public int getDeleted() {
@@ -34,9 +35,6 @@ public class Bill {
 
     public void setDeleted(int deleted) {
         this.deleted = deleted;
-    }
-    public long getId() {
-        return id;
     }
 
 
@@ -87,8 +85,6 @@ public class Bill {
     public void setPaid(int paid) {
         this.paid = paid;
     }
-
-
 
 
 }

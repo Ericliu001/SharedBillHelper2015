@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
+import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.EditBillActivity;
+import com.ericliudeveloper.sharedbillhelper.ui.dialog.DeleteDialog;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 
 import butterknife.ButterKnife;
@@ -68,6 +70,19 @@ public class ViewBillDetailsFragment extends BaseFragment {
         refreshDisplay(mBill);
     }
 
+    public void onEvent(CustomEvents.EventDeleteBill eventDeleteBill) {
+        if (mBill == null) {
+            return;
+        }
+
+        int yesDeleted = 1;
+        mBill.setDeleted(yesDeleted);
+        BillDAO.saveBill(mBill, null);
+        if (getActivity() != null) {
+            getActivity().finish();
+        }
+    }
+
 
     @Override
     public void onPause() {
@@ -113,10 +128,26 @@ public class ViewBillDetailsFragment extends BaseFragment {
                     getActivity().finish();
                 }
                 break;
+
+
+            case R.id.action_delete:
+                showDeleteBillDialog();
+
+                break;
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showDeleteBillDialog() {
+        Bundle args = new Bundle();
+        args.putString(DeleteDialog.TITLE,
+                getResources().getString(R.string.confirm_delete));
+        args.putString(DeleteDialog.MESSAGE,
+                getResources().getString(R.string.delete_bill));
+        DeleteDialog deleteDialog = DeleteDialog.newInstance(args);
+        deleteDialog.show(getFragmentManager(), "delete");
     }
 
 
