@@ -26,6 +26,32 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         setContentView(R.layout.nav_drawer);
         setupFloatActionButton();
         mRouter = new Router(MainActivity.this);
+
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        View decorView = getWindow().getDecorView();
+
+      //  Sticky flag — This is the UI you see if you use the IMMERSIVE_STICKY flag,
+      // and the user swipes to display the system bars. Semi-transparent bars
+      // temporarily appear and then hide again. The act of swiping doesn't clear
+      // any flags, nor does it trigger your system UI visibility change listeners,
+      // because the transient appearance of the system bars isn't considered a UI visibility
+      // change.
+
+
+
+        // Note: Remember that the "immersive" flags only take effect if you use them in conjunction
+        // with SYSTEM_UI_FLAG_HIDE_NAVIGATION, SYSTEM_UI_FLAG_FULLSCREEN, or both. You can just use
+        // one or the other, but it's common to hide both the status and the navigation bar when
+        // you're implementing "full immersion" mode.
+
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 
     private void setupFloatActionButton() {
