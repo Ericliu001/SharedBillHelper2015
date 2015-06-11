@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.ericliudeveloper.sharedbillhelper.R;
@@ -50,4 +51,13 @@ public abstract class ContainerActivity extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
