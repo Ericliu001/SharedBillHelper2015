@@ -50,7 +50,7 @@ public class EditBillPresenter {
         }
 
         mBill = eventEditBill.bill;
-        refreshDisplayFromBillInstance(mBill);
+        refreshDisplayFromBillInstance();
         EventBus.getDefault().removeStickyEvent(CustomEvents.EventEditBill.class);
     }
 
@@ -133,16 +133,21 @@ public class EditBillPresenter {
     public void startActionDone() {
         //todo: handle empty input
         String type = mCallback.getBillTypeInput();
-        double amount = TextUtils.isEmpty(mCallback.getAmountInput()) ? 0d : Double.valueOf(mCallback.getAmountInput());
-        int isPaid = mCallback.getIsPaidInput() ? 1 : 0;
+        if (!TextUtils.isEmpty(type)) {
+            mBill.setType(type);
+        }
 
-        mBill.setType(type);
+        double amount = TextUtils.isEmpty(mCallback.getAmountInput()) ? 0d : Double.valueOf(mCallback.getAmountInput());
         mBill.setAmount(amount);
+
+        int isPaid = mCallback.getIsPaidInput() ? 1 : 0;
         mBill.setPaid(isPaid);
 
         saveBillInstanceToDB(mBill);
 
-//        mActivity.finish(); // Never do this!!!
+        if (mActivity != null) {
+            mActivity.finish(); // Never do this!!!
+        }
     }
 
     private void saveBillInstanceToDB(Bill bill) {
@@ -150,22 +155,39 @@ public class EditBillPresenter {
     }
 
     public void startActionCancel() {
-//        mActivity.finish(); // Never do this!
+        if (mActivity != null) {
+            mActivity.finish(); // Never do this!!!
+        }
     }
 
-    public void refreshDisplayFromBillInstance(Bill bill) {
-        String type = bill.getType();
-        String amount = String.valueOf( bill.getAmount());
-        String start = bill.getStartDate();
-        String end = bill.getEndDate();
-        String due = bill.getDueDate();
-        boolean isPaid = bill.getPaid() > 0;
+    public void refreshDisplayFromBillInstance() {
+        String type = mBill.getType();
+        if (!TextUtils.isEmpty(type)) {
+            mCallback.showBillType(type);
+        }
 
-        mCallback.showBillType(type);
-        mCallback.showAmount(amount);
-        mCallback.showPickedStartDate(start);
-        mCallback.showPickedEndDate(end);
-        mCallback.showPickedDueDate(due);
+
+        String amount = String.valueOf(mBill.getAmount());
+        if (!TextUtils.isEmpty(amount)) {
+            mCallback.showAmount(amount);
+        }
+
+        String start = mBill.getStartDate();
+        if (!TextUtils.isEmpty(start)) {
+            mCallback.showPickedStartDate(start);
+        }
+
+        String end = mBill.getEndDate();
+        if (!TextUtils.isEmpty(end)) {
+            mCallback.showPickedEndDate(end);
+        }
+
+        String due = mBill.getDueDate();
+        if (!TextUtils.isEmpty(due)) {
+            mCallback.showPickedDueDate(due);
+        }
+
+        boolean isPaid = mBill.getPaid() > 0;
         mCallback.showIsPaid(isPaid);
     }
 

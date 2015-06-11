@@ -11,7 +11,7 @@ public class Bill {
     private String startDate;
     private String endDate;
     private String dueDate;
-    private int paid;
+    private int paid = 0;
 
 
     private int deleted;

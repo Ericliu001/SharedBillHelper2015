@@ -20,7 +20,7 @@ public class BaseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-//        setRetainInstance(true); // causes crashes, wait for google to fix it
+        setRetainInstance(true); // it is fine here, just dangerous when using in conjunction with ViewPager and Loader. 
     }
 
 
