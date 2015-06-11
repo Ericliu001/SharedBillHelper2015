@@ -1,0 +1,175 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/appbar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/edit_area_margin_side"
+            android:layout_marginRight="@dimen/edit_area_margin_side"
+            android:elevation="1dp">
+
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/edit_member" />
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/first_name" />
+
+                    <EditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/required"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName">
+
+                        <requestFocus />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/last_name" />
+
+                    <EditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPersonName" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_number" />
+
+                    <EditText
+                        android:id="@+id/etPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textEmailAddress" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:text="@string/move_in_date" />
+                </TableRow>
+
+
+
+                <Button
+                    android:id="@+id/btPickMoveInDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pick_date" />
+
+                <TextView
+                    android:id="@+id/tvMoveInDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:hint="@string/before_billing_start" />
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/move_out_date" />
+                </TableRow>
+
+
+                <Button
+                    android:id="@+id/btPickMoveOutDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pick_date" />
+
+                <TextView
+                    android:id="@+id/tvMoveOutDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="@string/after_billing_end" />
+            </TableLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+
+</LinearLayout>

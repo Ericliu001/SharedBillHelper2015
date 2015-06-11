@@ -4,16 +4,16 @@
     tools:context="com.ericliudeveloper.sharedbillhelper.ui.activity.EditBillActivity">
     <item
         android:id="@+id/action_done"
+        android:icon="@drawable/ic_done_white_24dp"
         android:orderInCategory="100"
         android:title="@string/done"
-        android:icon="@drawable/ic_done_white_24dp"
         app:showAsAction="always" />
 
 
     <item
         android:id="@+id/action_cancel"
+        android:icon="@drawable/ic_clear_white_24dp"
         android:orderInCategory="100"
         android:title="Cancel"
-        android:icon="@drawable/ic_clear_white_24dp"
         app:showAsAction="always" />
 </menu>

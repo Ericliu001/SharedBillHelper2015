@@ -2,7 +2,6 @@ package com.ericliudeveloper.sharedbillhelper.ui.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -68,8 +67,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             public void onClick(View v) {
 //                Intent intent = new Intent(MainActivity.this, EditMemberActivity.class);
 //                startActivity(intent);
-                //TODO: create member here
-                Snackbar.make(v, "Create Member", Snackbar.LENGTH_SHORT).show();
+                mRouter.startActivity(EditMemberActivity.class, null);
             }
         };
 

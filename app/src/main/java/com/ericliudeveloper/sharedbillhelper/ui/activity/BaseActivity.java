@@ -68,7 +68,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void setupToolbar() {
-        mToolbar.setTitle(R.string.app_name);
+//        mToolbar.setTitle(R.string.app_name);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

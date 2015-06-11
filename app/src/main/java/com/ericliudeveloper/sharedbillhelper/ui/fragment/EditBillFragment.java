@@ -129,7 +129,7 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_edit_bill, menu);
+        inflater.inflate(R.menu.menu_edit, menu);
     }
 
     @Override

@@ -31,4 +31,14 @@
     <string name="action_delete">Delete</string>
     <string name="confirm_delete">Confirm Delete</string>
     <string name="delete_bill">This bill is going to be deleted!</string>
+    <string name="edit_member">Edit Member</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="move_in_date">Move In Date</string>
+    <string name="before_billing_start">If not specified, assume moved in before billing starts</string>
+    <string name="move_out_date">Move Out Date</string>
+    <string name="after_billing_end">If not specified, assume moved out after billing ends</string>
+    <string name="title_activity_edit_member">Edit Member</string>
 </resources>
