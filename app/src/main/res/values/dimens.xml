@@ -15,4 +15,5 @@
     <dimen name="detail_content_padding">25dp</dimen>
     <dimen name="content_row_margin_top">10dp</dimen>
     <dimen name="empty_list_view">200dp</dimen>
+    <dimen name="list_bottom_margin_to_avoid_being_overlapped_by_navigationbar">50dp</dimen>
 </resources>
