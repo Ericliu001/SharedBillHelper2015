@@ -61,6 +61,7 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
             mEmptyView.setVisibility(View.VISIBLE);
         } else {
             mEmptyView.setVisibility(View.GONE);
+            mRecyclerView.invalidate();
         }
     }
 
