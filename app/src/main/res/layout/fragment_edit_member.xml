@@ -132,7 +132,6 @@
                     android:text="@string/pick_date" />
 
                 <TextView
-                    android:id="@+id/tvMoveInDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -159,7 +158,6 @@
                     android:text="@string/pick_date" />
 
                 <TextView
-                    android:id="@+id/tvMoveOutDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"

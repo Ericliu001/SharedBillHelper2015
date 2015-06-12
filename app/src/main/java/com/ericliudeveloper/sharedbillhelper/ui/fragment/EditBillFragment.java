@@ -72,13 +72,13 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     @Override
     public void onStart() {
         super.onStart();
-        mPresenter.registerEventbusListener();
+        mPresenter.registerEventBusListener();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        mPresenter.unregisterEventbusListener();
+        mPresenter.unregisterEventBusListener();
     }
 
     private void setupViews(View rootView) {
@@ -108,15 +108,15 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
         int id = v.getId();
         switch (id) {
             case R.id.btStartDate:
-                mPresenter.startDateButtonClicked();
+                mPresenter.onStartDateButtonClicked();
                 break;
 
             case R.id.btEndDate:
-                mPresenter.endDateButtonClicked();
+                mPresenter.enEndDateButtonClicked();
                 break;
 
             case R.id.btDueDate:
-                mPresenter.dueDateButtonClicked();
+                mPresenter.onDueDateButtonClicked();
                 break;
 
 

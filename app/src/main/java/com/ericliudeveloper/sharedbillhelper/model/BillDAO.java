@@ -53,7 +53,7 @@ public class BillDAO implements Dao {
 
     /**
      * Create a Bill instance from a cursor, assumed the cursor is retrieved from DB thus id field is not null.
-     *
+     ** Be careful: you must position the cursor before calling this method or it will throw CursorIndexOutOfBoundsException
      * @param cursor
      * @return
      */

@@ -1,6 +1,11 @@
 package com.ericliudeveloper.sharedbillhelper.util;
 
+import android.app.Activity;
+import android.os.Bundle;
 import android.text.TextUtils;
+
+import com.ericliudeveloper.sharedbillhelper.R;
+import com.ericliudeveloper.sharedbillhelper.ui.dialog.DateWrongDialog;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,11 +18,29 @@ import java.util.Locale;
  */
 public final class MyDateUtils {
 
+    private static final String DATE_WRONG = "date wrong";
     static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd",
             Locale.US);;
 
     private MyDateUtils() {
         // to prevent this class to be instantiated
+    }
+
+
+    public static void checkStartDateAfterEndDateAndShowDialog(String start, String end, Activity activity) {
+        if (activity == null) {
+            return;
+        }
+
+        if (!TextUtils.isEmpty(start) && !TextUtils.isEmpty(end)) {
+            if (MyDateUtils.compareDates(start, end) < 0) {
+                Bundle args = new Bundle();
+                args.putString(DateWrongDialog.TITLE, activity.getResources().getString(R.string.date_picking_mistake));
+                args.putString(DateWrongDialog.MESSAGE, activity.getResources().getString(R.string.start_date_must_be_before_end_date));
+                DateWrongDialog dateWrongdialog = DateWrongDialog.newInstance(args);
+                dateWrongdialog.show(activity.getFragmentManager(), DATE_WRONG);
+            }
+        }
     }
 
 

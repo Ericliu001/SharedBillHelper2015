@@ -1,5 +1,6 @@
 package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -9,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.EditMemberPresenter;
@@ -17,17 +17,15 @@ import com.ericliudeveloper.sharedbillhelper.ui.presenter.EditMemberPresenter;
 /**
  * Created by liu on 11/06/15.
  */
-public class EditMemberFragment extends BaseFragment implements View.OnClickListener {
+public class EditMemberFragment extends BaseFragment implements View.OnClickListener, EditMemberPresenter.EditMemberFace {
 
-    EditMemberPresenter mPresenter = new EditMemberPresenter();
+    EditMemberPresenter mPresenter = new EditMemberPresenter(this);
 
 
     private EditText etFirstName;
     private EditText etLastName;
     private EditText etPhone;
     private EditText etEmail;
-    private TextView tvMoveInDate;
-    private TextView tvMoveOutDate;
     private Button btPickMoveIndate;
     private Button btPickMoveOutdate;
 
@@ -36,12 +34,20 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
         // Required empty public constructor
     }
 
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mPresenter.setActivity(activity);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_edit_member, container, false);
         setupViews(root);
+        mPresenter.refreshDisplayFromMemberInstance();
         return root;
     }
 
@@ -52,9 +58,6 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
         etLastName = (EditText) rootView.findViewById(R.id.etLastName);
         etPhone = (EditText) rootView.findViewById(R.id.etPhone);
         etEmail = (EditText) rootView.findViewById(R.id.etEmail);
-        tvMoveInDate = (TextView) rootView.findViewById(R.id.tvMoveInDate);
-        tvMoveOutDate = (TextView) rootView
-                .findViewById(R.id.tvMoveOutDate);
         btPickMoveIndate = (Button) rootView
                 .findViewById(R.id.btPickMoveInDate);
         btPickMoveOutdate = (Button) rootView
@@ -63,6 +66,19 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
         btPickMoveIndate.setOnClickListener(this);
         btPickMoveOutdate.setOnClickListener(this);
 
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mPresenter.registerEventBusListener();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mPresenter.unregisterEventBusListener();
     }
 
 
@@ -78,11 +94,11 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
 
 
             case R.id.action_done:
-//                mPresenter.startActionDone();
+                mPresenter.startActionDone();
                 return true;
 
             case R.id.action_cancel:
-//                mPresenter.startActionCancel();
+                mPresenter.startActionCancel();
                 return true;
 
             default:
@@ -94,6 +110,68 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.btPickMoveInDate:
+                mPresenter.onPickMoveInDateButtonClicked();
+                break;
 
+            case R.id.btPickMoveOutDate:
+                mPresenter.onPickMoveOutDateButtonClicked();
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void showPickedMoveInDate(String pickedDate) {
+        btPickMoveIndate.setText(pickedDate);
+    }
+
+    @Override
+    public void showPickedMoveOutDate(String pickedDate) {
+        btPickMoveOutdate.setText(pickedDate);
+    }
+
+    @Override
+    public void showMemberFirstName(String firstName) {
+        etFirstName.setText(firstName);
+    }
+
+    @Override
+    public void showMemberLastName(String lastName) {
+        etLastName.setText(lastName);
+    }
+
+    @Override
+    public void showMemberPhoneNumber(String phone) {
+        etPhone.setText(phone);
+    }
+
+    @Override
+    public void showMemberEmail(String email) {
+        etEmail.setText(email);
+    }
+
+    @Override
+    public String getFirstNameInput() {
+        return etFirstName.getText().toString();
+    }
+
+    @Override
+    public String getLastNameInput() {
+        return etLastName.getText().toString();
+    }
+
+    @Override
+    public String getPhoneNumberInput() {
+        return etPhone.getText().toString();
+    }
+
+    @Override
+    public String getEmailInput() {
+        return etEmail.getText().toString();
     }
 }

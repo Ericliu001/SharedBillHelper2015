@@ -14,6 +14,8 @@ import android.util.Log;
 import com.ericliudeveloper.sharedbillhelper.database.DatabaseConstants;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
+import com.ericliudeveloper.sharedbillhelper.model.Member;
+import com.ericliudeveloper.sharedbillhelper.model.MemberDAO;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.provider.BillProvider;
 
@@ -151,7 +153,33 @@ public class ProviderTests extends ProviderTestCase2<BillProvider> {
     }
 
 
+    static String[] memberProjection = BillContract.Members.PROJECTION;
+    static Uri membersUri = BillContract.Members.CONTENT_URI;
+    public void testInsertMember() {
+        Member member = new Member();
+        member.setFirstName("Eric");
+        member.setLastName("Liu");
+        member.setEmail("someone@qq.com");
+        member.setPhone("12345");
+        member.setMoveInDate("2005-01-01");
+        member.setMoveOutDate("2005-02-01");
 
+        ContentValues values = MemberDAO.getContentValuesFromMemberInstance(member);
+
+        Uri uri = mResolver.insert(membersUri, values);
+        Log.d("eric", uri.toString());
+
+        assertNotNull("no uri returned when inserting member.", uri);
+
+        Cursor cursor = mResolver.query(uri, memberProjection, null , null, null);
+        assertTrue("Nothing in the cursor when quering member.", cursor.getCount() > 0);
+
+//        assertTrue("must fail", false);
+
+        cursor.moveToFirst();
+        Member retrievedMember = MemberDAO.getMemberFromCursor(cursor);
+        assertEquals("Retrieved member instance is different from the one been saved. ", "Eric", retrievedMember.getFirstName());
+    }
 
 
 

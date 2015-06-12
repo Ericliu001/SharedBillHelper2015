@@ -39,7 +39,7 @@ public class EditBillPresenter {
     }
 
 
-    public void registerEventbusListener() {
+    public void registerEventBusListener() {
         EventBus.getDefault().registerSticky(this);
     }
 
@@ -51,7 +51,7 @@ public class EditBillPresenter {
 
         mBill = eventEditBill.bill;
         refreshDisplayFromBillInstance();
-        EventBus.getDefault().removeStickyEvent(CustomEvents.EventEditBill.class);
+        EventBus.getDefault().removeStickyEvent(eventEditBill);
     }
 
     public void onEvent(CustomEvents.EventDatePicked event) {
@@ -91,7 +91,7 @@ public class EditBillPresenter {
         showDatePickDialog();
     }
 
-    public void unregisterEventbusListener() {
+    public void unregisterEventBusListener() {
         EventBus.getDefault().unregister(this);
     }
 
@@ -110,17 +110,17 @@ public class EditBillPresenter {
         }
     }
 
-    public void startDateButtonClicked() {
+    public void onStartDateButtonClicked() {
         selectActionType = ACTION_SELECT_START_DATE;
         showDatePickDialog();
     }
 
-    public void endDateButtonClicked() {
+    public void enEndDateButtonClicked() {
         selectActionType = ACTION_SELECT_END_DATE;
         showDatePickDialog();
     }
 
-    public void dueDateButtonClicked() {
+    public void onDueDateButtonClicked() {
         selectActionType = ACTION_SELECT_DUE_DATE;
         showDatePickDialog();
     }
