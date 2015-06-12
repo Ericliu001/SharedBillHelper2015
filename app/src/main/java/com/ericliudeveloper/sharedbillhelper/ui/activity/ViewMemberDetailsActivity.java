@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
-import com.ericliudeveloper.sharedbillhelper.ui.fragment.ViewBillDetailsFragment;
+import com.ericliudeveloper.sharedbillhelper.ui.fragment.ViewMemberDetailsFragment;
 
 /**
  * Created by eric.liu on 11/06/15.
  */
 public class ViewMemberDetailsActivity extends ContainerActivity {
+
 
 
 
@@ -22,7 +23,7 @@ public class ViewMemberDetailsActivity extends ContainerActivity {
 
     @Override
     protected Fragment getFragment() {
-        return new ViewBillDetailsFragment();
+        return new ViewMemberDetailsFragment();
     }
 
     @Override

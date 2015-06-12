@@ -22,9 +22,10 @@ public final class CustomEvents {
     }
 
 
-    // class to pass positive click from the dialog shown after the user clicks delete bill
-    public static class EventDeleteBill {
+    // class to pass positive click from the warning dialog shown after the user clicks delete
+    public static class EventActionDelete {
     }
+
 
     // class to pass event when the user need to re-pick the date
     public static class EventWrongDatePicked {

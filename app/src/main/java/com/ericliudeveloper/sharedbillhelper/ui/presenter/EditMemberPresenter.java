@@ -60,6 +60,17 @@ public class EditMemberPresenter {
         if (!TextUtils.isEmpty(email)) {
             mCallback.showMemberEmail(email);
         }
+
+        String moveIn = mMember.getMoveInDate();
+        if (!TextUtils.isEmpty(moveIn)) {
+            mCallback.showPickedMoveInDate(moveIn);
+        }
+
+        String moveOut = mMember.getMoveOutDate();
+        if (!TextUtils.isEmpty(moveOut)) {
+            mCallback.showPickedMoveOutDate(moveOut);
+        }
+
     }
 
     public void startActionDone() {

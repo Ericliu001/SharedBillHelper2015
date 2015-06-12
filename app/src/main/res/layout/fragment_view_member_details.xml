@@ -1,0 +1,149 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/detail_content_padding"
+        android:layout_marginRight="@dimen/detail_content_padding">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="@dimen/detail_content_padding"
+            android:layout_marginRight="@dimen/detail_content_padding"
+            android:layout_marginTop="40dp"
+            android:minHeight="500dp">
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/member_details"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/first_name" />
+
+                    <TextView
+                        android:id="@+id/tvFristName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right"
+                        android:text="@string/no_value" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/last_name" />
+
+                    <TextView
+                        android:id="@+id/tvLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:textStyle="bold"
+                        android:text="@string/no_value" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/phone_number" />
+
+                    <TextView
+                        android:id="@+id/tvPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="@string/no_value" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/email" />
+
+                    <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="@string/no_value" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/move_in_date" />
+
+                    <TextView
+                        android:id="@+id/tvMoveInDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="No Value" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/content_row_margin_top">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/move_out_date" />
+
+                    <TextView
+                        android:id="@+id/tvMoveOutDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:text="No Value" />
+                </TableRow>
+
+            </TableLayout>
+
+
+        </FrameLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</FrameLayout>

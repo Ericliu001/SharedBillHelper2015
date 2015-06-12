@@ -54,11 +54,21 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="BillDAO.java" pinned="false" current-in-tab="true">
+            <file leaf-file-name="BillDAO.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="1.675813">
+                  <state vertical-scroll-proportion="0.0">
                     <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="ViewBillDetailsFragment.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewBillDetailsFragment.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.89634144">
+                    <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
                     <folding />
                   </state>
                 </provider>
@@ -75,21 +85,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProviderTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/ericliudeveloper/sharedbillhelper/ProviderTests.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33261338">
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding>
+                <element signature="e#2765#3084#0" expanded="true" />
+                <element signature="e#3083#3084#0" expanded="true" />
+                <element signature="e#4486#4487#0" expanded="true" />
+                <element signature="e#4535#4536#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewPager.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/22.2.0/support-v4-22.2.0-sources.jar!/android/support/v4/view/ViewPager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-37.962963">
+              <caret line="531" column="61" selection-start-line="531" selection-start-column="53" selection-end-line="531" selection-end-column="61" />
+              <folding>
+                <element signature="e#18371#18372#0" expanded="true" />
+                <element signature="e#18402#18403#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="178" column="29" selection-start-line="178" selection-start-column="29" selection-end-line="178" selection-end-column="29" />
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemberDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/MemberDAO.java">
+      <file leaf-file-name="EditMemberFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditMemberFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33045357">
-              <caret line="19" column="83" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BaseFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewBillDetailsActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewBillDetailsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditMemberPresenter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditMemberPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="9" selection-start-line="43" selection-start-column="6" selection-end-line="71" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewMemberDetailsFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewMemberDetailsFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewMemberDetailsActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewMemberDetailsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1436,7 +1528,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/EditMemberActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditBillFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_edit.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
@@ -1447,10 +1538,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_edit_member.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditMemberFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditMemberPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/ericliudeveloper/sharedbillhelper/ProviderTests.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/MemberDAO.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_view_member_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewMemberDetailsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/CustomEvents.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditMemberPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewMemberDetailsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1526,6 +1622,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharedBillHelper2015" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1787,9 +1901,15 @@
     <property name="recentsLimit" value="5" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="1286d897" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="04d3333d0220298e" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_22_x86" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.ericliudeveloper.sharedbillhelper.ui.fragment" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -2070,7 +2190,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2081,26 +2201,6 @@
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3519#3520#0" expanded="true" />
-            <element signature="e#3571#3572#0" expanded="true" />
-            <element signature="e#3645#3646#0" expanded="true" />
-            <element signature="e#3698#3699#0" expanded="true" />
-            <element signature="e#3769#3770#0" expanded="true" />
-            <element signature="e#3815#3816#0" expanded="true" />
-            <element signature="e#3884#3885#0" expanded="true" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#3997#3998#0" expanded="true" />
-            <element signature="e#4035#4036#0" expanded="true" />
-            <element signature="e#4098#4099#0" expanded="true" />
-            <element signature="e#4136#4137#0" expanded="true" />
-            <element signature="e#4191#4192#0" expanded="true" />
-            <element signature="e#4246#4247#0" expanded="true" />
-            <element signature="e#4300#4301#0" expanded="true" />
-            <element signature="e#4354#4355#0" expanded="true" />
-            <element signature="e#4411#4412#0" expanded="true" />
-            <element signature="e#4462#4463#0" expanded="true" />
-            <element signature="e#4513#4514#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2122,20 +2222,6 @@
             <element signature="e#1346#1347#0" expanded="true" />
             <element signature="e#3074#3139#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewMemberDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewBillDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -2172,13 +2258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2174888">
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="62" selection-start-line="69" selection-start-column="62" selection-end-line="69" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -2203,21 +2282,6 @@
             <element signature="e#984#1018#0" expanded="true" />
             <element signature="e#1306#1342#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37373737">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -2260,36 +2324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditMemberFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3519#3520#0" expanded="true" />
-            <element signature="e#3571#3572#0" expanded="true" />
-            <element signature="e#3645#3646#0" expanded="true" />
-            <element signature="e#3698#3699#0" expanded="true" />
-            <element signature="e#3769#3770#0" expanded="true" />
-            <element signature="e#3815#3816#0" expanded="true" />
-            <element signature="e#3884#3885#0" expanded="true" />
-            <element signature="e#3928#3929#0" expanded="true" />
-            <element signature="e#3997#3998#0" expanded="true" />
-            <element signature="e#4035#4036#0" expanded="true" />
-            <element signature="e#4098#4099#0" expanded="true" />
-            <element signature="e#4136#4137#0" expanded="true" />
-            <element signature="e#4191#4192#0" expanded="true" />
-            <element signature="e#4246#4247#0" expanded="true" />
-            <element signature="e#4300#4301#0" expanded="true" />
-            <element signature="e#4354#4355#0" expanded="true" />
-            <element signature="e#4411#4412#0" expanded="true" />
-            <element signature="e#4462#4463#0" expanded="true" />
-            <element signature="e#4513#4514#0" expanded="true" />
-            <element signature="e#4564#4565#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/MyDateUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2301,45 +2335,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="91" selection-end-column="5" />
-          <folding>
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-            <element signature="e#3074#3139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-22/android/content/AsyncQueryHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33221477">
           <caret line="298" column="19" selection-start-line="298" selection-start-column="19" selection-end-line="298" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditMemberPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#2672#2673#0" expanded="true" />
-            <element signature="e#2723#2724#0" expanded="true" />
-            <element signature="e#2762#2763#0" expanded="true" />
-            <element signature="e#2796#2797#0" expanded="true" />
-            <element signature="e#3761#3762#0" expanded="true" />
-            <element signature="e#3819#3820#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#5163#5164#0" expanded="true" />
-            <element signature="e#5552#5617#0" expanded="true" />
-            <element signature="e#5676#5755#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2417,27 +2417,207 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/ericliudeveloper/sharedbillhelper/ProviderTests.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="178" column="29" selection-start-line="178" selection-start-column="29" selection-end-line="178" selection-end-column="29" />
+          <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java">
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/ericliudeveloper/sharedbillhelper/ProviderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.675813">
-          <caret line="107" column="7" selection-start-line="107" selection-start-column="7" selection-end-line="107" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.7645895">
+          <caret line="178" column="29" selection-start-line="178" selection-start-column="29" selection-end-line="178" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/MemberDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33045357">
+        <state vertical-scroll-proportion="0.0">
           <caret line="19" column="83" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_view_bill_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20773931">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.24">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_view_member_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.793104">
+          <caret line="133" column="54" selection-start-line="133" selection-start-column="54" selection-end-line="133" selection-end-column="54" />
+          <folding>
+            <element signature="e#318#349#0" expanded="true" />
+            <element signature="e#385#416#0" expanded="true" />
+            <element signature="e#622#653#0" expanded="true" />
+            <element signature="e#693#724#0" expanded="true" />
+            <element signature="e#1258#1282#0" expanded="true" />
+            <element signature="e#1504#1535#0" expanded="true" />
+            <element signature="e#1726#1746#0" expanded="true" />
+            <element signature="e#2041#2059#0" expanded="true" />
+            <element signature="e#2222#2253#0" expanded="true" />
+            <element signature="e#2444#2463#0" expanded="true" />
+            <element signature="e#2813#2831#0" expanded="true" />
+            <element signature="e#2992#3023#0" expanded="true" />
+            <element signature="e#3214#3236#0" expanded="true" />
+            <element signature="e#3540#3558#0" expanded="true" />
+            <element signature="e#3719#3750#0" expanded="true" />
+            <element signature="e#3941#3956#0" expanded="true" />
+            <element signature="e#4254#4272#0" expanded="true" />
+            <element signature="e#4433#4464#0" expanded="true" />
+            <element signature="e#4655#4677#0" expanded="true" />
+            <element signature="e#5151#5182#0" expanded="true" />
+            <element signature="e#5373#5396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/dialog/DeleteDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4319655">
+          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/CustomEvents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6911447">
+          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BaseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="e#1288#1289#0" expanded="true" />
+            <element signature="e#1346#1347#0" expanded="true" />
+            <element signature="e#3074#3139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditMemberFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_view_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewBillDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewMemberDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewBillDetailsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89634144">
+          <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditMemberPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="9" selection-start-line="43" selection-start-column="6" selection-end-line="71" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewMemberDetailsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/22.2.0/support-v4-22.2.0-sources.jar!/android/support/v4/view/ViewPager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-37.962963">
+          <caret line="531" column="61" selection-start-line="531" selection-start-column="53" selection-end-line="531" selection-end-column="61" />
+          <folding>
+            <element signature="e#18371#18372#0" expanded="true" />
+            <element signature="e#18402#18403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33261338">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="e#2765#3084#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
+            <element signature="e#4486#4487#0" expanded="true" />
+            <element signature="e#4535#4536#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

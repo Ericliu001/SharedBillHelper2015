@@ -23,9 +23,14 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
-        setupFloatActionButton();
         mRouter = new Router(MainActivity.this);
+    }
 
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        setupFloatActionButton();
     }
 
     @Override
@@ -71,9 +76,10 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             }
         };
 
+        int currentPage = mViewPager.getCurrentItem();
 
-        mFAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_note_add_white_24dp));
-        mFAB.setOnClickListener(createBillClickListener);
+        setupFABAccordingToPage(currentPage);
+
     }
 
 
@@ -115,6 +121,10 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
     @Override
     public void onPageSelected(int position) {
+        setupFABAccordingToPage(position);
+    }
+
+    private void setupFABAccordingToPage(int position) {
         if (position == 0) {
 
             mFAB.setImageDrawable(getResources().getDrawable(R.drawable.ic_note_add_white_24dp));

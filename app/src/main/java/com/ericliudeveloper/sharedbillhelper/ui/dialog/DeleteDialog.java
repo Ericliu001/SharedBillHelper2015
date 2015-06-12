@@ -47,7 +47,7 @@ public class DeleteDialog extends DialogFragment implements OnClickListener {
             case AlertDialog.BUTTON_POSITIVE:
                 // todo handle yes to delete
 
-                EventBus.getDefault().post(new CustomEvents.EventDeleteBill());
+                EventBus.getDefault().post(new CustomEvents.EventActionDelete());
                 break;
 
             case AlertDialog.BUTTON_NEGATIVE:

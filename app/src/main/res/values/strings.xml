@@ -41,4 +41,6 @@
     <string name="move_out_date">Move Out Date</string>
     <string name="after_billing_end">If not specified, assume moved out after billing ends</string>
     <string name="title_activity_edit_member">Edit Member</string>
+    <string name="member_details">Member Details</string>
+    <string name="delete_member">This member is going to be deleted!</string>
 </resources>
