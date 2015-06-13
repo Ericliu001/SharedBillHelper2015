@@ -55,7 +55,6 @@ public abstract class RecyclerViewFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
 
-
         mAdapter = new CursorRecyclerAdapter(null) {
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

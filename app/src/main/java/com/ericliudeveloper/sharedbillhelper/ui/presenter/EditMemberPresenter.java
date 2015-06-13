@@ -26,14 +26,13 @@ public class EditMemberPresenter {
     private Activity mActivity;
     private Member mMember;
     private EditMemberFace mCallback;
-    private int selectDateType  = -1;
+    private int selectDateType = -1;
 
 
-    public EditMemberPresenter(EditMemberFace callback){
+    public EditMemberPresenter(EditMemberFace callback) {
         mCallback = callback;
         mMember = new Member();
     }
-
 
 
     public void setActivity(Activity activity) {
@@ -77,6 +76,9 @@ public class EditMemberPresenter {
         String firstName = mCallback.getFirstNameInput();
         if (!TextUtils.isEmpty(firstName)) {
             mMember.setFirstName(firstName);
+        } else {
+            mCallback.showErroDialog();
+            return;
         }
 
         String lastName = mCallback.getLastNameInput();
@@ -98,6 +100,8 @@ public class EditMemberPresenter {
 
         mActivity.finish();
     }
+
+
 
     private void saveMemberInstanceToDB(Member mMember) {
         MemberDAO.saveMember(mMember, null);
@@ -144,6 +148,8 @@ public class EditMemberPresenter {
         String getPhoneNumberInput();
 
         String getEmailInput();
+
+        void showErroDialog();
     }
 
 

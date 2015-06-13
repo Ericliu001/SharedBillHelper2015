@@ -71,6 +71,7 @@ public class BillDAO implements Dao {
             return bill;
         }
         return null;
+        // don't close the cursor!
     }
 
     public static void saveBill(final Bill bill, final Handler handler) {

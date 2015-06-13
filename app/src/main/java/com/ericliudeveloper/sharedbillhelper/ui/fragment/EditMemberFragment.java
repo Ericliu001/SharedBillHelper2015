@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.ericliudeveloper.sharedbillhelper.R;
+import com.ericliudeveloper.sharedbillhelper.ui.dialog.MessageDialog;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.EditMemberPresenter;
 
 /**
@@ -173,5 +174,20 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
     @Override
     public String getEmailInput() {
         return etEmail.getText().toString();
+    }
+
+    @Override
+    public void showErroDialog() {
+        Bundle args = new Bundle();
+        String title = getActivity().getResources()
+                .getString(R.string.fields_empty);
+        args.putString(MessageDialog.TITLE, title);
+
+        String must_fill_fields_member = getActivity().getResources()
+                .getString(R.string.must_fill_fields_member);
+        args.putString(MessageDialog.MESSAGE, must_fill_fields_member);
+        MessageDialog messageDialog = MessageDialog
+                .newInstance(args);
+        messageDialog.show(getActivity().getFragmentManager(), "message");
     }
 }
