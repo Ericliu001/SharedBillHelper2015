@@ -12,6 +12,25 @@ public final class CustomEvents {
     private CustomEvents() {
     }
 
+    // class to pass event when the user want to set calculation parameters,
+    // when user clicks Float Action Button from a view bill page, that bill shall be selected
+    // under CalculationParameters View
+    public static class EventSetCalculationParameters {
+        public final Bill bill;
+
+        public EventSetCalculationParameters(Bill bill) {
+            this.bill = bill;
+        }
+
+        public Bill getData() {
+            return bill;
+        }
+    }
+
+    // FloatActionBar clicked
+    public static class EventFABClicked {
+    }
+
     // class to pass pick date event from the date pick dialog
     public static class EventDatePicked {
         public final Date date;
@@ -64,8 +83,6 @@ public final class CustomEvents {
             this.member = member;
         }
     }
-
-
 
 
 }

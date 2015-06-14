@@ -16,9 +16,11 @@ import android.widget.TextView;
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Member;
 import com.ericliudeveloper.sharedbillhelper.model.MemberDAO;
+import com.ericliudeveloper.sharedbillhelper.ui.activity.CalculationParameterActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.EditMemberActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.dialog.DeleteDialog;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+import com.ericliudeveloper.sharedbillhelper.util.Router;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -118,6 +120,10 @@ public class ViewMemberDetailsFragment extends BaseFragment {
         if (getActivity() != null) {
             getActivity().finish();
         }
+    }
+
+    public void onEvent(CustomEvents.EventFABClicked eventFABClicked) {
+        Router.startActivity(getActivity(), CalculationParameterActivity.class, null);
     }
 
     @Override

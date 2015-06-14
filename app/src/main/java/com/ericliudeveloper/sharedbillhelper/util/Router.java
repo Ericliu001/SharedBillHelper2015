@@ -10,24 +10,21 @@ import com.ericliudeveloper.sharedbillhelper.MyApplication;
 /**
  * Created by liu on 8/06/15.
  */
-public class Router {
-    Context mContext;
+public final class Router {
 
-    public Router(Context context) {
-        mContext = context;
-    }
+    private Router(){}
 
-    public void startActivity(Class<?> dest, Bundle data) {
-        Intent intent = new Intent(mContext, dest);
+    public static void startActivity(Activity activity, Class<?> dest, Bundle data) {
+        Intent intent = new Intent(activity, dest);
         if (data != null) {
             intent.putExtras(data);
         }
 
-        if (!(mContext instanceof Activity)) {
+        if (!(activity instanceof Activity)) {
             // System will throw an Exception if you try to call startActivity from outside an Activity without having the flag
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
-        mContext.startActivity(intent);
+        activity.startActivity(intent);
     }
 
 

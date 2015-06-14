@@ -15,9 +15,11 @@ import android.widget.TextView;
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
+import com.ericliudeveloper.sharedbillhelper.ui.activity.CalculationParameterActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.EditBillActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.dialog.DeleteDialog;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+import com.ericliudeveloper.sharedbillhelper.util.Router;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -29,6 +31,7 @@ import de.greenrobot.event.EventBus;
 public class ViewBillDetailsFragment extends BaseFragment {
 
     Bill mBill;
+
 
     @InjectView(R.id.tvType)
     TextView tvType;
@@ -81,6 +84,12 @@ public class ViewBillDetailsFragment extends BaseFragment {
         if (getActivity() != null) {
             getActivity().finish();
         }
+    }
+
+
+    public void onEvent(CustomEvents.EventFABClicked eventFABClicked) {
+        EventBus.getDefault().postSticky(new CustomEvents.EventSetCalculationParameters(mBill));
+        Router.startActivity(getActivity(), CalculationParameterActivity.class, null);
     }
 
 

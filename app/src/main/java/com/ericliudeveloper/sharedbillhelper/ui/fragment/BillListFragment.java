@@ -29,12 +29,12 @@ import de.greenrobot.event.EventBus;
  */
 public class BillListFragment extends RecyclerViewFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     private int mBillQueryToken = 1;
-
+    protected boolean isListSelectionMode = false;
 
 
     @Override
     protected ListPresenter getPresenter() {
-        return new BillListPresenter();
+        return new BillListPresenter(isListSelectionMode);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     }
 
 
-    private void checkListEmpty() {
+    protected void checkListEmpty() {
         if (mAdapter.getItemCount() == 0) {
             ImageView ivEmptyBillList = new ImageView(getActivity());
             ivEmptyBillList.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_assignment));

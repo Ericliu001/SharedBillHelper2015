@@ -17,13 +17,11 @@ import com.ericliudeveloper.sharedbillhelper.util.Router;
 public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
     FloatingActionButton mFAB;
     View.OnClickListener createMemberClickListener, createBillClickListener;
-    Router mRouter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
-        mRouter = new Router(MainActivity.this);
     }
 
 
@@ -63,7 +61,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         createBillClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRouter.startActivity(EditBillActivity.class, null);
+                Router.startActivity(MainActivity.this, EditBillActivity.class, null);
             }
         };
 
@@ -72,7 +70,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             public void onClick(View v) {
 //                Intent intent = new Intent(MainActivity.this, EditMemberActivity.class);
 //                startActivity(intent);
-                mRouter.startActivity(EditMemberActivity.class, null);
+                Router.startActivity(MainActivity.this, EditMemberActivity.class, null);
             }
         };
 
