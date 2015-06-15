@@ -51,4 +51,5 @@
     <string name="select_members">Select Members</string>
     <string name="no_member_create">You haven\'t created any member, click to create</string>
     <string name="no_bill_create">You haven\'t created any bill, click to create</string>
+    <string name="reports">Reports</string>
 </resources>

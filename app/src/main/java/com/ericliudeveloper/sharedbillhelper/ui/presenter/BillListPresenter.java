@@ -51,7 +51,7 @@ public class BillListPresenter implements ListPresenter {
         private TextView tvAmount;
         private TextView tvPaid;
         private TextView tvDueDay;
-        private CheckBox checkBox;
+        public final CheckBox checkBox;
 
         public BillViewHolder(View itemView, boolean isSelectionMode) {
             super(itemView);

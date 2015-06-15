@@ -13,8 +13,6 @@ import com.ericliudeveloper.sharedbillhelper.model.MemberDAO;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
 
-import java.util.List;
-
 import de.greenrobot.event.EventBus;
 
 /**
@@ -47,7 +45,7 @@ public class MemberListPresenter implements ListPresenter {
         private Member mMember;
         CardView cardView;
         TextView  tvFirstName, tvLastName;
-        CheckBox checkBox;
+        public final CheckBox checkBox;
 
         public MemberViewHolder(View itemView, boolean isSelectionMode) {
             super(itemView);

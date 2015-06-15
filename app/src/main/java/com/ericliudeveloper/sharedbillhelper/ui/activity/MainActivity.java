@@ -18,6 +18,12 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     FloatingActionButton mFAB;
     View.OnClickListener createMemberClickListener, createBillClickListener;
 
+
+    @Override
+    protected int getSelfNavDrawerItem() {
+        return R.id.nav_home;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

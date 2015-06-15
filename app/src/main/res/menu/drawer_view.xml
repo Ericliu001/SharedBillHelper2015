@@ -25,7 +25,13 @@
         <item
             android:id="@+id/nav_calculator"
             android:icon="@android:drawable/ic_menu_add"
-            android:title="Messages" />
+            android:title="@string/calculate" />
+
+
+        <item
+            android:id="@+id/nav_reports"
+            android:icon="@drawable/ic_subject_black_24dp"
+            android:title="@string/reports" />
 
 
     </group>

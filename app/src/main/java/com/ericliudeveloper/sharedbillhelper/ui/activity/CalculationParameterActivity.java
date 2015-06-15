@@ -11,6 +11,12 @@ import com.ericliudeveloper.sharedbillhelper.R;
  */
 public class CalculationParameterActivity extends BaseActivity {
 
+
+    @Override
+    protected int getSelfNavDrawerItem() {
+        return R.id.nav_calculator;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

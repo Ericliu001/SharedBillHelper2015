@@ -5,7 +5,7 @@
       <config />
     </shared>
     <layouts>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculation_parameter.xml">
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_calculation_parameter.xml">
         <config>
           <theme>@style/AppTheme</theme>
         </config>
@@ -38,12 +38,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CalculationParameterActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+              <folding>
+                <element signature="e#853#854#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17378497">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+              <folding>
+                <element signature="e#2644#2645#0" expanded="true" />
+                <element signature="e#2689#2690#0" expanded="true" />
+                <element signature="e#4610#4627#0" expanded="true" />
+                <element signature="e#4629#4646#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav_drawer.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_drawer.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.51724">
+              <caret line="35" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_calculation_parameter.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculation_parameter.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.6896553">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout_calculation_parameter.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_calculation_parameter.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.6896553">
+              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculationParameterActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationParameterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30044183">
-              <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding>
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#399#400#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,9 +123,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -1413,30 +1483,31 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/CustomEvents.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/Router.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewBillDetailsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewMemberDetailsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/PixelTool.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/PixelUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/ResouceUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tool_bar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationParameterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/member_row_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/CursorUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/RecyclerViewFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/BillListPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/MemberListPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/MemberListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calculation_parameter.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/bill_row_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-land/activity_calculation_parameter.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ContainerActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListSelectionFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/MemberListSelectionFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_calcuation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/BillListPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/MemberListPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/drawer_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calculation_parameter.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationParameterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java" />
       </list>
     </option>
   </component>
@@ -1563,6 +1634,46 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharedBillHelper2015" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharedBillHelper2015" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout_calculation_parameter.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1863,7 +1974,7 @@
     <property name="recentsLimit" value="5" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="HT4AGJT05307" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="04d3333d0220298e" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="extract.method.default.visibility" value="private" />
@@ -2164,336 +2275,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79970545">
-          <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/dialog/MessageDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditMemberFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-          <folding>
-            <element signature="e#4745#4823#0" expanded="false" />
-            <element signature="e#4919#5008#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sdk/sources/android-22/android/support/v7/widget/RecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8001" column="33" selection-start-line="8001" selection-start-column="20" selection-end-line="8001" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#382597#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#8396#8402#0" expanded="false" />
-            <element signature="e#9872#9888#0" expanded="false" />
-            <element signature="e#9990#10011#0" expanded="false" />
-            <element signature="e#13604#13605#0" expanded="false" />
-            <element signature="e#13639#13640#0" expanded="false" />
-            <element signature="e#13703#13704#0" expanded="false" />
-            <element signature="e#13742#13743#0" expanded="false" />
-            <element signature="e#15962#15963#0" expanded="false" />
-            <element signature="e#16034#16035#0" expanded="false" />
-            <element signature="e#16303#16304#0" expanded="false" />
-            <element signature="e#16378#16379#0" expanded="false" />
-            <element signature="e#16769#16770#0" expanded="false" />
-            <element signature="e#16844#16845#0" expanded="false" />
-            <element signature="e#17239#17240#0" expanded="false" />
-            <element signature="e#17305#17306#0" expanded="false" />
-            <element signature="e#20597#20598#0" expanded="false" />
-            <element signature="e#20647#20648#0" expanded="false" />
-            <element signature="e#21526#21527#0" expanded="false" />
-            <element signature="e#21576#21577#0" expanded="false" />
-            <element signature="e#22511#22512#0" expanded="false" />
-            <element signature="e#22555#22556#0" expanded="false" />
-            <element signature="e#22743#22744#0" expanded="false" />
-            <element signature="e#22779#22780#0" expanded="false" />
-            <element signature="e#28066#28067#0" expanded="false" />
-            <element signature="e#28097#28098#0" expanded="false" />
-            <element signature="e#28628#28629#0" expanded="false" />
-            <element signature="e#28672#28673#0" expanded="false" />
-            <element signature="e#33073#33074#0" expanded="false" />
-            <element signature="e#33103#33104#0" expanded="false" />
-            <element signature="e#33563#33564#0" expanded="false" />
-            <element signature="e#33617#33618#0" expanded="false" />
-            <element signature="e#34155#34156#0" expanded="false" />
-            <element signature="e#34206#34207#0" expanded="false" />
-            <element signature="e#35202#35203#0" expanded="false" />
-            <element signature="e#35250#35251#0" expanded="false" />
-            <element signature="e#35486#35487#0" expanded="false" />
-            <element signature="e#35521#35522#0" expanded="false" />
-            <element signature="e#38045#38046#0" expanded="false" />
-            <element signature="e#38089#38090#0" expanded="false" />
-            <element signature="e#39101#39102#0" expanded="false" />
-            <element signature="e#39143#39144#0" expanded="false" />
-            <element signature="e#42014#42015#0" expanded="false" />
-            <element signature="e#42061#42062#0" expanded="false" />
-            <element signature="e#58309#58310#0" expanded="false" />
-            <element signature="e#58379#58380#0" expanded="false" />
-            <element signature="e#80260#80261#0" expanded="false" />
-            <element signature="e#80296#80297#0" expanded="false" />
-            <element signature="e#117372#117373#0" expanded="false" />
-            <element signature="e#117425#117426#0" expanded="false" />
-            <element signature="e#135167#135168#0" expanded="false" />
-            <element signature="e#135219#135220#0" expanded="false" />
-            <element signature="e#140526#140549#0" expanded="false" />
-            <element signature="e#140742#140743#0" expanded="false" />
-            <element signature="e#140780#140781#0" expanded="false" />
-            <element signature="e#142324#142325#0" expanded="false" />
-            <element signature="e#142362#142363#0" expanded="false" />
-            <element signature="e#142387#142388#0" expanded="false" />
-            <element signature="e#142425#142426#0" expanded="false" />
-            <element signature="e#144781#144793#0" expanded="false" />
-            <element signature="e#144922#144934#0" expanded="false" />
-            <element signature="e#146328#146329#0" expanded="false" />
-            <element signature="e#146385#146386#0" expanded="false" />
-            <element signature="e#152878#152879#0" expanded="false" />
-            <element signature="e#152944#152945#0" expanded="false" />
-            <element signature="e#169675#169676#0" expanded="false" />
-            <element signature="e#169727#169728#0" expanded="false" />
-            <element signature="e#169769#169770#0" expanded="false" />
-            <element signature="e#169834#169835#0" expanded="false" />
-            <element signature="e#169863#169864#0" expanded="false" />
-            <element signature="e#169909#169910#0" expanded="false" />
-            <element signature="e#190752#190753#0" expanded="false" />
-            <element signature="e#190784#190785#0" expanded="false" />
-            <element signature="e#191889#191890#0" expanded="false" />
-            <element signature="e#191925#191926#0" expanded="false" />
-            <element signature="e#192565#192566#0" expanded="false" />
-            <element signature="e#192609#192610#0" expanded="false" />
-            <element signature="e#196238#196239#0" expanded="false" />
-            <element signature="e#196274#196275#0" expanded="false" />
-            <element signature="e#197580#197581#0" expanded="false" />
-            <element signature="e#197637#197638#0" expanded="false" />
-            <element signature="e#201621#201622#0" expanded="false" />
-            <element signature="e#201672#201673#0" expanded="false" />
-            <element signature="e#211585#211586#0" expanded="false" />
-            <element signature="e#211621#211622#0" expanded="false" />
-            <element signature="e#218573#218574#0" expanded="false" />
-            <element signature="e#218614#218615#0" expanded="false" />
-            <element signature="e#221405#221406#0" expanded="false" />
-            <element signature="e#221437#221438#0" expanded="false" />
-            <element signature="e#222307#222308#0" expanded="false" />
-            <element signature="e#222339#222340#0" expanded="false" />
-            <element signature="e#222633#222634#0" expanded="false" />
-            <element signature="e#222669#222670#0" expanded="false" />
-            <element signature="e#222957#222958#0" expanded="false" />
-            <element signature="e#222993#222994#0" expanded="false" />
-            <element signature="e#225447#225448#0" expanded="false" />
-            <element signature="e#225522#225523#0" expanded="false" />
-            <element signature="e#226834#226835#0" expanded="false" />
-            <element signature="e#226888#226889#0" expanded="false" />
-            <element signature="e#227794#227795#0" expanded="false" />
-            <element signature="e#227848#227849#0" expanded="false" />
-            <element signature="e#228188#228189#0" expanded="false" />
-            <element signature="e#228230#228231#0" expanded="false" />
-            <element signature="e#228627#228628#0" expanded="false" />
-            <element signature="e#228682#228683#0" expanded="false" />
-            <element signature="e#231921#231922#0" expanded="false" />
-            <element signature="e#231975#231976#0" expanded="false" />
-            <element signature="e#237108#237109#0" expanded="false" />
-            <element signature="e#237176#237177#0" expanded="false" />
-            <element signature="e#239316#239317#0" expanded="false" />
-            <element signature="e#239361#239362#0" expanded="false" />
-            <element signature="e#243056#243057#0" expanded="false" />
-            <element signature="e#243139#243140#0" expanded="false" />
-            <element signature="e#243300#243301#0" expanded="false" />
-            <element signature="e#243384#243385#0" expanded="false" />
-            <element signature="e#245246#245247#0" expanded="false" />
-            <element signature="e#245327#245328#0" expanded="false" />
-            <element signature="e#245595#245596#0" expanded="false" />
-            <element signature="e#245675#245676#0" expanded="false" />
-            <element signature="e#268062#268063#0" expanded="false" />
-            <element signature="e#268097#268098#0" expanded="false" />
-            <element signature="e#277033#277034#0" expanded="false" />
-            <element signature="e#277065#277066#0" expanded="false" />
-            <element signature="e#277620#277621#0" expanded="false" />
-            <element signature="e#277652#277653#0" expanded="false" />
-            <element signature="e#278222#278223#0" expanded="false" />
-            <element signature="e#278254#278255#0" expanded="false" />
-            <element signature="e#278765#278766#0" expanded="false" />
-            <element signature="e#278797#278798#0" expanded="false" />
-            <element signature="e#279344#279345#0" expanded="false" />
-            <element signature="e#279376#279377#0" expanded="false" />
-            <element signature="e#279938#279939#0" expanded="false" />
-            <element signature="e#279970#279971#0" expanded="false" />
-            <element signature="e#281424#281425#0" expanded="false" />
-            <element signature="e#281496#281497#0" expanded="false" />
-            <element signature="e#281636#281637#0" expanded="false" />
-            <element signature="e#281709#281710#0" expanded="false" />
-            <element signature="e#282431#282432#0" expanded="false" />
-            <element signature="e#282466#282467#0" expanded="false" />
-            <element signature="e#291194#291195#0" expanded="false" />
-            <element signature="e#291251#291252#0" expanded="false" />
-            <element signature="e#294591#294592#0" expanded="false" />
-            <element signature="e#294627#294628#0" expanded="false" />
-            <element signature="e#299466#299467#0" expanded="false" />
-            <element signature="e#299507#299508#0" expanded="false" />
-            <element signature="e#312249#312250#0" expanded="false" />
-            <element signature="e#312307#312308#0" expanded="false" />
-            <element signature="e#316570#316571#0" expanded="false" />
-            <element signature="e#316613#316614#0" expanded="false" />
-            <element signature="e#316863#316864#0" expanded="false" />
-            <element signature="e#316901#316902#0" expanded="false" />
-            <element signature="e#317024#317025#0" expanded="false" />
-            <element signature="e#317068#317069#0" expanded="false" />
-            <element signature="e#317097#317098#0" expanded="false" />
-            <element signature="e#317151#317152#0" expanded="false" />
-            <element signature="e#317177#317178#0" expanded="false" />
-            <element signature="e#317234#317235#0" expanded="false" />
-            <element signature="e#317276#317277#0" expanded="false" />
-            <element signature="e#317347#317348#0" expanded="false" />
-            <element signature="e#317392#317393#0" expanded="false" />
-            <element signature="e#317459#317460#0" expanded="false" />
-            <element signature="e#317496#317497#0" expanded="false" />
-            <element signature="e#317556#317557#0" expanded="false" />
-            <element signature="e#317587#317588#0" expanded="false" />
-            <element signature="e#317641#317642#0" expanded="false" />
-            <element signature="e#317694#317695#0" expanded="false" />
-            <element signature="e#317744#317745#0" expanded="false" />
-            <element signature="e#317775#317776#0" expanded="false" />
-            <element signature="e#317834#317835#0" expanded="false" />
-            <element signature="e#317867#317868#0" expanded="false" />
-            <element signature="e#317925#317926#0" expanded="false" />
-            <element signature="e#317956#317957#0" expanded="false" />
-            <element signature="e#318015#318016#0" expanded="false" />
-            <element signature="e#318044#318045#0" expanded="false" />
-            <element signature="e#318101#318102#0" expanded="false" />
-            <element signature="e#318132#318133#0" expanded="false" />
-            <element signature="e#318191#318192#0" expanded="false" />
-            <element signature="e#318238#318239#0" expanded="false" />
-            <element signature="e#318290#318291#0" expanded="false" />
-            <element signature="e#318325#318326#0" expanded="false" />
-            <element signature="e#318389#318390#0" expanded="false" />
-            <element signature="e#318572#318573#0" expanded="false" />
-            <element signature="e#318638#318639#0" expanded="false" />
-            <element signature="e#318674#318675#0" expanded="false" />
-            <element signature="e#318713#318714#0" expanded="false" />
-            <element signature="e#322266#322267#0" expanded="false" />
-            <element signature="e#322332#322333#0" expanded="false" />
-            <element signature="e#324013#324014#0" expanded="false" />
-            <element signature="e#324052#324053#0" expanded="false" />
-            <element signature="e#324106#324107#0" expanded="false" />
-            <element signature="e#324150#324151#0" expanded="false" />
-            <element signature="e#324208#324209#0" expanded="false" />
-            <element signature="e#324245#324246#0" expanded="false" />
-            <element signature="e#324307#324308#0" expanded="false" />
-            <element signature="e#324344#324345#0" expanded="false" />
-            <element signature="e#324396#324397#0" expanded="false" />
-            <element signature="e#324458#324459#0" expanded="false" />
-            <element signature="e#324751#324752#0" expanded="false" />
-            <element signature="e#324807#324808#0" expanded="false" />
-            <element signature="e#325098#325099#0" expanded="false" />
-            <element signature="e#325152#325153#0" expanded="false" />
-            <element signature="e#325592#325593#0" expanded="false" />
-            <element signature="e#325646#325647#0" expanded="false" />
-            <element signature="e#326066#326067#0" expanded="false" />
-            <element signature="e#326120#326121#0" expanded="false" />
-            <element signature="e#326281#326282#0" expanded="false" />
-            <element signature="e#326337#326338#0" expanded="false" />
-            <element signature="e#326639#326640#0" expanded="false" />
-            <element signature="e#326701#326702#0" expanded="false" />
-            <element signature="e#327138#327139#0" expanded="false" />
-            <element signature="e#327201#327202#0" expanded="false" />
-            <element signature="e#328587#328588#0" expanded="false" />
-            <element signature="e#328646#328647#0" expanded="false" />
-            <element signature="e#330034#330035#0" expanded="false" />
-            <element signature="e#330090#330091#0" expanded="false" />
-            <element signature="e#330243#330244#0" expanded="false" />
-            <element signature="e#330288#330289#0" expanded="false" />
-            <element signature="e#331562#331563#0" expanded="false" />
-            <element signature="e#331611#331612#0" expanded="false" />
-            <element signature="e#331736#331737#0" expanded="false" />
-            <element signature="e#331775#331776#0" expanded="false" />
-            <element signature="e#332039#332040#0" expanded="false" />
-            <element signature="e#332085#332086#0" expanded="false" />
-            <element signature="e#333349#333350#0" expanded="false" />
-            <element signature="e#333417#333418#0" expanded="false" />
-            <element signature="e#337135#337136#0" expanded="false" />
-            <element signature="e#337205#337206#0" expanded="false" />
-            <element signature="e#337489#337490#0" expanded="false" />
-            <element signature="e#337549#337550#0" expanded="false" />
-            <element signature="e#339858#339859#0" expanded="false" />
-            <element signature="e#339900#339901#0" expanded="false" />
-            <element signature="e#340047#340048#0" expanded="false" />
-            <element signature="e#340089#340090#0" expanded="false" />
-            <element signature="e#340242#340243#0" expanded="false" />
-            <element signature="e#340290#340291#0" expanded="false" />
-            <element signature="e#340480#340481#0" expanded="false" />
-            <element signature="e#340532#340533#0" expanded="false" />
-            <element signature="e#341817#341818#0" expanded="false" />
-            <element signature="e#341869#341870#0" expanded="false" />
-            <element signature="e#344839#344840#0" expanded="false" />
-            <element signature="e#344880#344881#0" expanded="false" />
-            <element signature="e#345117#345118#0" expanded="false" />
-            <element signature="e#345174#345175#0" expanded="false" />
-            <element signature="e#345381#345382#0" expanded="false" />
-            <element signature="e#345438#345439#0" expanded="false" />
-            <element signature="e#345514#345515#0" expanded="false" />
-            <element signature="e#345573#345574#0" expanded="false" />
-            <element signature="e#346473#346501#0" expanded="false" />
-            <element signature="e#346601#346629#0" expanded="false" />
-            <element signature="e#346721#346739#0" expanded="false" />
-            <element signature="e#347752#347753#0" expanded="false" />
-            <element signature="e#347795#347796#0" expanded="false" />
-            <element signature="e#348133#348134#0" expanded="false" />
-            <element signature="e#348188#348189#0" expanded="false" />
-            <element signature="e#348514#348515#0" expanded="false" />
-            <element signature="e#348565#348566#0" expanded="false" />
-            <element signature="e#350538#350539#0" expanded="false" />
-            <element signature="e#350584#350585#0" expanded="false" />
-            <element signature="e#351141#351142#0" expanded="false" />
-            <element signature="e#351189#351190#0" expanded="false" />
-            <element signature="e#353294#353295#0" expanded="false" />
-            <element signature="e#353340#353341#0" expanded="false" />
-            <element signature="e#359070#359100#0" expanded="false" />
-            <element signature="e#359531#359532#0" expanded="false" />
-            <element signature="e#359575#359576#0" expanded="false" />
-            <element signature="e#359786#359787#0" expanded="false" />
-            <element signature="e#359838#359839#0" expanded="false" />
-            <element signature="e#360033#360034#0" expanded="false" />
-            <element signature="e#360076#360077#0" expanded="false" />
-            <element signature="e#360282#360283#0" expanded="false" />
-            <element signature="e#360332#360333#0" expanded="false" />
-            <element signature="e#360536#360537#0" expanded="false" />
-            <element signature="e#360582#360583#0" expanded="false" />
-            <element signature="e#360803#360804#0" expanded="false" />
-            <element signature="e#360859#360860#0" expanded="false" />
-            <element signature="e#361063#361064#0" expanded="false" />
-            <element signature="e#361109#361110#0" expanded="false" />
-            <element signature="e#361330#361331#0" expanded="false" />
-            <element signature="e#361386#361387#0" expanded="false" />
-            <element signature="e#361636#361637#0" expanded="false" />
-            <element signature="e#361692#361693#0" expanded="false" />
-            <element signature="e#363207#363208#0" expanded="false" />
-            <element signature="e#363251#363252#0" expanded="false" />
-            <element signature="e#372513#372514#0" expanded="false" />
-            <element signature="e#372559#372560#0" expanded="false" />
-            <element signature="e#372790#372791#0" expanded="false" />
-            <element signature="e#372834#372835#0" expanded="false" />
-            <element signature="e#373064#373065#0" expanded="false" />
-            <element signature="e#373107#373108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../sdk/sources/android-22/android/support/v7/widget/RecyclerViewAnimationsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2640,14 +2426,6 @@
             <element signature="e#732#733#0" expanded="false" />
             <element signature="e#767#768#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2822,21 +2600,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/MemberListPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/MemberListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44919">
           <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
           <folding>
-            <element signature="e#1405#1406#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="false" />
+            <element signature="e#1472#1473#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2871,7 +2641,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_calculation_parameter.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-land/layout_calculation_parameter.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
@@ -2882,24 +2652,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/activity_calculation_parameter.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-xlarge/layout_calculation_parameter.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculation_parameter.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -2917,8 +2676,8 @@
         <state vertical-scroll-proportion="0.17525773">
           <caret line="9" column="31" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
           <folding>
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="false" />
+            <element signature="e#464#465#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2933,16 +2692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/BillListPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="118" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="118" />
-          <folding>
-            <element signature="e#2467#2555#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ContainerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2951,25 +2700,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-          <folding>
-            <element signature="e#1873#1890#0" expanded="true" />
-            <element signature="e#1892#1909#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/BillListSelectionFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#801#887#0" expanded="true" />
-            <element signature="e#1076#1141#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#801#887#0" expanded="false" />
+            <element signature="e#1076#1141#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2995,17 +2733,114 @@
         <state vertical-scroll-proportion="0.6259205">
           <caret line="27" column="96" selection-start-line="27" selection-start-column="96" selection-end-line="27" selection-end-column="96" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#809#895#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#809#895#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/BillListPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54933727">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+          <folding>
+            <element signature="e#2472#2560#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/MemberListPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52577317">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8011782">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+          <folding>
+            <element signature="e#1078#1097#0" expanded="true" />
+            <element signature="e#1244#1261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_drawer.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.51724">
+          <caret line="35" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_calculation_parameter.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6896553">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_calculation_parameter.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6896553">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar!/android/support/design/widget/NavigationView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3119266">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding>
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationParameterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30044183">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17378497">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="e#2644#2645#0" expanded="true" />
+            <element signature="e#2689#2690#0" expanded="true" />
+            <element signature="e#4610#4627#0" expanded="true" />
+            <element signature="e#4629#4646#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
