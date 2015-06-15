@@ -19,7 +19,10 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.ViewBillDetailsActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.BillListPresenter;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.ListPresenter;
+import com.ericliudeveloper.sharedbillhelper.util.CursorUtils;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+
+import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
@@ -30,6 +33,7 @@ import de.greenrobot.event.EventBus;
 public class BillListFragment extends RecyclerViewFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     private int mBillQueryToken = 1;
     protected boolean isListSelectionMode = false;
+    protected List<Long> mIdList;
 
 
     @Override
@@ -48,7 +52,6 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +67,16 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     }
 
 
-    protected void checkListEmpty() {
+    protected boolean isListEmpty() {
         if (mAdapter.getItemCount() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    protected void displayEmptyView(boolean isEmpty) {
+        if (isEmpty) {
             ImageView ivEmptyBillList = new ImageView(getActivity());
             ivEmptyBillList.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_assignment));
             mEmptyView.addView(ivEmptyBillList);
@@ -74,6 +85,11 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
             mEmptyView.setVisibility(View.GONE);
             mEmptyView.removeAllViews();
         }
+
+    }
+
+    public List<Long> getIdList() {
+        return mIdList;
     }
 
 
@@ -85,6 +101,7 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
 
     /**
      * Handle user click on List items
+     *
      * @param eventViewBill
      */
     public void onEvent(CustomEvents.EventViewBill eventViewBill) {
@@ -104,19 +121,25 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
         Loader<Cursor> loader = null;
         Uri uri = BillContract.Bills.CONTENT_URI;
         String[] projection = BillContract.Bills.PROJECTION;
-        loader = new CursorLoader(getActivity(), uri, projection, null, null, null );
+        loader = new CursorLoader(getActivity(), uri, projection, null, null, null);
         return loader;
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mAdapter.swapCursor(data);
-        checkListEmpty();
+        if (isListEmpty()) {
+            displayEmptyView(true);
+        } else {
+            displayEmptyView(false);
+            mIdList = CursorUtils.getIdListFromCursor(data);
+        }
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
+        mIdList = null;
     }
 
 

@@ -1,6 +1,7 @@
 package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 
 import android.database.Cursor;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
@@ -10,6 +11,7 @@ import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
 
 import de.greenrobot.event.EventBus;
 
@@ -18,6 +20,7 @@ import de.greenrobot.event.EventBus;
  */
 public class BillListPresenter implements ListPresenter {
     private boolean isListSelectionMode = false;
+
 
     public BillListPresenter(boolean isSelectionMode) {
         isListSelectionMode = isSelectionMode;
@@ -43,7 +46,7 @@ public class BillListPresenter implements ListPresenter {
 
         private boolean isSelectionMode = false;
 
-
+        private CardView cardView;
         private TextView tvType;
         private TextView tvAmount;
         private TextView tvPaid;
@@ -53,6 +56,7 @@ public class BillListPresenter implements ListPresenter {
         public BillViewHolder(View itemView, boolean isSelectionMode) {
             super(itemView);
             this.isSelectionMode = isSelectionMode;
+            cardView = (CardView) itemView.findViewById(R.id.card_view);
             tvType = (TextView) itemView.findViewById(R.id.tvType);
             tvAmount = (TextView) itemView.findViewById(R.id.tvAmount);
             tvPaid = (TextView) itemView.findViewById(R.id.tvPaid);
@@ -64,6 +68,8 @@ public class BillListPresenter implements ListPresenter {
             if (isSelectionMode) {
                 tvPaid.setVisibility(View.GONE);
                 checkBox.setVisibility(View.VISIBLE);
+                int pixels = ResouceUtils.getAppResources().getDimensionPixelSize(R.dimen.selectionModeRowItemHeight);
+                cardView.getLayoutParams().height = pixels;
             } else {
                 tvPaid.setVisibility(View.VISIBLE);
                 checkBox.setVisibility(View.GONE);

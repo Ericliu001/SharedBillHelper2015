@@ -33,7 +33,9 @@
             android:label="@string/title_activity_edit_member" />
         <activity android:name=".ui.activity.ViewMemberDetailsActivity" />
 
-        <activity android:name=".ui.activity.CalculationParameterActivity" />
+        <activity android:name=".ui.activity.CalculationParameterActivity"
+            android:label="@string/title_activity_calculation_parameter"
+            />
 
     </application>
 

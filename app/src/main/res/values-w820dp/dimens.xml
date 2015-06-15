@@ -15,6 +15,8 @@
     <dimen name="detail_content_padding">45dp</dimen>
     <dimen name="content_row_margin_top">10dp</dimen>
     <dimen name="empty_list_view">450dp</dimen>
+    <dimen name="selectionModeRowItemHeight">45dp</dimen>
+    <dimen name="list_container_height">300dp</dimen>
 
 
 </resources>

@@ -13,31 +13,39 @@
         android:layout_height="fill_parent"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tvId"
-            android:layout_width="0.0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:gravity="center" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:src="@drawable/ic_face_black_24dp" />
 
         <TextView
             android:id="@+id/tvFristName"
             android:layout_width="0.0dip"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="8.0dip"
-            android:layout_weight="4.0"
+            android:layout_weight="1"
             android:gravity="center"
-            android:textSize="25.0sp" />
+            android:textSize="@dimen/list_row_text_size" />
 
         <TextView
             android:id="@+id/tvLastName"
             android:layout_width="0.0dip"
-            android:layout_height="wrap_content"
-            android:layout_margin="8.0dip"
-            android:layout_weight="4.0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
-            android:textSize="20.0sp" />
+            android:textSize="@dimen/list_row_text_size" />
+
+        <CheckBox
+            android:id="@android:id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="false"
+            android:checked="true"
+            android:gravity="center"
+            android:visibility="gone" />
 
     </LinearLayout>
 

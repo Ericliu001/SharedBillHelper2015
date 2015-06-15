@@ -45,4 +45,10 @@
     <string name="delete_member">This member is going to be deleted!</string>
     <string name="fields_empty">Required Fields are empty</string>
     <string name="must_fill_fields_member">First Name must not be empty</string>
+    <string name="calculate">Calculate</string>
+    <string name="title_activity_calculation_parameter">Select</string>
+    <string name="select_bills">Select Bills (only bills that are marked as unpaid will be shown here)</string>
+    <string name="select_members">Select Members</string>
+    <string name="no_member_create">You haven\'t created any member, click to create</string>
+    <string name="no_bill_create">You haven\'t created any bill, click to create</string>
 </resources>

@@ -14,6 +14,8 @@ import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.adapter.CursorRecyclerAdapter;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.ListPresenter;
 
+import java.util.List;
+
 /**
  * Created by liu on 8/06/15.
  */
@@ -22,6 +24,7 @@ public abstract class RecyclerViewFragment extends Fragment {
     protected CursorRecyclerAdapter mAdapter;
     protected ListPresenter mPresenter;
     protected FrameLayout mEmptyView;
+
 
 
     protected abstract ListPresenter getPresenter();
