@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.drawable.Drawable;
 
 import com.ericliudeveloper.sharedbillhelper.R;
+import com.ericliudeveloper.sharedbillhelper.ui.fragment.CalculationResultsFragment;
 
 public class CalculationResultActivity extends DetailsViewActivity {
 
@@ -15,11 +16,11 @@ public class CalculationResultActivity extends DetailsViewActivity {
 
     @Override
     protected Fragment getFragment() {
-        return null;
+        return new CalculationResultsFragment();
     }
 
     @Override
     protected String getFragmentTag() {
-        return null;
+        return getClass().getName();
     }
 }

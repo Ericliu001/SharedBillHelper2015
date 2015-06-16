@@ -43,7 +43,7 @@
             android:layout_height="match_parent"
             android:clickable="false"
             android:focusable="false"
-            android:checked="true"
+            android:checked="false"
             android:gravity="center"
             android:visibility="gone" />
 
