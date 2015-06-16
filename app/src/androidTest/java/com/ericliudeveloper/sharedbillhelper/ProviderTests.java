@@ -18,6 +18,8 @@ import com.ericliudeveloper.sharedbillhelper.model.Member;
 import com.ericliudeveloper.sharedbillhelper.model.MemberDAO;
 import com.ericliudeveloper.sharedbillhelper.model.Payment;
 import com.ericliudeveloper.sharedbillhelper.model.PaymentDAO;
+import com.ericliudeveloper.sharedbillhelper.model.PaymentInfo;
+import com.ericliudeveloper.sharedbillhelper.model.PaymentInfoDAO;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.provider.BillProvider;
 
@@ -189,9 +191,54 @@ public class ProviderTests extends ProviderTestCase2<BillProvider> {
 
     public void testInsertPayment() {
 
+        // create a PaymentInfo instance
+        PaymentInfo.Builder paymentInfoBuilder = new PaymentInfo.Builder();
+        PaymentInfo paymentInfo = paymentInfoBuilder.description("I'm ok")
+                .name("Sunday payment")
+                .numberOfBillsPaid(3)
+                .numberOfMembersPaid(3)
+                .paidTime("1994-02-03")
+                .totalAmount(32135.34)
+                .build();
+
+        ContentValues paymentInfoValues = PaymentInfoDAO.getContentValuesFromPaymentInfoInstance(paymentInfo);
+        Uri paymentInfoUri = mResolver.insert(BillContract.PaymentInfos.CONTENT_URI, paymentInfoValues);
+        assertNotNull("Returned null when inserting paymentInfo", paymentInfoUri);
 
 
-        Payment.Builder builder = new Payment.Builder(123, 234,345);
+        // create an Payee
+        Member member = new Member();
+        member.setFirstName("Eric");
+        member.setLastName("Liu");
+        member.setEmail("someone@qq.com");
+        member.setPhone("12345");
+        member.setMoveInDate("2005-01-01");
+        member.setMoveOutDate("2005-02-01");
+
+        ContentValues payeeValues = MemberDAO.getContentValuesFromMemberInstance(member);
+
+        Uri payeeUri = mResolver.insert(membersUri, payeeValues);
+        assertNotNull("Returned null when inserting Payee", payeeUri);
+
+
+        Bill bill = new Bill();
+        bill.setAmount(324.23);
+        bill.setType("Weapons");
+        bill.setEndDate("2015-06-30");
+        bill.setStartDate("2014-05-01");
+
+        ContentValues billValues = BillDAO.getContentValuesFromBillInstance(bill);
+
+        Uri billUri = mResolver.insert(BillContract.Bills.CONTENT_URI, billValues);
+
+        assertNotNull("Returned null when inserting bill", billUri);
+
+
+        long paymentInfoId = Long.valueOf(paymentInfoUri.getLastPathSegment());
+        long billId = Long.valueOf(billUri.getLastPathSegment());
+        long memberId = Long.valueOf(payeeUri.getLastPathSegment());
+
+        Payment.Builder builder = new Payment.Builder(paymentInfoId, billId, memberId);
         builder.payeeDays(10);
         builder.payeeStartDate("1981-10-10");
         builder.payeeEndDate("1981-10-20");
@@ -199,8 +246,8 @@ public class ProviderTests extends ProviderTestCase2<BillProvider> {
 
         Payment payment = builder.build();
 
-        ContentValues values = PaymentDAO.getContentValuesFromPaymentInstance(payment);
-        Uri uri = mResolver.insert(paymentsUri, values);
+        ContentValues paymentValues = PaymentDAO.getContentValuesFromPaymentInstance(payment);
+        Uri uri = mResolver.insert(paymentsUri, paymentValues);
         assertNotNull("returns null uri when inserting payment", uri);
 
 

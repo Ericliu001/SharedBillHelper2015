@@ -59,7 +59,7 @@ public class BillProvider extends ContentProvider implements DatabaseConstants.T
         URI_MATCHER.addURI(AUTH, BillContract.PATH_MEMBERS + "/#", HOUSEMATE_ID);
 
         URI_MATCHER.addURI(AUTH, BillContract.PATH_PAYMENTS, PAYMENTS);
-        URI_MATCHER.addURI(AUTH, "payment/#", PAYMENT_ID);
+        URI_MATCHER.addURI(AUTH, BillContract.PATH_PAYMENTS + "/#", PAYMENT_ID);
 
         URI_MATCHER.addURI(AUTH, BillContract.PATH_PAYMENT_INFOS, PAYMENT_INFO);
         URI_MATCHER.addURI(AUTH, BillContract.PATH_PAYMENT_INFOS + "/#", PAYMENT_INFO_ID);
