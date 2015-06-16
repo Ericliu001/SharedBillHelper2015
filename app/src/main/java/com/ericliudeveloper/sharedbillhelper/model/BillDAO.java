@@ -1,14 +1,12 @@
 package com.ericliudeveloper.sharedbillhelper.model;
 
 import android.content.AsyncQueryHandler;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 
-import com.ericliudeveloper.sharedbillhelper.MyApplication;
 import com.ericliudeveloper.sharedbillhelper.database.DatabaseConstants;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 
@@ -17,7 +15,7 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
  */
 public class BillDAO implements Dao {
 
-    static ContentResolver mContentResolver = MyApplication.getAppContentResolver();
+//    static ContentResolver mContentResolver = MyApplication.getAppContentResolver();
     static String[] projection = BillContract.Bills.PROJECTION;
     static Uri billsUri = BillContract.Bills.CONTENT_URI;
 

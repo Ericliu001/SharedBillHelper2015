@@ -16,6 +16,8 @@ import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
 import com.ericliudeveloper.sharedbillhelper.model.Member;
 import com.ericliudeveloper.sharedbillhelper.model.MemberDAO;
+import com.ericliudeveloper.sharedbillhelper.model.Payment;
+import com.ericliudeveloper.sharedbillhelper.model.PaymentDAO;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.provider.BillProvider;
 
@@ -179,6 +181,32 @@ public class ProviderTests extends ProviderTestCase2<BillProvider> {
         cursor.moveToFirst();
         Member retrievedMember = MemberDAO.getMemberFromCursor(cursor);
         assertEquals("Retrieved member instance is different from the one been saved. ", "Eric", retrievedMember.getFirstName());
+    }
+
+
+    static String[] paymentsProjection = BillContract.Payments.PROJECTION;
+    static Uri paymentsUri = BillContract.Payments.CONTENT_URI;
+
+    public void testInsertPayment() {
+
+
+
+        Payment.Builder builder = new Payment.Builder(123, 234,345);
+        builder.payeeDays(10);
+        builder.payeeStartDate("1981-10-10");
+        builder.payeeEndDate("1981-10-20");
+        builder.payee_amount(212.2);
+
+        Payment payment = builder.build();
+
+        ContentValues values = PaymentDAO.getContentValuesFromPaymentInstance(payment);
+        Uri uri = mResolver.insert(paymentsUri, values);
+        assertNotNull("returns null uri when inserting payment", uri);
+
+
+        Cursor cursor = mResolver.query(uri, paymentsProjection, null, null, null);
+        cursor.moveToFirst();
+
     }
 
 

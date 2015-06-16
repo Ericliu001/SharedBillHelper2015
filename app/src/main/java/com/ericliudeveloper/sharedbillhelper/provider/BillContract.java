@@ -68,6 +68,18 @@ public class BillContract {
         public static Uri buildPaymentUri(String paymentId) {
             return CONTENT_URI.buildUpon().appendPath(paymentId).build();
         }
+
+        public static final String[] PROJECTION = {
+                COL_ROWID
+                ,COL_PAYMENT_INFO_ID
+                ,COL_BILL_ID
+                ,COL_PAYEE_ID
+                ,COL_PAYEE_DAYS
+                ,COL_PAYEE_START_DATE
+                ,COL_PAYEE_END_DATE
+                ,COL_PAYEE_AMOUNT
+        };
+
     }
 
 
@@ -78,6 +90,18 @@ public class BillContract {
         public static Uri buildPaymentInfoUri(String paymentInfoId) {
             return CONTENT_URI.buildUpon().appendPath(paymentInfoId).build();
         }
+
+        public static final String[] PROJECTION = {
+                COL_ROWID
+                ,COL_SERIAL_NUMBER
+                ,COL_NAME
+                ,COL_DESCRIPTION
+                ,COL_TOTAL_AMOUNT
+                ,COL_NUMBER_OF_MEMBERS_PAID
+                ,COL_NUMBER_OF_BILLS_PAID
+                ,COL_PAID_TIME
+                ,COL_DELETED
+        };
     }
 
 
