@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ericliudeveloper.sharedbillhelper">
+    package="com.ericliudeveloper.sharedbillhelper" >
 
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <provider
             android:name=".provider.BillProvider"
             android:authorities="com.ericliudeveloper.sharedbillhelper.provdier" />
 
         <activity
             android:name=".ui.activity.MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,20 +23,21 @@
         </activity>
         <activity
             android:name=".ui.activity.EditBillActivity"
-            android:label="@string/title_activity_edit_bill"></activity>
+            android:label="@string/title_activity_edit_bill" />
         <activity
             android:name=".ui.activity.ViewBillDetailsActivity"
-            android:label="@string/title_activity_view_bill_details"></activity>
-
+            android:label="@string/title_activity_view_bill_details" />
         <activity
             android:name=".ui.activity.EditMemberActivity"
             android:label="@string/title_activity_edit_member" />
         <activity android:name=".ui.activity.ViewMemberDetailsActivity" />
-
-        <activity android:name=".ui.activity.CalculationParameterActivity"
-            android:label="@string/title_activity_calculation_parameter"
-            />
-
+        <activity
+            android:name=".ui.activity.CalculationParameterActivity"
+            android:label="@string/title_activity_calculation_parameter" />
+        <activity
+            android:name=".ui.activity.CalculationResultActivity"
+            android:label="@string/title_activity_calculation_result" >
+        </activity>
     </application>
 
 </manifest>

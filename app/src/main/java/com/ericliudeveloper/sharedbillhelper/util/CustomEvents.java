@@ -4,6 +4,7 @@ import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.Member;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Created by liu on 8/06/15.
@@ -12,6 +13,17 @@ public final class CustomEvents {
     private CustomEvents() {
     }
 
+
+
+    public static class EventStartCalculating{
+        public final HashMap<Long, Bill> checkedBills;
+        public final HashMap<Long, Member> checkedMembers;
+
+        public EventStartCalculating(HashMap<Long, Bill> bills, HashMap<Long, Member> members) {
+            this.checkedBills = bills;
+            this.checkedMembers = members;
+        }
+    }
 
     public static class EventMemberChecked{
         public final Member member;

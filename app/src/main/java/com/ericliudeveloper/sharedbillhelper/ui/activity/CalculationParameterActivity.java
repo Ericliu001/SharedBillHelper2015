@@ -9,11 +9,12 @@ import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.ui.fragment.BillListSelectionFragment;
 import com.ericliudeveloper.sharedbillhelper.ui.fragment.MemberListSelectionFragment;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.CalculationParameterPresenter;
+import com.ericliudeveloper.sharedbillhelper.util.Router;
 
 /**
  * Created by liu on 14/06/15.
  */
-public class CalculationParameterActivity extends BaseActivity {
+public class CalculationParameterActivity extends BaseActivity implements CalculationParameterPresenter.CalculationParameterFace {
 
     BillListSelectionFragment mBillFragment;
     MemberListSelectionFragment mMemberFragment;
@@ -29,7 +30,7 @@ public class CalculationParameterActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mPresenter = new CalculationParameterPresenter();
+        mPresenter = new CalculationParameterPresenter(this);
 
         setContentView(R.layout.activity_calculation_parameter);
 //        mBillFragment = (BillListSelectionFragment) getFragmentManager().findFragmentById(R.id.billListFragment);
@@ -70,5 +71,10 @@ public class CalculationParameterActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void startCalculationResultActivity() {
+        Router.startActivity(CalculationParameterActivity.this, CalculationResultActivity.class, null);
     }
 }

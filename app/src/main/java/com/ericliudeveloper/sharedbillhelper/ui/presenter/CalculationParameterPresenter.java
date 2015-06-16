@@ -14,7 +14,12 @@ import de.greenrobot.event.EventBus;
 public class CalculationParameterPresenter {
     private HashMap<Long, Bill> checkedBills = new HashMap();
     private HashMap<Long, Member> checkedMembers = new HashMap<>();
+    private CalculationParameterFace mCallbacks;
 
+
+    public CalculationParameterPresenter(CalculationParameterFace callbacks) {
+        this.mCallbacks = callbacks;
+    }
 
     public void registerEventBusListener() {
         EventBus.getDefault().register(this);
@@ -65,8 +70,12 @@ public class CalculationParameterPresenter {
             return;
         }
 
-        for (Bill bill : checkedBills.values()) {
+        // todo checked member unhandled
+        EventBus.getDefault().postSticky(new CustomEvents.EventStartCalculating(checkedBills, checkedMembers));
+        mCallbacks.startCalculationResultActivity();
+    }
 
-        }
+    public interface CalculationParameterFace {
+        void startCalculationResultActivity();
     }
 }
