@@ -19,10 +19,7 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.ViewBillDetailsActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.BillListPresenter;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.ListPresenter;
-import com.ericliudeveloper.sharedbillhelper.util.CursorUtils;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
-
-import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
@@ -33,7 +30,6 @@ import de.greenrobot.event.EventBus;
 public class BillListFragment extends RecyclerViewFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     private int mBillQueryToken = 1;
     protected boolean isListSelectionMode = false;
-    protected List<Long> mIdList;
 
 
     @Override
@@ -88,9 +84,6 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
 
     }
 
-    public List<Long> getIdList() {
-        return mIdList;
-    }
 
 
     @Override
@@ -132,14 +125,12 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
             displayEmptyView(true);
         } else {
             displayEmptyView(false);
-            mIdList = CursorUtils.getIdListFromCursor(data);
         }
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
-        mIdList = null;
     }
 
 

@@ -131,7 +131,12 @@ public class EditBillPresenter {
 
 
     public void startActionDone() {
-        //todo: handle empty input
+
+        if ( TextUtils.isEmpty(mBill.getStartDate()) || TextUtils.isEmpty(mBill.getEndDate())) {
+            mCallback.showErrorDialog();
+            return;
+        }
+
         String type = mCallback.getBillTypeInput();
         if (!TextUtils.isEmpty(type)) {
             mBill.setType(type);
@@ -211,5 +216,7 @@ public class EditBillPresenter {
         String getAmountInput();
 
         boolean getIsPaidInput();
+
+        void showErrorDialog();
     }
 }

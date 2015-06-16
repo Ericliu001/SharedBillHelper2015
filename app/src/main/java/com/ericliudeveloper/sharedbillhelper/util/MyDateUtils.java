@@ -86,7 +86,9 @@ public final class MyDateUtils {
 
 
     public static String[] getPayeeStartEndDates(String memberStartString,
-                                                 String memberEndtring, String billStartString, String billEndString){
+                                                 String memberEndtring,
+                                                 String billStartString,
+                                                 String billEndString){
         String[] startEndDates = new String[2];
         try {
             java.util.Date memberStartDate = dateFormat

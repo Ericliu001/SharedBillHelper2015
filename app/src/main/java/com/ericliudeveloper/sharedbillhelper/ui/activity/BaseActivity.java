@@ -27,9 +27,6 @@ public class BaseActivity extends AppCompatActivity {
 
 
     protected static final int NAVDRAWER_ITEM_INVALID = -1;
-    protected static final int NAVDRAWER_ITEM_HOME = 0;
-    protected static final int NAVDRAWER_ITEM_CALCULATE = 1;
-    protected static final int NAVDRAWER_ITEM_REPORTS = 2;
 
 
     @Override

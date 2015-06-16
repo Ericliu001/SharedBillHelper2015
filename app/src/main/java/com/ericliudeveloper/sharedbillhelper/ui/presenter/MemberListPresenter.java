@@ -5,6 +5,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
@@ -39,7 +40,8 @@ public class MemberListPresenter implements ListPresenter {
         }
     }
 
-    public static class MemberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public static class MemberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
         private boolean isSelectionMode = false;
 
         private Member mMember;
@@ -57,6 +59,7 @@ public class MemberListPresenter implements ListPresenter {
             checkBox = (CheckBox) itemView.findViewById(android.R.id.checkbox);
 
             itemView.setOnClickListener(this);
+            checkBox.setOnCheckedChangeListener(this);
 
             if (isSelectionMode) {
                 checkBox.setVisibility(View.VISIBLE);
@@ -95,6 +98,15 @@ public class MemberListPresenter implements ListPresenter {
                 EventBus.getDefault().postSticky(eventViewMember);
             }
 
+        }
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked) {
+                EventBus.getDefault().post(new CustomEvents.EventMemberChecked(mMember));
+            } else {
+                EventBus.getDefault().post(new CustomEvents.EventMemberUnchecked(mMember));
+            }
         }
     }
 }

@@ -19,10 +19,7 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.ViewMemberDetailsActivity;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.ListPresenter;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.MemberListPresenter;
-import com.ericliudeveloper.sharedbillhelper.util.CursorUtils;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
-
-import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
@@ -35,7 +32,6 @@ public class MemberListFragment extends RecyclerViewFragment implements LoaderMa
     protected boolean isListSelectionMode = false;
     private int mMemberQueryToken = 2;
 
-    protected List<Long> mIdList;
 
     public MemberListFragment() {
         // Required empty public constructor
@@ -97,14 +93,12 @@ public class MemberListFragment extends RecyclerViewFragment implements LoaderMa
             displayEmptyView(true);
         } else {
             displayEmptyView(false);
-            mIdList = CursorUtils.getIdListFromCursor(data);
         }
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
-        mIdList = null;
     }
 
 

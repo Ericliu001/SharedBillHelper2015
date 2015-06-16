@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
+import com.ericliudeveloper.sharedbillhelper.ui.dialog.MessageDialog;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.EditBillPresenter;
 
 
@@ -202,5 +203,20 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     @Override
     public boolean getIsPaidInput() {
         return cbPaid.isChecked();
+    }
+
+    @Override
+    public void showErrorDialog() {
+        Bundle args = new Bundle();
+        String title = getActivity().getResources()
+                .getString(R.string.fields_empty);
+        args.putString(MessageDialog.TITLE, title);
+
+        String must_fill_fields_bill = getActivity().getResources()
+                .getString(R.string.must_fill_fields_bill);
+        args.putString(MessageDialog.MESSAGE, must_fill_fields_bill);
+        MessageDialog messageDialog = MessageDialog
+                .newInstance(args);
+        messageDialog.show(getActivity().getFragmentManager(), "message");
     }
 }

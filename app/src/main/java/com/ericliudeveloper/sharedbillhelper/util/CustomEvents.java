@@ -12,6 +12,45 @@ public final class CustomEvents {
     private CustomEvents() {
     }
 
+
+    public static class EventMemberChecked{
+        public final Member member;
+
+        public EventMemberChecked(Member member) {
+            this.member = member;
+        }
+    }
+
+    public static class EventMemberUnchecked{
+        public final Member member;
+
+
+        public EventMemberUnchecked(Member member) {
+            this.member = member;
+        }
+    }
+
+
+
+
+    public static class EventBillChecked{
+        public final Bill bill;
+
+        public EventBillChecked(Bill bill) {
+            this.bill = bill;
+        }
+    }
+
+
+    public static class EventBillUnchecked{
+        public final Bill bill;
+
+        public EventBillUnchecked(Bill bill) {
+            this.bill  = bill;
+        }
+    }
+
+
     // class to pass event when the user want to set calculation parameters,
     // when user clicks Float Action Button from a view bill page, that bill shall be selected
     // under CalculationParameters View
@@ -26,6 +65,7 @@ public final class CustomEvents {
             return bill;
         }
     }
+
 
     // FloatActionBar clicked
     public static class EventFABClicked {

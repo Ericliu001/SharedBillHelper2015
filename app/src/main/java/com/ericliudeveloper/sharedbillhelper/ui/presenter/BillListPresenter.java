@@ -5,6 +5,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
@@ -41,7 +42,8 @@ public class BillListPresenter implements ListPresenter {
     }
 
 
-    public static class BillViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public static class BillViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
         private Bill mBill;
 
         private boolean isSelectionMode = false;
@@ -64,6 +66,7 @@ public class BillListPresenter implements ListPresenter {
             checkBox = (CheckBox) itemView.findViewById(android.R.id.checkbox);
 
             itemView.setOnClickListener(this);
+            checkBox.setOnCheckedChangeListener(this);
 
             if (isSelectionMode) {
                 tvPaid.setVisibility(View.GONE);
@@ -116,5 +119,13 @@ public class BillListPresenter implements ListPresenter {
         }
 
 
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked) {
+                EventBus.getDefault().post(new CustomEvents.EventBillChecked(mBill));
+            } else {
+                EventBus.getDefault().post(new CustomEvents.EventBillUnchecked(mBill));
+            }
+        }
     }
 }

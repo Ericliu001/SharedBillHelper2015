@@ -19,6 +19,8 @@ public class BillListSelectionFragment extends BillListFragment {
     }
 
 
+
+
     @Override
     protected void displayEmptyView(boolean isEmpty) {
         if (isEmpty) {
