@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.ericliudeveloper.sharedbillhelper.MyApplication;
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.ViewBillDetailsActivity;
@@ -114,7 +115,7 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
         Loader<Cursor> loader = null;
         Uri uri = BillContract.Bills.CONTENT_URI;
         String[] projection = BillContract.Bills.PROJECTION;
-        loader = new CursorLoader(getActivity(), uri, projection, null, null, null);
+        loader = new CursorLoader(MyApplication.getApplication(), uri, projection, null, null, null);
         return loader;
     }
 
