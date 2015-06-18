@@ -32,7 +32,7 @@ public abstract class RecyclerViewFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);  // causes crashes, wati for google to fix it
+//        setRetainInstance(true);  // causes crashes, wati for google to fix it
 
         mPresenter = getPresenter();
     }
