@@ -20,10 +20,17 @@ public final class MyDateUtils {
 
     private static final String DATE_WRONG = "date wrong";
     static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd",
-            Locale.US);;
+            Locale.US);
+    ;
 
     private MyDateUtils() {
         // to prevent this class to be instantiated
+    }
+
+
+    public static String getCurrentTimeString() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
+        return dateFormat.format(new Date());
     }
 
 
@@ -48,7 +55,15 @@ public final class MyDateUtils {
         return dateFormat.format(date);
     }
 
-    public static int compareDates(String memberStartString,
+    /**
+     * Calculate how many days this member should pay for this bill
+     * @param memberStartString
+     * @param memberEndtring
+     * @param billStartString
+     * @param billEndString
+     * @return
+     */
+    public static int calculateMemberPayingDays(String memberStartString,
                                    String memberEndtring, String billStartString, String billEndString) {
 
         int interval = 0;
@@ -88,7 +103,7 @@ public final class MyDateUtils {
     public static String[] getPayeeStartEndDates(String memberStartString,
                                                  String memberEndtring,
                                                  String billStartString,
-                                                 String billEndString){
+                                                 String billEndString) {
         String[] startEndDates = new String[2];
         try {
             java.util.Date memberStartDate = dateFormat
@@ -103,6 +118,7 @@ public final class MyDateUtils {
                     : billEndDate;
 
             if (startDate.after(endDate)) {
+                return null;
             }
 
 
@@ -116,7 +132,9 @@ public final class MyDateUtils {
 
 
         return startEndDates;
-    };
+    }
+
+    ;
 
     public static int compareDates(String startDateString, String endDateString) {
         int interval = 0;

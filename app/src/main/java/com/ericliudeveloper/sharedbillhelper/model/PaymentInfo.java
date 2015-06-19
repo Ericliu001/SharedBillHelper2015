@@ -47,6 +47,11 @@ public class PaymentInfo {
 
         }
 
+        /**
+         * only to be called when instantiating an instance from DB data
+         * @param id
+         * @return
+         */
         public Builder setId(long id) {
             this.id = id;
             return this;

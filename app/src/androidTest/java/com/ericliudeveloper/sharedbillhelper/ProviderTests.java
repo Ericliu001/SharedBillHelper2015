@@ -234,11 +234,11 @@ public class ProviderTests extends ProviderTestCase2<BillProvider> {
         assertNotNull("Returned null when inserting bill", billUri);
 
 
-        long paymentInfoId = Long.valueOf(paymentInfoUri.getLastPathSegment());
+        String paymentInfoSerialNumber = paymentInfo.getSerialNumber();
         long billId = Long.valueOf(billUri.getLastPathSegment());
         long memberId = Long.valueOf(payeeUri.getLastPathSegment());
 
-        Payment.Builder builder = new Payment.Builder(paymentInfoId, billId, memberId);
+        Payment.Builder builder = new Payment.Builder(paymentInfoSerialNumber, billId, memberId);
         builder.payeeDays(10);
         builder.payeeStartDate("1981-10-10");
         builder.payeeEndDate("1981-10-20");
