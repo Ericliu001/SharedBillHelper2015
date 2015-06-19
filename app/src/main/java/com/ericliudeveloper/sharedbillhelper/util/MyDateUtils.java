@@ -105,6 +105,32 @@ public final class MyDateUtils {
                                                  String billStartString,
                                                  String billEndString) {
         String[] startEndDates = new String[2];
+
+        if ((TextUtils.isEmpty(memberStartString) && (TextUtils.isEmpty(billStartString)))
+                ||
+
+                (TextUtils.isEmpty(memberEndtring) && TextUtils.isEmpty(billEndString))) {
+
+            return null;
+        }
+
+        if (TextUtils.isEmpty(memberStartString)) {
+            memberStartString = "1900-01-01";
+        }
+
+        if (TextUtils.isEmpty(billStartString)) {
+            billStartString = "1900-01-01";
+        }
+
+        if (TextUtils.isEmpty(memberEndtring)) {
+            memberEndtring = "3000-01-01";
+        }
+
+        if (TextUtils.isEmpty(billEndString)) {
+            billEndString = "3000-01-01";
+        }
+
+
         try {
             java.util.Date memberStartDate = dateFormat
                     .parse(memberStartString);

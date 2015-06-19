@@ -19,7 +19,6 @@ public class CalculationParameterPresenter {
             return;
         }
 
-        // todo checked member unhandled
         mCallbacks.startCalculationResultActivity();
     }
 

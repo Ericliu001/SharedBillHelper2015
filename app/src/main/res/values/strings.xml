@@ -54,4 +54,7 @@
     <string name="reports">Reports</string>
     <string name="must_fill_fields_bill">Must pick bill start and end dates</string>
     <string name="title_activity_calculation_result">CalculationResultActivity</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="number_of_members_paying">Number of members are paying</string>
+    <string name="number_of_bills">Number of bills paid</string>
 </resources>

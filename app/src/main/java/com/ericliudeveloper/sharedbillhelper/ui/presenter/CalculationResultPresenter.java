@@ -5,9 +5,14 @@ import android.content.ContentValues;
 import android.content.OperationApplicationException;
 import android.net.Uri;
 import android.os.RemoteException;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.ericliudeveloper.sharedbillhelper.MyApplication;
+import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.Member;
 import com.ericliudeveloper.sharedbillhelper.model.Payment;
@@ -18,16 +23,15 @@ import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.util.MyDateUtils;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by liu on 19/06/15.
  */
 public class CalculationResultPresenter {
-    HashMap billSelections = BillListPresenter.mSelection;
-    HashMap memberSelections = MemberListPresenter.mSelection;
+    List<Bill> billSelections = new ArrayList(BillListPresenter.mSelection.values());
+    List<Member> memberSelections = new ArrayList(MemberListPresenter.mSelection.values());
+    double[] memberTotalAmountArray = new double[memberSelections.size()];
     CalculationResultFace mCallbacks;
 
     PaymentInfo mInfo;
@@ -41,7 +45,6 @@ public class CalculationResultPresenter {
     public void Calculate() {
         PaymentInfo.Builder infoBuilder = new PaymentInfo.Builder();
 
-        infoBuilder.description(mCallbacks.getDescription());
         infoBuilder.totalAmount(getTotalAmount());
         infoBuilder.numberOfMembersPaid(getNumberOfMembersPaid());
         infoBuilder.numberOfBillsPaid(getNumberOfBillsPaid());
@@ -52,18 +55,16 @@ public class CalculationResultPresenter {
 
         String paymentInfoSerialNumber = mInfo.getSerialNumber();
 
-        Collection<Bill> bills = billSelections.values();
 
-
-        Bill bill = null;
-
-
-        while (bills.iterator().hasNext()) {
-            bill = bills.iterator().next();
+        for (Bill bill : billSelections) {
             calculateMemberShareForEachBill(bill);
         }
-        
-        saveEverythingToDB();
+
+        for (int i = 0; i < memberTotalAmountArray.length; i++) {
+            for (int j = 0; j < billSelections.size(); j++) {
+                memberTotalAmountArray[i] += mPaymentList.get(j * memberSelections.size() + i).getPayee_amount();
+            }
+        }
 
     }
 
@@ -95,28 +96,24 @@ public class CalculationResultPresenter {
     /**
      * Calculate how much money each member should pay for this bill
      * and other necessary info
+     *
      * @param bill
      */
     private void calculateMemberShareForEachBill(Bill bill) {
         double amount = bill.getAmount();
-        Collection<Member> members = memberSelections.values();
-        ArrayList<Member> memberList = new ArrayList<>();
 
 
         // an Array to store the days each member is eligible for this bill
-        int[] memberPayingDayArray = new int[members.size()];
+        int[] memberPayingDayArray = new int[memberSelections.size()];
 
         // an Array to store each member's start paying date for this bill
-        String[] payeeStartDateArray = new String[members.size()];
+        String[] payeeStartDateArray = new String[memberSelections.size()];
 
         // an Array to store each member's end paying date for this bill
-        String[] payeeEndDateArray = new String[members.size()];
+        String[] payeeEndDateArray = new String[memberSelections.size()];
 
-        Member member = null;
         int index = 0;
-        while (members.iterator().hasNext()) {
-            member = members.iterator().next();
-            memberList.add(member);
+        for (Member member: memberSelections) {
             int payingDaysForThisBill = MyDateUtils.calculateMemberPayingDays(member.getMoveInDate()
                     , member.getMoveOutDate()
                     , bill.getStartDate()
@@ -144,7 +141,7 @@ public class CalculationResultPresenter {
         }
 
         // an Array to store how much money for each member to pay for this bill
-        double[] memberShareArray = new double[members.size()];
+        double[] memberShareArray = new double[memberSelections.size()];
 
         // sum all all days all members have been in this bill
         double totalNumOfDays = 0d;
@@ -158,8 +155,8 @@ public class CalculationResultPresenter {
 
 
         Member member1 = null; // avoid creating instances in a loop
-        for (int i = 0; i < memberList.size(); i++) {
-            member1 = memberList.get(i);
+        for (int i = 0; i < memberSelections.size(); i++) {
+            member1 = memberSelections.get(i);
             Payment.Builder paymentBuilder = new Payment.Builder(mInfo.getSerialNumber(), bill.getId(), member1.getId());
             int payeeDays = memberPayingDayArray[i];
             paymentBuilder.payeeDays(payeeDays);
@@ -202,9 +199,33 @@ public class CalculationResultPresenter {
         return totalAmount;
     }
 
+    public RecyclerView.ViewHolder createViewHolder(ViewGroup parent, int viewType) {
+        //todo change the row layout xml file
+      View rowLayout = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
+        return new MemberPaymentViewHolder(rowLayout);
+    }
+
+    public void bindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        ((MemberPaymentViewHolder)holder).setItemData(memberSelections.get(position), memberTotalAmountArray[position]);
+    }
+
+    public int getItemCount() {
+        return memberSelections.size();
+    }
+
 
     public interface CalculationResultFace {
 
-        String getDescription();
+    }
+
+    public static class MemberPaymentViewHolder extends RecyclerView.ViewHolder {
+
+        public MemberPaymentViewHolder(View itemView) {
+            super(itemView);
+        }
+
+        public void setItemData(Member member, double amout) {
+
+        }
     }
 }
