@@ -1,11 +1,13 @@
 package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.ericliudeveloper.sharedbillhelper.R;
+import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.ui.activity.EditBillActivity;
 import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
 import com.ericliudeveloper.sharedbillhelper.util.Router;

@@ -40,19 +40,7 @@ public class CalculationParameterActivity extends BaseActivity implements Calcul
 
 
 
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        mPresenter.registerEventBusListener();
-    }
 
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mPresenter.unregisterEventBusListener();
-    }
 
 
     @Override

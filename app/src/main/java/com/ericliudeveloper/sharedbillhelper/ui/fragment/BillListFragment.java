@@ -33,6 +33,8 @@ public class BillListFragment extends RecyclerViewFragment implements LoaderMana
     protected boolean isListSelectionMode = false;
 
 
+
+
     @Override
     protected ListPresenter getPresenter() {
         return new BillListPresenter(isListSelectionMode);

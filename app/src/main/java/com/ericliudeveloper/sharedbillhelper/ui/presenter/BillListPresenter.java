@@ -14,6 +14,8 @@ import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
 
+import java.util.HashMap;
+
 import de.greenrobot.event.EventBus;
 
 /**
@@ -21,6 +23,8 @@ import de.greenrobot.event.EventBus;
  */
 public class BillListPresenter implements ListPresenter {
     private boolean isListSelectionMode = false;
+
+    public static HashMap<Long, Bill> mSelection = new HashMap<>();
 
 
     public BillListPresenter(boolean isSelectionMode) {
@@ -40,7 +44,6 @@ public class BillListPresenter implements ListPresenter {
             ((BillViewHolder) holder).setItem(bill);
         }
     }
-
 
 
     public static class BillViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
@@ -98,6 +101,10 @@ public class BillListPresenter implements ListPresenter {
             tvAmount.setText(amount);
             tvPaid.setText(isPaid);
             tvDueDay.setText(dueDay);
+
+
+            checkBox.setChecked(mSelection.containsKey(bill.getId()));
+
         }
 
 
@@ -122,9 +129,13 @@ public class BillListPresenter implements ListPresenter {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if (isChecked) {
-                EventBus.getDefault().post(new CustomEvents.EventBillChecked(mBill));
+                if (!mSelection.containsKey(mBill.getId())) {
+                    mSelection.put(mBill.getId(), mBill);
+                }
             } else {
-                EventBus.getDefault().post(new CustomEvents.EventBillUnchecked(mBill));
+                if (mSelection.containsKey(mBill.getId())) {
+                    mSelection.remove(mBill.getId());
+                }
             }
         }
     }

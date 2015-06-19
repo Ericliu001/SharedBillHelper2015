@@ -14,6 +14,8 @@ import com.ericliudeveloper.sharedbillhelper.model.MemberDAO;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
 
+import java.util.HashMap;
+
 import de.greenrobot.event.EventBus;
 
 /**
@@ -21,6 +23,8 @@ import de.greenrobot.event.EventBus;
  */
 public class MemberListPresenter implements ListPresenter {
     private boolean isListSelectionMode = false;
+
+    public static HashMap<Long, Member> mSelection = new HashMap<>();
 
 
     public MemberListPresenter(boolean isSelectionMode) {
@@ -83,6 +87,8 @@ public class MemberListPresenter implements ListPresenter {
 
             tvFirstName.setText(first);
             tvLastName.setText(last);
+
+            checkBox.setChecked(mSelection.containsKey(member.getId()));
         }
 
 
@@ -103,9 +109,13 @@ public class MemberListPresenter implements ListPresenter {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if (isChecked) {
-                EventBus.getDefault().post(new CustomEvents.EventMemberChecked(mMember));
+                if (!mSelection.containsKey(mMember.getId())) {
+                    mSelection.put(mMember.getId(), mMember);
+                }
             } else {
-                EventBus.getDefault().post(new CustomEvents.EventMemberUnchecked(mMember));
+                if (mSelection.containsKey(mMember.getId())) {
+                    mSelection.remove(mMember.getId());
+                }
             }
         }
     }

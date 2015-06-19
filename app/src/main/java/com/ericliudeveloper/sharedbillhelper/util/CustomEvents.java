@@ -25,42 +25,10 @@ public final class CustomEvents {
         }
     }
 
-    public static class EventMemberChecked{
-        public final Member member;
-
-        public EventMemberChecked(Member member) {
-            this.member = member;
-        }
-    }
-
-    public static class EventMemberUnchecked{
-        public final Member member;
-
-
-        public EventMemberUnchecked(Member member) {
-            this.member = member;
-        }
-    }
 
 
 
 
-    public static class EventBillChecked{
-        public final Bill bill;
-
-        public EventBillChecked(Bill bill) {
-            this.bill = bill;
-        }
-    }
-
-
-    public static class EventBillUnchecked{
-        public final Bill bill;
-
-        public EventBillUnchecked(Bill bill) {
-            this.bill  = bill;
-        }
-    }
 
 
     // class to pass event when the user want to set calculation parameters,
