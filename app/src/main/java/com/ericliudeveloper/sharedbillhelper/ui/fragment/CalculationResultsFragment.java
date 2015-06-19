@@ -24,7 +24,9 @@ public class CalculationResultsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calculation_results, container, false);
+        View root = inflater.inflate(R.layout.fragment_calculation_results, container, false);
+
+        return root;
     }
 
 

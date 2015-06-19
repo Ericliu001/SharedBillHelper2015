@@ -49,7 +49,7 @@ public final class DatabaseConstants {
 
 
     public interface PaymentColumns extends CommonColumns {
-        String COL_PAYMENT_INFO_ID = "info_id";
+        String COL_PAYMENT_INFO_SERIAL_NUMBER = "info_serial_number";
         String COL_BILL_ID = "bill_id";
         String COL_PAYEE_ID = "payee_id";
         String COL_PAYEE_DAYS = "payee_days";

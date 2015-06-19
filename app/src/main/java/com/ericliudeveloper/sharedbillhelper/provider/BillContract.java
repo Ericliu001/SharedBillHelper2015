@@ -71,7 +71,7 @@ public class BillContract {
 
         public static final String[] PROJECTION = {
                 COL_ROWID
-                ,COL_PAYMENT_INFO_ID
+                , COL_PAYMENT_INFO_SERIAL_NUMBER
                 ,COL_BILL_ID
                 ,COL_PAYEE_ID
                 ,COL_PAYEE_DAYS

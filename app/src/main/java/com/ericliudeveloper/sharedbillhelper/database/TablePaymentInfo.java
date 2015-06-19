@@ -13,7 +13,7 @@ public class TablePaymentInfo implements PaymentInfoColumns, PaymentColumns, Bil
 			+ TABLE_PAYMENT_INFO
 			+ " ( "
 			+ COL_ROWID + " integer primary key autoincrement, "
-			+ COL_SERIAL_NUMBER + " integer not null, "
+			+ COL_SERIAL_NUMBER + " text not null, "
 			+ COL_NAME + "  text, "
 			+ COL_DESCRIPTION + " text, "
 			+ COL_TOTAL_AMOUNT + " numeric, "
@@ -31,7 +31,7 @@ public class TablePaymentInfo implements PaymentInfoColumns, PaymentColumns, Bil
 			+ " as "
 			+ " select "
 			+ TABLE_PAYMENT + "." + COL_ROWID + ","
-			+ TABLE_PAYMENT + "." + COL_PAYMENT_INFO_ID + ","
+			+ TABLE_PAYMENT + "." + COL_PAYMENT_INFO_SERIAL_NUMBER + ","
 			+ TABLE_PAYMENT + "." + COL_BILL_ID + ","
 			+ TABLE_PAYMENT + "." + COL_PAYEE_ID + ","
 			+ TABLE_PAYMENT + "." + COL_PAYEE_DAYS + ","
@@ -72,7 +72,7 @@ public class TablePaymentInfo implements PaymentInfoColumns, PaymentColumns, Bil
 			+ " left join  " + TABLE_BILL 
 			+ " on " + TABLE_PAYMENT + "." + COL_BILL_ID + "=" + TABLE_BILL + "." + COL_ROWID
 			+ " left join " + TABLE_PAYMENT_INFO 
-			+ " on " + TABLE_PAYMENT + "." + COL_PAYMENT_INFO_ID + "=" + TABLE_PAYMENT_INFO + "." + COL_SERIAL_NUMBER
+			+ " on " + TABLE_PAYMENT + "." + COL_PAYMENT_INFO_SERIAL_NUMBER + "=" + TABLE_PAYMENT_INFO + "." + COL_SERIAL_NUMBER
 			+ " where " + TABLE_PAYMENT_INFO + "." + COL_DELETED + " =0 "  
 			+";"
 			;

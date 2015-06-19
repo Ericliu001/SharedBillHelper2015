@@ -14,7 +14,7 @@ public class TablePayment implements PaymentColumns, DatabaseConstants.TableAndV
 			+ TABLE_PAYMENT
 			+ "("
 			+ COL_ROWID + " integer primary key autoincrement, "
-			+ COL_PAYMENT_INFO_ID + "  integer not null , " 
+			+ COL_PAYMENT_INFO_SERIAL_NUMBER + "  text not null , "
 			+ COL_BILL_ID +  " integer not null references " + TABLE_BILL + "(" + COL_ROWID+"),"
 			+ COL_PAYEE_ID + " integer not null references " + TABLE_MEMBER + "("+ COL_ROWID+"),"
 			+ COL_PAYEE_DAYS + " integer, "

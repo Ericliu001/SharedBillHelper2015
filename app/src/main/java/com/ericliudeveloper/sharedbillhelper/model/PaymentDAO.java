@@ -23,7 +23,7 @@ public class PaymentDAO implements Dao {
             return null;
         }
         ContentValues values = new ContentValues();
-        values.put(DatabaseConstants.PaymentColumns.COL_PAYMENT_INFO_ID, payment.getPayment_info_serial_number());
+        values.put(DatabaseConstants.PaymentColumns.COL_PAYMENT_INFO_SERIAL_NUMBER, payment.getPayment_info_serial_number());
         values.put(DatabaseConstants.PaymentColumns.COL_BILL_ID, payment.getBill_id());
         values.put(DatabaseConstants.PaymentColumns.COL_PAYEE_ID, payment.getPayee_id());
         values.put(DatabaseConstants.PaymentColumns.COL_PAYEE_DAYS, payment.getPayee_days());

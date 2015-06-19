@@ -20,9 +20,14 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
 	public void onOpen(SQLiteDatabase db) {
 		
 		super.onOpen(db);
+//		if (!db.isReadOnly()) {
+//			// enable foreign key constraints
+//			db.execSQL("PRAGMA foreign_keys=ON;");
+//		}
+
 		if (!db.isReadOnly()) {
-			// enable foreign key constraints
-			db.execSQL("PRAGMA foreign_keys=ON;");
+			// disable foreign key constraints
+			db.execSQL("PRAGMA foreign_keys=OFF;");
 		}
 	}
 

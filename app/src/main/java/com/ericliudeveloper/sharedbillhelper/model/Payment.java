@@ -5,7 +5,7 @@ package com.ericliudeveloper.sharedbillhelper.model;
  */
 public class Payment {
 
-    private final long payment_info_serial_number;
+    private final String payment_info_serial_number;
     private final long bill_id;
     private final long payee_id;
     private final int payee_days;
@@ -16,7 +16,7 @@ public class Payment {
 
 
     public static class Builder {
-        private long payment_info_serial_number;
+        private String payment_info_serial_number;
         private long bill_id;
         private long payee_id;
         private int payee_days;
@@ -24,7 +24,7 @@ public class Payment {
         private String payee_end_date;
         private double payee_amount;
 
-        public Builder(long payment_info_serial_number, long bill_id,
+        public Builder(String payment_info_serial_number, long bill_id,
                        long payee_id) {
             this.payment_info_serial_number = payment_info_serial_number;
             this.bill_id = bill_id;
@@ -72,7 +72,7 @@ public class Payment {
     }
 
 
-    public long getPayment_info_serial_number() {
+    public String getPayment_info_serial_number() {
         return payment_info_serial_number;
     }
 

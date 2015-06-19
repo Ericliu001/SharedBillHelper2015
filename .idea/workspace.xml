@@ -36,7 +36,113 @@
     <favorites_list name="SharedBillHelper2015" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="CalculationResultsFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/CalculationResultsFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculationResultPresenter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/CalculationResultPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaymentInfoDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfoDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BillDatabaseHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/BillDatabaseHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.92">
+              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TablePayment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePayment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Payment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/Payment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaymentDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.85125184">
+              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/DatabaseConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TablePaymentInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePaymentInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="74" column="116" selection-start-line="74" selection-start-column="116" selection-end-line="74" selection-end-column="116" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaymentInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+              <folding>
+                <element signature="e#130#131#0" expanded="true" />
+                <element signature="e#155#156#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1376,11 +1482,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/CalculationParameterFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_calculation_parameter.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_detail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewBillDetailsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/ViewMemberDetailsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/DetailsViewActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/Router.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewBillDetailsFragment.java" />
@@ -1403,7 +1504,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/EditBillFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/EditBillPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/Payment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/MemberDAO.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/MyDateUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/BillDAO.java" />
@@ -1411,12 +1511,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/provider/BillContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfoDAO.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/Dao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfo.java" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/ericliudeveloper/sharedbillhelper/ProviderTests.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/provider/BillProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_calculation_result.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/member_row_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/CalculationResultsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationResultActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/MemberListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/RecyclerViewFragment.java" />
@@ -1427,6 +1525,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/CustomEvents.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/CalculationParameterPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationParameterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/CalculationResultsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/CalculationResultPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/BillDatabaseHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePayment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/DatabaseConstants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePaymentInfo.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/Payment.java" />
       </list>
     </option>
   </component>
@@ -2160,7 +2266,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2225,13 +2331,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/MemberListSelectionFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="96" selection-start-line="27" selection-start-column="96" selection-end-line="27" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/ViewBillDetailsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2243,20 +2342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.8556702">
           <caret line="190" column="74" selection-start-line="180" selection-start-column="7" selection-end-line="190" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27540502">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42562592">
-          <caret line="17" column="63" selection-start-line="16" selection-start-column="3" selection-end-line="17" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -2312,13 +2397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/Payment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/member_row_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2337,27 +2415,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/DatabaseConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/BillDatabaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42562592">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
@@ -2417,20 +2474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="51" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePaymentInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2017673">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePayment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10014728">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2559,14 +2602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/CalculationResultsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/util/CustomEvents.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6759941">
@@ -2580,19 +2615,8 @@
         <state vertical-scroll-proportion="0.84977907">
           <caret line="116" column="55" selection-start-line="116" selection-start-column="55" selection-end-line="116" selection-end-column="55" />
           <folding>
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationResultActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42562592">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding>
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2625,6 +2649,102 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/activity/CalculationResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding>
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/fragment/CalculationResultsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+          <folding>
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#155#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/ui/presenter/CalculationResultPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentInfoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/BillDatabaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.92">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/DatabaseConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePaymentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="116" selection-start-line="74" selection-start-column="116" selection-end-line="74" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/database/TablePayment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/Payment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ericliudeveloper/sharedbillhelper/model/PaymentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85125184">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

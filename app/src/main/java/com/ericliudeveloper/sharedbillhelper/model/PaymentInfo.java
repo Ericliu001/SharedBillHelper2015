@@ -1,5 +1,7 @@
 package com.ericliudeveloper.sharedbillhelper.model;
 
+import java.util.UUID;
+
 public class PaymentInfo {
 
     public long getId() {
@@ -8,7 +10,7 @@ public class PaymentInfo {
 
     private final long id;
 
-    private final int serialNumber;
+    private final String serialNumber;
 
     private final String name;
 
@@ -32,7 +34,7 @@ public class PaymentInfo {
 
     public static class Builder {
         private long id = -100L;
-        private static int serialNumber = 0;
+        private String serialNumber;
         private String name;
         private String description;
         private double totalAmount;
@@ -87,7 +89,8 @@ public class PaymentInfo {
          * @return
          */
         public PaymentInfo build() {
-            Builder.serialNumber++;
+            // generate a unique identifier for every PaymentInfo instance
+            this.serialNumber = UUID.randomUUID().toString();
             return new PaymentInfo(this);
         }
 
@@ -95,7 +98,7 @@ public class PaymentInfo {
 
     private PaymentInfo(Builder builder) {
         this.id = builder.id;
-        this.serialNumber = Builder.serialNumber;
+        this.serialNumber = builder.serialNumber;
         this.name = builder.name;
         this.description = builder.description;
         this.totalAmount = builder.totalAmount;
@@ -111,7 +114,7 @@ public class PaymentInfo {
         this.description = description;
     }
 
-    public int getSerialNumber() {
+    public String getSerialNumber() {
         return serialNumber;
     }
 
