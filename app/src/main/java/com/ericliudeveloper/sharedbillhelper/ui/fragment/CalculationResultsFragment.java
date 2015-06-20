@@ -46,6 +46,7 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_calculation_results, container, false);
         setupViews(root);
+        mPresenter.refreshDisplay();
         return root;
     }
 
@@ -59,14 +60,27 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         mAdapter = new PaymentListAdapter();
         rvPayment.setAdapter(mAdapter);
 
-        int pixels = ResouceUtils.getAppResources().getDimensionPixelSize(R.dimen.minimum_heigh_of_scrollview);
+        int pixels = ResouceUtils.getAppResources().getDimensionPixelSize(R.dimen.minimum_heigh_of_recyclerview);
         ViewGroup.LayoutParams params = rvPayment.getLayoutParams();
         params.height = pixels;
         rvPayment.setLayoutParams(params);
         rvPayment.requestLayout();
     }
 
+    @Override
+    public void showTotalAmount(String amount) {
+        tvSum.setText(amount);
+    }
 
+    @Override
+    public void showNumberOfMembersPaying(String numMembers) {
+        tvNumMember.setText(numMembers);
+    }
+
+    @Override
+    public void showNumberOfBillsPaid(String numBills) {
+        tvNumBill.setText(numBills);
+    }
 
 
     private class PaymentListAdapter extends RecyclerView.Adapter {

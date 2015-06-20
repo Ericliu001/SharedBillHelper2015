@@ -22,6 +22,7 @@ import com.ericliudeveloper.sharedbillhelper.model.PaymentDAO;
 import com.ericliudeveloper.sharedbillhelper.model.PaymentInfo;
 import com.ericliudeveloper.sharedbillhelper.model.PaymentInfoDAO;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
+import com.ericliudeveloper.sharedbillhelper.util.DigitUtils;
 import com.ericliudeveloper.sharedbillhelper.util.MyDateUtils;
 
 import java.util.ArrayList;
@@ -33,11 +34,19 @@ import java.util.List;
 public class CalculationResultPresenter {
     List<Bill> billSelections = new ArrayList(BillListPresenter.mSelection.values());
     List<Member> memberSelections = new ArrayList(MemberListPresenter.mSelection.values());
-    double[] memberTotalAmountArray =  new double[memberSelections.size()];
+    double[] memberTotalAmountArray = new double[memberSelections.size()];
     CalculationResultFace mCallbacks;
 
     static PaymentInfo mInfo;
     List<Payment> mPaymentList = null;
+
+
+    public void refreshDisplay() {
+
+        mCallbacks.showTotalAmount(String.valueOf(mInfo.getTotalAmount()));
+        mCallbacks.showNumberOfMembersPaying(String.valueOf(memberSelections.size()));
+        mCallbacks.showNumberOfBillsPaid(String.valueOf(billSelections.size()));
+    }
 
 
     public CalculationResultPresenter(CalculationResultFace callbacks) {
@@ -65,6 +74,7 @@ public class CalculationResultPresenter {
                 memberTotalAmountArray[i] += mPaymentList.get(j * memberSelections.size() + i).getPayee_amount();
             }
         }
+
 
     }
 
@@ -127,8 +137,8 @@ public class CalculationResultPresenter {
                     , bill.getEndDate()
             );
 
-            if (payeeStartDateArray != null) {
-                payeeStartDateArray[index] = payeeStartDateArray[0];
+            if (payeeStartEndDateArray != null) {
+                payeeStartDateArray[index] = payeeStartEndDateArray[0];
                 payeeEndDateArray[index] = payeeStartEndDateArray[1];
             }
 
@@ -215,6 +225,11 @@ public class CalculationResultPresenter {
 
     public interface CalculationResultFace {
 
+        void showTotalAmount(String amount);
+
+        void showNumberOfMembersPaying(String numMembers);
+
+        void showNumberOfBillsPaid(String numBills);
     }
 
     public static class MemberPaymentViewHolder extends RecyclerView.ViewHolder {
@@ -235,17 +250,23 @@ public class CalculationResultPresenter {
                     .findViewById(R.id.tvPayeeAmout);
         }
 
-        public void setItemData(Member member, double amout) {
+        public void setItemData(Member member, double amount) {
 
-            String payeeFullName = member.getFirstName() + " " + member.getLastName();
+            String payeeFullName = member.getFirstName();
+            String lastName = member.getLastName();
+            if (!TextUtils.isEmpty(lastName)) {
+                payeeFullName = payeeFullName + " " + lastName;
+            }
+
             tvPayeeFullName.setText(payeeFullName);
 
-            String amountString = String.valueOf(amout);
+            String amountString = DigitUtils.convertToDollarFormat(amount);
             tvPayeeAmount.setText(amountString);
 
             if (mInfo != null) {
-                int percentage = (int)(amout/mInfo.getTotalAmount());
-                tvPercentage.setText(String.valueOf(percentage));
+                int percentage = (int) (100 * amount / mInfo.getTotalAmount());
+                String percentageHint = String.valueOf(percentage) + "%";
+                tvPercentage.setHint(percentageHint);
                 pbPercentage.setProgress(percentage);
             }
 

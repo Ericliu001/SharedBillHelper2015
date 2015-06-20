@@ -68,9 +68,20 @@ public final class MyDateUtils {
 
         int interval = 0;
 
-        if (TextUtils.isEmpty(memberStartString) || TextUtils.isEmpty(memberEndtring) || TextUtils.isEmpty(billStartString) || TextUtils.isEmpty(billEndString)
-                ) {
-            return -1;
+        if (TextUtils.isEmpty(memberStartString)) {
+            memberStartString = ResouceUtils.getAppResources().getString(R.string.a_century_ago);
+        }
+
+        if (TextUtils.isEmpty(billStartString)) {
+            billStartString = ResouceUtils.getAppResources().getString(R.string.a_century_ago);;
+        }
+
+        if (TextUtils.isEmpty(memberEndtring)) {
+            memberEndtring = ResouceUtils.getAppResources().getString(R.string.a_century_later);
+        }
+
+        if (TextUtils.isEmpty(billEndString)) {
+            billEndString = ResouceUtils.getAppResources().getString(R.string.a_century_later);
         }
 
         try {
@@ -115,19 +126,19 @@ public final class MyDateUtils {
         }
 
         if (TextUtils.isEmpty(memberStartString)) {
-            memberStartString = "1900-01-01";
+            memberStartString = ResouceUtils.getAppResources().getString(R.string.a_century_ago);
         }
 
         if (TextUtils.isEmpty(billStartString)) {
-            billStartString = "1900-01-01";
+            billStartString = ResouceUtils.getAppResources().getString(R.string.a_century_ago);;
         }
 
         if (TextUtils.isEmpty(memberEndtring)) {
-            memberEndtring = "3000-01-01";
+            memberEndtring = ResouceUtils.getAppResources().getString(R.string.a_century_later);
         }
 
         if (TextUtils.isEmpty(billEndString)) {
-            billEndString = "3000-01-01";
+            billEndString = ResouceUtils.getAppResources().getString(R.string.a_century_later);
         }
 
 
