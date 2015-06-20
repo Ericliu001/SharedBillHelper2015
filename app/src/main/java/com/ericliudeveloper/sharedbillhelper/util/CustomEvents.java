@@ -2,9 +2,11 @@ package com.ericliudeveloper.sharedbillhelper.util;
 
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.Member;
+import com.ericliudeveloper.sharedbillhelper.model.Payment;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by liu on 8/06/15.
@@ -13,6 +15,15 @@ public final class CustomEvents {
     private CustomEvents() {
     }
 
+
+
+    public static class EventCalculationFinished{
+        final List<Payment> paymentList;
+
+        public EventCalculationFinished(List<Payment> paymentList) {
+            this.paymentList = paymentList;
+        }
+    }
 
 
     public static class EventStartCalculating{

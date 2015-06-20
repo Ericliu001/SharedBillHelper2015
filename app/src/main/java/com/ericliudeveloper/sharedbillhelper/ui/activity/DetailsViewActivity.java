@@ -17,7 +17,7 @@ import de.greenrobot.event.EventBus;
 public abstract class DetailsViewActivity extends ContainerActivity {
 
 
-    FloatingActionButton mFab;
+    protected  FloatingActionButton mFab;
     protected abstract Drawable getAppbarImageDrawable();
 
 

@@ -22,11 +22,14 @@ import com.ericliudeveloper.sharedbillhelper.model.PaymentDAO;
 import com.ericliudeveloper.sharedbillhelper.model.PaymentInfo;
 import com.ericliudeveloper.sharedbillhelper.model.PaymentInfoDAO;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
+import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.DigitUtils;
 import com.ericliudeveloper.sharedbillhelper.util.MyDateUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by liu on 19/06/15.
@@ -75,7 +78,8 @@ public class CalculationResultPresenter {
             }
         }
 
-
+        // post the event
+        EventBus.getDefault().postSticky(new CustomEvents.EventCalculationFinished(mPaymentList));
     }
 
     private void saveEverythingToDB() {

@@ -38,6 +38,10 @@
             android:name=".ui.activity.CalculationResultActivity"
             android:label="@string/title_activity_calculation_result" >
         </activity>
+
+        <activity android:name=".ui.activity.PaymentListActivity"
+            android:label="@string/payment_details"
+            ></activity>
     </application>
 
 </manifest>
