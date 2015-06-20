@@ -57,4 +57,5 @@
     <string name="total_amount">Total Amount</string>
     <string name="number_of_members_paying">Number of members are paying</string>
     <string name="number_of_bills">Number of bills paid</string>
+    <string name="percentage_0">0%</string>
 </resources>

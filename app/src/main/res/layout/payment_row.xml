@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <TextView
+        android:id="@+id/tvPayeeFullName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvPercentage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="0.5"
+        android:hint="@string/percentage_0"
+        />
+
+
+    <ProgressBar
+        android:id="@+id/pbPercentage"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/tvPayeeAmout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:hint="0.00" 
+        />
+
+</LinearLayout>

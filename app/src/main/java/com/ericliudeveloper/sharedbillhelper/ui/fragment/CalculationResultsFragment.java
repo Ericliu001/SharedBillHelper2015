@@ -3,6 +3,7 @@ package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.ui.presenter.CalculationResultPresenter;
+import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +25,7 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
     private TextView tvNumBill;
     private TextView tvNumMember;
     private RecyclerView rvPayment;
+    RecyclerView.Adapter mAdapter;
 
     public CalculationResultsFragment() {
         // Required empty public constructor
@@ -34,6 +37,7 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         super.onCreate(savedInstanceState);
         mPresenter = new CalculationResultPresenter(this);
         mPresenter.Calculate();
+
     }
 
     @Override
@@ -51,14 +55,25 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         tvNumMember = (TextView) root.findViewById(R.id.tvNumMember);
         rvPayment = (RecyclerView) root.findViewById(R.id.list);
 
-        rvPayment.setAdapter(new PaymentListAdapter());
+        rvPayment.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mAdapter = new PaymentListAdapter();
+        rvPayment.setAdapter(mAdapter);
 
+        int pixels = ResouceUtils.getAppResources().getDimensionPixelSize(R.dimen.minimum_heigh_of_scrollview);
+        ViewGroup.LayoutParams params = rvPayment.getLayoutParams();
+        params.height = pixels;
+        rvPayment.setLayoutParams(params);
+        rvPayment.requestLayout();
     }
 
 
 
 
-    private class PaymentListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private class PaymentListAdapter extends RecyclerView.Adapter {
+
+
+        public PaymentListAdapter(){}
+
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             return mPresenter.createViewHolder(parent, viewType);

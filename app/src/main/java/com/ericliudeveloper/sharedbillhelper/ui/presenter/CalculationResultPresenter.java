@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.MyApplication;
 import com.ericliudeveloper.sharedbillhelper.R;
@@ -31,11 +33,11 @@ import java.util.List;
 public class CalculationResultPresenter {
     List<Bill> billSelections = new ArrayList(BillListPresenter.mSelection.values());
     List<Member> memberSelections = new ArrayList(MemberListPresenter.mSelection.values());
-    double[] memberTotalAmountArray = new double[memberSelections.size()];
+    double[] memberTotalAmountArray =  new double[memberSelections.size()];
     CalculationResultFace mCallbacks;
 
-    PaymentInfo mInfo;
-    List<Payment> mPaymentList = new ArrayList<>();
+    static PaymentInfo mInfo;
+    List<Payment> mPaymentList = null;
 
 
     public CalculationResultPresenter(CalculationResultFace callbacks) {
@@ -52,9 +54,7 @@ public class CalculationResultPresenter {
 
         mInfo = infoBuilder.build();
 
-
-        String paymentInfoSerialNumber = mInfo.getSerialNumber();
-
+        mPaymentList = new ArrayList<>();
 
         for (Bill bill : billSelections) {
             calculateMemberShareForEachBill(bill);
@@ -113,7 +113,7 @@ public class CalculationResultPresenter {
         String[] payeeEndDateArray = new String[memberSelections.size()];
 
         int index = 0;
-        for (Member member: memberSelections) {
+        for (Member member : memberSelections) {
             int payingDaysForThisBill = MyDateUtils.calculateMemberPayingDays(member.getMoveInDate()
                     , member.getMoveOutDate()
                     , bill.getStartDate()
@@ -193,20 +193,19 @@ public class CalculationResultPresenter {
 
     private double getTotalAmount() {
         double totalAmount = 0d;
-        for (Payment payment : mPaymentList) {
-            totalAmount += payment.getPayee_amount();
+        for (Bill bill : billSelections) {
+            totalAmount += bill.getAmount();
         }
         return totalAmount;
     }
 
     public RecyclerView.ViewHolder createViewHolder(ViewGroup parent, int viewType) {
-        //todo change the row layout xml file
-      View rowLayout = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
+        View rowLayout = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_row, parent, false);
         return new MemberPaymentViewHolder(rowLayout);
     }
 
     public void bindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((MemberPaymentViewHolder)holder).setItemData(memberSelections.get(position), memberTotalAmountArray[position]);
+        ((MemberPaymentViewHolder) holder).setItemData(memberSelections.get(position), memberTotalAmountArray[position]);
     }
 
     public int getItemCount() {
@@ -219,12 +218,36 @@ public class CalculationResultPresenter {
     }
 
     public static class MemberPaymentViewHolder extends RecyclerView.ViewHolder {
+        private TextView tvPayeeFullName, tvPercentage;
+        private ProgressBar pbPercentage;
+        private TextView tvPayeeAmount;
 
-        public MemberPaymentViewHolder(View itemView) {
-            super(itemView);
+        public MemberPaymentViewHolder(View itemview) {
+            super(itemview);
+            tvPayeeFullName = (TextView) itemview
+                    .findViewById(R.id.tvPayeeFullName);
+
+            tvPercentage = (TextView) itemview
+                    .findViewById(R.id.tvPercentage);
+            pbPercentage = (ProgressBar) itemview
+                    .findViewById(R.id.pbPercentage);
+            tvPayeeAmount = (TextView) itemview
+                    .findViewById(R.id.tvPayeeAmout);
         }
 
         public void setItemData(Member member, double amout) {
+
+            String payeeFullName = member.getFirstName() + " " + member.getLastName();
+            tvPayeeFullName.setText(payeeFullName);
+
+            String amountString = String.valueOf(amout);
+            tvPayeeAmount.setText(amountString);
+
+            if (mInfo != null) {
+                int percentage = (int)(amout/mInfo.getTotalAmount());
+                tvPercentage.setText(String.valueOf(percentage));
+                pbPercentage.setProgress(percentage);
+            }
 
         }
     }
