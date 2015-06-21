@@ -36,8 +36,8 @@ import de.greenrobot.event.EventBus;
  * Created by liu on 19/06/15.
  */
 public class CalculationResultPresenter {
-    public  List<Bill> billSelections = new ArrayList(BillListPresenter.mSelection.values());
-    public  List<Member> memberSelections = new ArrayList(MemberListPresenter.mSelection.values());
+    public List<Bill> billSelections = new ArrayList(BillListPresenter.mSelection.values());
+    public List<Member> memberSelections = new ArrayList(MemberListPresenter.mSelection.values());
     double[] memberTotalAmountArray = new double[memberSelections.size()];
     CalculationResultFace mCallbacks;
 
@@ -165,7 +165,11 @@ public class CalculationResultPresenter {
         }
 
         for (int i = 0; i < memberShareArray.length; i++) {
-            memberShareArray[i] = amount * memberPayingDayArray[i] / totalNumOfDays;
+            if (totalNumOfDays > 0) {
+                memberShareArray[i] = amount * memberPayingDayArray[i] / totalNumOfDays;
+            } else {
+                memberShareArray[i] = 0d;
+            }
         }
 
 
