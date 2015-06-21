@@ -9,7 +9,6 @@
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/list_bottom_margin_to_avoid_being_overlapped_by_navigationbar"
         android:scrollbars="vertical" />
 
     <FrameLayout

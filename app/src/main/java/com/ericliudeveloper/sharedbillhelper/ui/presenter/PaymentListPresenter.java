@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
@@ -59,26 +60,71 @@ public class PaymentListPresenter extends BasePresenter implements CollectionVie
 
     @Override
     public RecyclerView.ViewHolder createHeaderViewHolder(ViewGroup parent) {
-        View billRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
-        return new BillListPresenter.BillViewHolder(billRow, false);
+        View billRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.header_bill_row_layout, parent, false);
+        return new HeaderBillViewHolder(billRow);
     }
 
     @Override
     public RecyclerView.ViewHolder createDataViewHolder(ViewGroup parent) {
         // todo replace it with payment row
-        View paymentRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.member_row_layout, parent, false);
+        View paymentRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_row_layout, parent, false);
         return new MemberListPresenter.MemberViewHolder(paymentRow, false);
     }
 
     @Override
     public void bindHeaderViewHolder(RecyclerView.ViewHolder holder, int headerIndex) {
         Bill bill = billList.get(headerIndex);
-        ((BillListPresenter.BillViewHolder) holder).setItem(bill);
+        ((HeaderBillViewHolder) holder).setItem(bill);
     }
 
     @Override
     public void bindDataViewHolder(RecyclerView.ViewHolder holder, int dataIndex) {
 
+    }
+
+
+    public static class HeaderBillViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView tvType, tvAmount, tvPaid, tvStartDay, tvEndDate ;
+
+        public HeaderBillViewHolder(View itemView) {
+            super(itemView);
+
+            tvType = (TextView) itemView.findViewById(R.id.tvType);
+            tvAmount = (TextView) itemView.findViewById(R.id.tvAmount);
+            tvPaid = (TextView) itemView.findViewById(R.id.tvPaid);
+            tvStartDay = (TextView) itemView.findViewById(R.id.tvStartDate);
+            tvEndDate = (TextView) itemView.findViewById(R.id.tvEndDate);
+        }
+
+        public void setItem(Bill bill) {
+            refreshDisplay(bill);
+        }
+
+        public void refreshDisplay(Bill bill) {
+            String type = bill.getType();
+            String amount = String.valueOf(bill.getAmount());
+            String isPaid = bill.getPaid() > 0 ? tvAmount.getResources().getString(R.string.paid)
+                    : tvAmount.getResources().getString(R.string.unpaid);
+
+            String startDay = bill.getStartDate();
+            String endDay = bill.getEndDate();
+
+            tvType.setText(type);
+            tvAmount.setText(amount);
+            tvPaid.setText(isPaid);
+            tvStartDay.setText(startDay);
+            tvEndDate.setText(endDay);
+        }
+    }
+
+    public static class PaymenViewHolder extends RecyclerView.ViewHolder {
+
+        public PaymenViewHolder(View itemView) {
+            super(itemView);
+
+
+        }
     }
 
 
