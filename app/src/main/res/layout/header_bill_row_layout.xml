@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:layout_gravity="center"
-    android:layout_margin="4dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="0dp"
     card_view:cardBackgroundColor="@color/primaryLight"
     card_view:cardCornerRadius="4dp">
 
@@ -66,14 +67,14 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="left" />
+                    android:gravity="right" />
 
-                <ImageView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:gravity="center"
-                    android:src="@android:drawable/divider_horizontal_dim_dark"
+                    android:hint="@string/to"
                     />
 
 
@@ -82,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:gravity="left" />
 
 
 

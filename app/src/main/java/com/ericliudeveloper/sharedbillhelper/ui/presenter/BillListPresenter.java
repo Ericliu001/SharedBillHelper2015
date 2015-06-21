@@ -12,6 +12,7 @@ import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.BillDAO;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+import com.ericliudeveloper.sharedbillhelper.util.DigitUtils;
 import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
 
 import java.util.HashMap;
@@ -91,11 +92,13 @@ public class BillListPresenter implements ListPresenter {
 
         public void refreshDisplay(Bill bill) {
             String type = bill.getType();
-            String amount = String.valueOf(bill.getAmount());
+            String amount = DigitUtils.convertToDollarFormat(bill.getAmount());
             String isPaid = bill.getPaid() > 0 ? tvAmount.getResources().getString(R.string.paid)
                     : tvAmount.getResources().getString(R.string.unpaid);
 
             String dueDay = bill.getDueDate();
+
+
 
             tvType.setText(type);
             tvAmount.setText(amount);

@@ -35,8 +35,8 @@ import de.greenrobot.event.EventBus;
  * Created by liu on 19/06/15.
  */
 public class CalculationResultPresenter {
-    public static List<Bill> billSelections = new ArrayList(BillListPresenter.mSelection.values());
-    public static List<Member> memberSelections = new ArrayList(MemberListPresenter.mSelection.values());
+    public  List<Bill> billSelections = new ArrayList(BillListPresenter.mSelection.values());
+    public  List<Member> memberSelections = new ArrayList(MemberListPresenter.mSelection.values());
     double[] memberTotalAmountArray = new double[memberSelections.size()];
     CalculationResultFace mCallbacks;
 

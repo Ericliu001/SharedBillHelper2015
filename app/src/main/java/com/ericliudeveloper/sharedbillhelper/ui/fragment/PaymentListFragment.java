@@ -15,7 +15,7 @@ import com.ericliudeveloper.sharedbillhelper.widget.CollectionView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PaymentListFragment extends Fragment implements PaymentListPresenter.PaymentListFace {
+public class PaymentListFragment extends BaseFragment implements PaymentListPresenter.PaymentListFace {
     CollectionView mCollectionView;
     PaymentListPresenter mPresenter;
 

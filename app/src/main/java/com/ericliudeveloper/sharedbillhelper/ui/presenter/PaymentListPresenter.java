@@ -11,6 +11,7 @@ import com.ericliudeveloper.sharedbillhelper.model.Bill;
 import com.ericliudeveloper.sharedbillhelper.model.Member;
 import com.ericliudeveloper.sharedbillhelper.model.Payment;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
+import com.ericliudeveloper.sharedbillhelper.util.DigitUtils;
 import com.ericliudeveloper.sharedbillhelper.widget.CollectionView;
 
 import java.util.ArrayList;
@@ -21,8 +22,8 @@ import java.util.List;
  */
 public class PaymentListPresenter extends BasePresenter implements CollectionView.CollectionViewCallbacks {
     List<Payment> paymentList;
-    List<Bill> billList = CalculationResultPresenter.billSelections;
-    List<Member> memberList = CalculationResultPresenter.memberSelections;
+    List<Bill> billList = new ArrayList(BillListPresenter.mSelection.values());
+    List<Member> memberList = new ArrayList(MemberListPresenter.mSelection.values());
     PaymentListFace mCallbacks;
     CollectionView.Inventory<Bill, Payment> mInventory;
 
@@ -66,9 +67,8 @@ public class PaymentListPresenter extends BasePresenter implements CollectionVie
 
     @Override
     public RecyclerView.ViewHolder createDataViewHolder(ViewGroup parent) {
-        // todo replace it with payment row
         View paymentRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_row_layout, parent, false);
-        return new MemberListPresenter.MemberViewHolder(paymentRow, false);
+        return new PaymenViewHolder(paymentRow);
     }
 
     @Override
@@ -103,7 +103,7 @@ public class PaymentListPresenter extends BasePresenter implements CollectionVie
 
         public void refreshDisplay(Bill bill) {
             String type = bill.getType();
-            String amount = String.valueOf(bill.getAmount());
+            String amount = amount = DigitUtils.convertToDollarFormat(bill.getAmount());
             String isPaid = bill.getPaid() > 0 ? tvAmount.getResources().getString(R.string.paid)
                     : tvAmount.getResources().getString(R.string.unpaid);
 

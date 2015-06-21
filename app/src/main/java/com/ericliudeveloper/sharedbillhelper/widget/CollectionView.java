@@ -40,20 +40,24 @@ public class CollectionView extends RecyclerView {
     public static class Inventory<T1, T2> {
         private List<Header<T1>> mHeaderList = new ArrayList<>();
         private List<T2> mDataList = new ArrayList<>();
-        private ArrayList<Integer> headerInsertPositionList = new ArrayList<>();
-        private ArrayList<Integer> headerListPositionList = new ArrayList<>();
+        private int[] headerInsertPositionList;
+        private int[] headerListPositionList;
 
 
         public Inventory(List headerList, List dataList) {
             this.mHeaderList = headerList;
             this.mDataList = dataList;
+            headerInsertPositionList = new int[mHeaderList.size()];
+            headerListPositionList = new int[mHeaderList.size()];
 
+            int index1 = 0;
             for (Header<T1> header : mHeaderList) {
-                headerInsertPositionList.add(header.headerInsertingPosition);
+                headerInsertPositionList[index1] = header.headerInsertingPosition;
+                index1 ++;
             }
 
-            for (int i = 0; i < headerInsertPositionList.size(); i++) {
-                headerListPositionList.add(headerInsertPositionList.get(i) + i);
+            for (int i = 0; i < headerInsertPositionList.length; i++) {
+                headerListPositionList[i] = headerInsertPositionList[i] + i;
             }
 
         }
@@ -75,22 +79,42 @@ public class CollectionView extends RecyclerView {
         }
 
         public int getHeaderPositionInList(int index) {
-            return headerListPositionList.get(index);
+            return headerListPositionList[index];
         }
 
         public int getHeaderIndex(int position) {
-            return headerListPositionList.indexOf(position);
+            return indexOf(headerListPositionList, position);
         }
+
+
+
 
         public int getDataIndex(int position) {
             int afterHeader = 0;
-            while (afterHeader < headerListPositionList.size()  && headerListPositionList.get(afterHeader) < position) {
+            while (afterHeader < headerListPositionList.length  && headerListPositionList[afterHeader] < position) {
                 afterHeader ++;
             }
-
             return  position - afterHeader;
         }
 
+    }
+
+    private static int indexOf(int[] array, int position) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == position) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private static boolean contains(int[] array, int position) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == position) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -106,7 +130,7 @@ public class CollectionView extends RecyclerView {
     }
 
 
-    public static int ROW_TYPE_HEADER = 1;
+    public static int ROW_TYPE_HEADER = 0;
     public static int ROW_TYPE_DATA = 1;
 
     protected class MyListAdapter extends RecyclerView.Adapter {
@@ -114,7 +138,7 @@ public class CollectionView extends RecyclerView {
 
         @Override
         public int getItemViewType(int position) {
-            return mInventory.headerListPositionList.contains(position)
+            return contains(mInventory.headerListPositionList, position)
                     ? ROW_TYPE_HEADER
                     : ROW_TYPE_DATA;
         }
@@ -132,8 +156,8 @@ public class CollectionView extends RecyclerView {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            if (mInventory.headerListPositionList.contains(position)) {
-                int headerIndex = mInventory.headerListPositionList.indexOf(position);
+            if (contains(mInventory.headerListPositionList, position)) {
+                int headerIndex = indexOf(mInventory.headerListPositionList, position);
                 mCallback.bindHeaderViewHolder(holder, headerIndex);
             } else {
                 int dataIndex = mInventory.getDataIndex(position);

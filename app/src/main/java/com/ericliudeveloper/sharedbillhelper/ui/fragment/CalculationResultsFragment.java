@@ -35,9 +35,8 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = new CalculationResultPresenter(this);
-        mPresenter.Calculate();
 
+        mPresenter = new CalculationResultPresenter(this);
     }
 
     @Override
@@ -46,9 +45,13 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_calculation_results, container, false);
         setupViews(root);
+
+        mPresenter.Calculate();
         mPresenter.refreshDisplay();
         return root;
     }
+
+
 
     private void setupViews(View root) {
         tvSum = (TextView) root.findViewById(R.id.tvSum);
@@ -86,7 +89,8 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
     private class PaymentListAdapter extends RecyclerView.Adapter {
 
 
-        public PaymentListAdapter(){}
+        public PaymentListAdapter() {
+        }
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

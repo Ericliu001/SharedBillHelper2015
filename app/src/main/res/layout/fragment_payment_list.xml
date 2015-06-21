@@ -1,13 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.ericliudeveloper.sharedbillhelper.ui.fragment.PaymentListFragment">
+
+    <include layout="@layout/appbar_layout" />
 
     <com.ericliudeveloper.sharedbillhelper.widget.CollectionView
         android:id="@+id/collectionView"
-        android:fitsSystemWindows="true"
-        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.ericliudeveloper.sharedbillhelper.widget.CollectionView>
-</FrameLayout>
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:scrollbars="vertical"></com.ericliudeveloper.sharedbillhelper.widget.CollectionView>
+</LinearLayout>

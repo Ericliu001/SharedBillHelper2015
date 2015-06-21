@@ -61,4 +61,5 @@
     <string name="a_century_ago">1900-01-01</string>
     <string name="a_century_later">3000-01-01</string>
     <string name="payment_details">Payment Details</string>
+    <string name="to">to</string>
 </resources>
