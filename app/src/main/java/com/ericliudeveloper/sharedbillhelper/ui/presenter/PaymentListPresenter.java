@@ -12,6 +12,7 @@ import com.ericliudeveloper.sharedbillhelper.model.Member;
 import com.ericliudeveloper.sharedbillhelper.model.Payment;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.DigitUtils;
+import com.ericliudeveloper.sharedbillhelper.util.MemberUtil;
 import com.ericliudeveloper.sharedbillhelper.widget.CollectionView;
 
 import java.util.ArrayList;
@@ -79,7 +80,8 @@ public class PaymentListPresenter extends BasePresenter implements CollectionVie
 
     @Override
     public void bindDataViewHolder(RecyclerView.ViewHolder holder, int dataIndex) {
-
+        Payment payment = paymentList.get(dataIndex);
+        ((PaymenViewHolder)holder).setItem(payment);
     }
 
 
@@ -120,10 +122,32 @@ public class PaymentListPresenter extends BasePresenter implements CollectionVie
 
     public static class PaymenViewHolder extends RecyclerView.ViewHolder {
 
+        TextView tvName, tvAmount, tvPayingDays, tvStartDate, tvEndDate;
+
         public PaymenViewHolder(View itemView) {
             super(itemView);
+            tvName = (TextView) itemView.findViewById(R.id.tvName);
+            tvAmount = (TextView) itemView.findViewById(R.id.tvAmount);
+            tvPayingDays = (TextView) itemView.findViewById(R.id.tvPayingDays);
+            tvStartDate = (TextView) itemView.findViewById(R.id.tvStartDate);
+            tvEndDate = (TextView) itemView.findViewById(R.id.tvEndDate);
+        }
 
+        public void setItem(Payment payment) {
+            long memberId = payment.getPayee_id();
+            Member member = MemberListPresenter.mSelection.get(memberId);
+            if (member == null) {
+                return;
+            }
 
+            String fullName = MemberUtil.getFullNameString(member);
+            tvName.setText(fullName);
+            String amount = DigitUtils.convertToDollarFormat(payment.getPayee_amount());
+            tvAmount.setText(amount);
+            String payingDays = String.valueOf(payment.getPayee_days());
+            tvPayingDays.setText(payingDays);
+            tvStartDate.setText(payment.getPayee_start_date());
+            tvEndDate.setText(payment.getPayee_end_date());
         }
     }
 

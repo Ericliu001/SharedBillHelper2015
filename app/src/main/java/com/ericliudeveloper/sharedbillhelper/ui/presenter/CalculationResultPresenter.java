@@ -24,6 +24,7 @@ import com.ericliudeveloper.sharedbillhelper.model.PaymentInfoDAO;
 import com.ericliudeveloper.sharedbillhelper.provider.BillContract;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.DigitUtils;
+import com.ericliudeveloper.sharedbillhelper.util.MemberUtil;
 import com.ericliudeveloper.sharedbillhelper.util.MyDateUtils;
 
 import java.util.ArrayList;
@@ -256,11 +257,7 @@ public class CalculationResultPresenter {
 
         public void setItemData(Member member, double amount) {
 
-            String payeeFullName = member.getFirstName();
-            String lastName = member.getLastName();
-            if (!TextUtils.isEmpty(lastName)) {
-                payeeFullName = payeeFullName + " " + lastName;
-            }
+            String payeeFullName = MemberUtil.getFullNameString(member);
 
             tvPayeeFullName.setText(payeeFullName);
 
@@ -276,4 +273,6 @@ public class CalculationResultPresenter {
 
         }
     }
+
+
 }

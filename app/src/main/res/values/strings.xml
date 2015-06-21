@@ -62,4 +62,6 @@
     <string name="a_century_later">3000-01-01</string>
     <string name="payment_details">Payment Details</string>
     <string name="to">to</string>
+    <string name="paying_from">Paying from</string>
+    <string name="paying_days">paying days</string>
 </resources>
