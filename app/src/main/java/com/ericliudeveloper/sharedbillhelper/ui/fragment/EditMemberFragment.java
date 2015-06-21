@@ -73,7 +73,7 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
     @Override
     public void onStart() {
         super.onStart();
-        mPresenter.registerEventBusListener();
+        mPresenter.registerStickyEventBusListener();
     }
 
     @Override

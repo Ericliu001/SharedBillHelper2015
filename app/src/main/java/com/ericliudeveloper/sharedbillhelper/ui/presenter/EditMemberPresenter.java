@@ -17,7 +17,7 @@ import de.greenrobot.event.EventBus;
 /**
  * Created by liu on 11/06/15.
  */
-public class EditMemberPresenter {
+public class EditMemberPresenter extends BasePresenter {
 
 
     private static final int ACTION_SELECT_MOVE_IN_DATE = 10;
@@ -153,9 +153,7 @@ public class EditMemberPresenter {
     }
 
 
-    public void registerEventBusListener() {
-        EventBus.getDefault().registerSticky(this);
-    }
+
 
 
     public void onEvent(CustomEvents.EventEditMember eventEditMember) {
@@ -200,9 +198,7 @@ public class EditMemberPresenter {
     }
 
 
-    public void unregisterEventBusListener() {
-        EventBus.getDefault().unregister(this);
-    }
+
 
     private void checkIfStartDateAfterEndDate() {
         String moveIn = mMember.getMoveInDate();

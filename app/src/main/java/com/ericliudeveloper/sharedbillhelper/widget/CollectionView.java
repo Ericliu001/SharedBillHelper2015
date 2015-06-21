@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by liu on 20/06/15.
@@ -24,6 +25,7 @@ public class CollectionView extends RecyclerView {
 
     public CollectionView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+
     }
 
 
@@ -36,41 +38,40 @@ public class CollectionView extends RecyclerView {
 
 
     public static class Inventory<T1, T2> {
-        private ArrayList<Header<T1>> headerList = new ArrayList<>();
-        private ArrayList<T2> dataList = new ArrayList<>();
+        private List<Header<T1>> mHeaderList = new ArrayList<>();
+        private List<T2> mDataList = new ArrayList<>();
         private ArrayList<Integer> headerInsertPositionList = new ArrayList<>();
         private ArrayList<Integer> headerListPositionList = new ArrayList<>();
 
 
-        public Inventory(Inventory<T1, T2> copyFrom) {
-            for (Header<T1> header : copyFrom.headerList) {
-                headerList.add(header);
+        public Inventory(List headerList, List dataList) {
+            this.mHeaderList = headerList;
+            this.mDataList = dataList;
+
+            for (Header<T1> header : mHeaderList) {
                 headerInsertPositionList.add(header.headerInsertingPosition);
-            }
-
-
-            for (T2 t2 : copyFrom.dataList) {
-                dataList.add(t2);
             }
 
             for (int i = 0; i < headerInsertPositionList.size(); i++) {
                 headerListPositionList.add(headerInsertPositionList.get(i) + i);
             }
+
         }
 
 
+
         public void addHeader(Header header) {
-            headerList.add(header);
+            mHeaderList.add(header);
         }
 
         public int getTotalItemCount() {
             int total = 0;
-            total = headerList.size() + dataList.size();
+            total = mHeaderList.size() + mDataList.size();
             return total;
         }
 
         public int getHeaderCount() {
-            return headerList.size();
+            return mHeaderList.size();
         }
 
         public int getHeaderPositionInList(int index) {
@@ -83,7 +84,7 @@ public class CollectionView extends RecyclerView {
 
         public int getDataIndex(int position) {
             int afterHeader = 0;
-            while (headerListPositionList.get(afterHeader) < position) {
+            while (afterHeader < headerListPositionList.size()  && headerListPositionList.get(afterHeader) < position) {
                 afterHeader ++;
             }
 
@@ -122,9 +123,9 @@ public class CollectionView extends RecyclerView {
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             ViewHolder holder;
             if (viewType == ROW_TYPE_HEADER) {
-                mCallback.createHeaderViewHolder(parent);
+              return   mCallback.createHeaderViewHolder(parent);
             } else if (viewType == ROW_TYPE_DATA) {
-                mCallback.createDataViewHolder(parent);
+              return   mCallback.createDataViewHolder(parent);
             }
             return null;
         }
@@ -149,11 +150,10 @@ public class CollectionView extends RecyclerView {
 
     public interface CollectionViewCallbacks {
 
-        void onBindViewHolder(ViewHolder holder, int position);
 
-        void createHeaderViewHolder(ViewGroup parent);
+        ViewHolder createHeaderViewHolder(ViewGroup parent);
 
-        void createDataViewHolder(ViewGroup parent);
+        ViewHolder createDataViewHolder(ViewGroup parent);
 
         void bindHeaderViewHolder(ViewHolder holder, int headerIndex);
 

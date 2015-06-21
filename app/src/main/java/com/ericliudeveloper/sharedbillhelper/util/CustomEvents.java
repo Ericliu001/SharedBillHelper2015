@@ -18,7 +18,7 @@ public final class CustomEvents {
 
 
     public static class EventCalculationFinished{
-        final List<Payment> paymentList;
+        public final List<Payment> paymentList;
 
         public EventCalculationFinished(List<Payment> paymentList) {
             this.paymentList = paymentList;

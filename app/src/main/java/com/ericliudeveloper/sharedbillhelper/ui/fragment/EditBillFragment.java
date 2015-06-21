@@ -73,7 +73,7 @@ public class EditBillFragment extends BaseFragment implements View.OnClickListen
     @Override
     public void onStart() {
         super.onStart();
-        mPresenter.registerEventBusListener();
+        mPresenter.registerStickyEventBusListener();
     }
 
     @Override

@@ -17,7 +17,7 @@ import de.greenrobot.event.EventBus;
 /**
  * Created by liu on 8/06/15.
  */
-public class EditBillPresenter {
+public class EditBillPresenter extends  BasePresenter{
     private static final String DATE_WRONG = "date_wrong";
     Activity mActivity;
     Bill mBill;
@@ -39,9 +39,7 @@ public class EditBillPresenter {
     }
 
 
-    public void registerEventBusListener() {
-        EventBus.getDefault().registerSticky(this);
-    }
+
 
 
     public void onEvent(CustomEvents.EventEditBill eventEditBill) {
@@ -91,9 +89,7 @@ public class EditBillPresenter {
         showDatePickDialog();
     }
 
-    public void unregisterEventBusListener() {
-        EventBus.getDefault().unregister(this);
-    }
+
 
 
     private void checkIfStartDateAfterEndDate() {
