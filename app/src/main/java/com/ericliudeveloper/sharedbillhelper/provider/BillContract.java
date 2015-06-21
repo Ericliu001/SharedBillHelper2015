@@ -10,7 +10,7 @@ import com.ericliudeveloper.sharedbillhelper.database.DatabaseConstants;
 public class BillContract {
 
 
-    public static final String CONTENT_AUTHORITY = "com.ericliudeveloper.sharedbillhelper.provdier";
+    public static final String CONTENT_AUTHORITY = "com.ericliu.billshare.provdier";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
 

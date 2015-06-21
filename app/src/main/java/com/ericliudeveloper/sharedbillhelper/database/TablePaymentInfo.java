@@ -104,6 +104,8 @@ public class TablePaymentInfo implements PaymentInfoColumns, PaymentColumns, Bil
 	
 	public static void onUpdate(SQLiteDatabase db){
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_PAYMENT_INFO);
+		db.execSQL("DROP VIEW IF EXISTS " + VIEW_PAYMENT_INFO);
+		db.execSQL("DROP VIEW IF EXISTS " + VIEW_PAYMENT_FULL);
 		onCreate(db);
 	}
 

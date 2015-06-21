@@ -64,6 +64,8 @@ public class TableMember implements MemberColumns, TableAndView{
 	
 	public static void onUpgrade(SQLiteDatabase db){
 		db.execSQL(" DROP TABLE IF EXISTS " + TABLE_MEMBER);
+		db.execSQL(" DROP VIEW IF EXISTS " + VIEW_MEMBER);
+		db.execSQL(" DROP VIEW IF EXISTS " + VIEW_MEMBER_NAME);
 		onCreate(db);
 	}
 }

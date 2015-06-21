@@ -59,6 +59,8 @@ public class TableBill implements DatabaseConstants.BillColumns, DatabaseConstan
 	
 	public static void onUpgrade(SQLiteDatabase db){
 		db.execSQL(" DROP TABLE IF EXISTS " + TABLE_BILL);
+		db.execSQL(" DROP VIEW IF EXISTS " + VIEW_BILL);
+		db.execSQL(" DROP VIEW IF EXISTS " + VIEW_BILL_NAME);
 		onCreate(db);
 	}
 

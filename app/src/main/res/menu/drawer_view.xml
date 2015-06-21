@@ -28,10 +28,7 @@
             android:title="@string/calculate" />
 
 
-        <item
-            android:id="@+id/nav_reports"
-            android:icon="@drawable/ic_subject_black_24dp"
-            android:title="@string/reports" />
+
 
 
     </group>

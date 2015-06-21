@@ -113,9 +113,7 @@ public class BaseActivity extends AppCompatActivity {
                         mDrawerLayout.closeDrawer(GravityCompat.START);
                         return true;
 
-                    case R.id.nav_reports:
-                        mDrawerLayout.closeDrawer(GravityCompat.START);
-                        return true;
+
 
                     default:
                         break;
