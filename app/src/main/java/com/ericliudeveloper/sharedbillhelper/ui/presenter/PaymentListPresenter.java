@@ -68,7 +68,7 @@ public class PaymentListPresenter extends BasePresenter implements CollectionVie
 
     @Override
     public RecyclerView.ViewHolder createDataViewHolder(ViewGroup parent) {
-        View paymentRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_row_layout, parent, false);
+        View paymentRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_detail_row_layout, parent, false);
         return new PaymenViewHolder(paymentRow);
     }
 

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -51,6 +53,12 @@ public class PaymentListFragment extends BaseFragment implements PaymentListPres
     public void onPause() {
         super.onPause();
         mPresenter.unregisterEventBusListener();
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_save, menu);
     }
 
     @Override
