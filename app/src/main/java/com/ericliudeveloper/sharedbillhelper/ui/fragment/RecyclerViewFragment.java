@@ -26,7 +26,6 @@ public abstract class RecyclerViewFragment extends Fragment {
 
 
     protected abstract ListPresenter getPresenter();
-    protected abstract View getRowView(ViewGroup parent, int viewType);
 
 
     @Override
@@ -61,8 +60,7 @@ public abstract class RecyclerViewFragment extends Fragment {
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 View itemView;
                 RecyclerView.ViewHolder holder;
-                itemView = getRowView(parent, viewType);
-                holder = mPresenter.getCustomViewHolder(itemView);
+                holder = mPresenter.getCustomViewHolder(parent, viewType);
                 return holder;
             }
 

@@ -9,9 +9,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.ericliudeveloper.sharedbillhelper.MyApplication;
@@ -44,10 +42,6 @@ public class MemberListFragment extends RecyclerViewFragment implements LoaderMa
         return new MemberListPresenter(isListSelectionMode);
     }
 
-    @Override
-    protected View getRowView(ViewGroup parent, int viewType) {
-        return LayoutInflater.from(parent.getContext()).inflate(R.layout.member_row_layout, parent, false);
-    }
 
 
     @Override

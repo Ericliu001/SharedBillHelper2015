@@ -3,7 +3,9 @@ package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 import android.database.Cursor;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -32,10 +34,13 @@ public class BillListPresenter implements ListPresenter {
         isListSelectionMode = isSelectionMode;
     }
 
+
     @Override
-    public RecyclerView.ViewHolder getCustomViewHolder(View itemView) {
+    public RecyclerView.ViewHolder getCustomViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_row_layout, parent, false);
         return new BillViewHolder(itemView, isListSelectionMode);
     }
+
 
     @Override
     public void setViewHolderData(RecyclerView.ViewHolder holder, Cursor cursor) {
@@ -97,7 +102,6 @@ public class BillListPresenter implements ListPresenter {
                     : tvAmount.getResources().getString(R.string.unpaid);
 
             String dueDay = bill.getDueDate();
-
 
 
             tvType.setText(type);

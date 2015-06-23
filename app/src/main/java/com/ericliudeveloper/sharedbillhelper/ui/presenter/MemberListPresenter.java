@@ -3,7 +3,9 @@ package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 import android.database.Cursor;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -32,7 +34,8 @@ public class MemberListPresenter implements ListPresenter {
     }
 
     @Override
-    public RecyclerView.ViewHolder getCustomViewHolder(View itemView) {
+    public RecyclerView.ViewHolder getCustomViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.member_row_layout, parent, false);
         return new MemberViewHolder(itemView, isListSelectionMode);
     }
 
@@ -40,7 +43,7 @@ public class MemberListPresenter implements ListPresenter {
     public void setViewHolderData(RecyclerView.ViewHolder holder, Cursor cursor) {
         Member member = MemberDAO.getMemberFromCursor(cursor);
         if (member != null) {
-            ((MemberViewHolder)holder).setItem(member);
+            ((MemberViewHolder) holder).setItem(member);
         }
     }
 
@@ -50,7 +53,7 @@ public class MemberListPresenter implements ListPresenter {
 
         private Member mMember;
         CardView cardView;
-        TextView  tvFirstName, tvLastName;
+        TextView tvFirstName, tvLastName;
         public final CheckBox checkBox;
 
         public MemberViewHolder(View itemView, boolean isSelectionMode) {
