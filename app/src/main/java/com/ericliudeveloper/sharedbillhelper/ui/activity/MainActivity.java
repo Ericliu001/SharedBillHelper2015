@@ -90,8 +90,8 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     @Override
     protected void setupViewPager(ViewPager viewPager) {
         PagerAdapter pagerAdapter = new PagerAdapter(getFragmentManager());
-        pagerAdapter.addFragment(new BillListFragment(), "Bill");
-        pagerAdapter.addFragment(new MemberListFragment(), "Member");
+        pagerAdapter.addFragment(new BillListFragment(), getString(R.string.bill));
+        pagerAdapter.addFragment(new MemberListFragment(), getString(R.string.member));
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(this);
     }

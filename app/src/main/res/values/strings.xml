@@ -65,4 +65,6 @@
     <string name="paying_from">Paying from</string>
     <string name="paying_days">paying days</string>
     <string name="have_a_good_day">Have a good day!</string>
+    <string name="bill">Bill</string>
+    <string name="member">Member</string>
 </resources>
