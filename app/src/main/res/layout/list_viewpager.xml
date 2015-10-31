@@ -44,7 +44,6 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/list_bottom_margin_to_avoid_being_overlapped_by_navigationbar"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 

@@ -10,7 +10,9 @@
     </style>
 
 
-
+    <style name="LayoutStyle" parent="AppTheme">
+        <item name="android:background">@color/light_grey_background</item>
+    </style>
 
 
 </resources>

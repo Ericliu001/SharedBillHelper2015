@@ -18,7 +18,7 @@
     <dimen name="selectionModeRowItemHeight">45dp</dimen>
     <dimen name="list_container_height">300dp</dimen>
     <dimen name="listview_side_margin">35dp</dimen>
-    <dimen name="list_item_margin_top">10dp</dimen>
+    <dimen name="list_item_margin_top">20dp</dimen>
 
 
 </resources>

@@ -5,6 +5,7 @@
     <color name="primaryDark">#00796B</color>
     <color name="accent">#1DE9B6</color>
 
+    <color name="light_grey_background">#EEEEEE</color>
 
     <color name="appbar_photo_scrim">#769B</color>
 

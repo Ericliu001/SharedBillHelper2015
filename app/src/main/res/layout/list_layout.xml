@@ -2,6 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    style="@style/LayoutStyle"
     >
 
     <android.support.v7.widget.RecyclerView
@@ -9,6 +10,8 @@
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/listview_side_margin"
+        android:layout_marginEnd="@dimen/listview_side_margin"
         android:scrollbars="vertical" />
 
     <FrameLayout
