@@ -32,7 +32,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
 
@@ -132,11 +131,12 @@ public class BaseActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
     }
 
-    private void setupToolbar() {
+    protected void setupToolbar() {
 //        mToolbar.setTitle(R.string.app_name);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     private void setupNavigationDrawer() {

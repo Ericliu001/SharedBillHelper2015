@@ -86,6 +86,11 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
     }
 
+    @Override
+    protected void setupToolbar() {
+        super.setupToolbar();
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+    }
 
     @Override
     protected void setupViewPager(ViewPager viewPager) {
