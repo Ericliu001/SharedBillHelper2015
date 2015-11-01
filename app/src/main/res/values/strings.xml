@@ -67,4 +67,5 @@
     <string name="have_a_good_day">Have a good day!</string>
     <string name="bill">Bill</string>
     <string name="member">Member</string>
+    <string name="choose_from_address_book">Add from Contacts</string>
 </resources>

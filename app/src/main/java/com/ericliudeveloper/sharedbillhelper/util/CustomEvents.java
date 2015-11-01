@@ -116,4 +116,6 @@ public final class CustomEvents {
     }
 
 
+    public static class ReadContactPermissionGrantedEvent {
+    }
 }

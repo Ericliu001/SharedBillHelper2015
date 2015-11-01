@@ -85,15 +85,16 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_edit, menu);
+        inflater.inflate(R.menu.menu_edit_member, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-
-
+            case R.id.action_pick_contact:
+                mPresenter.startActionPickContact();
+                return true;
             case R.id.action_done:
                 mPresenter.startActionDone();
                 return true;

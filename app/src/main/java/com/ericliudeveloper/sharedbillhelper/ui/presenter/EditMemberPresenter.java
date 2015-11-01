@@ -1,7 +1,10 @@
 package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 
 import com.ericliudeveloper.sharedbillhelper.R;
@@ -11,6 +14,7 @@ import com.ericliudeveloper.sharedbillhelper.ui.dialog.DatePickerFragment;
 import com.ericliudeveloper.sharedbillhelper.ui.dialog.DateWrongDialog;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
 import com.ericliudeveloper.sharedbillhelper.util.MyDateUtils;
+import com.ericliudeveloper.sharedbillhelper.util.PermissionsUtil;
 
 import de.greenrobot.event.EventBus;
 
@@ -23,6 +27,7 @@ public class EditMemberPresenter extends BasePresenter {
     private static final int ACTION_SELECT_MOVE_IN_DATE = 10;
     private static final int ACTION_SELECT_MOVE_OUT_DATE = 11;
     private static final String DATE_WRONG = "wrong date";
+    private static final int REQUEST_PICK_CONTACT = 1;
     private Activity mActivity;
     private Member mMember;
     private EditMemberFace mCallback;
@@ -101,15 +106,21 @@ public class EditMemberPresenter extends BasePresenter {
         mActivity.finish();
     }
 
+    public void startActionCancel() {
+        mActivity.finish();
+    }
+
+    public void startActionPickContact() {
+        PermissionsUtil.checkReadContactsPermission(mActivity);
+    }
+
 
 
     private void saveMemberInstanceToDB(Member mMember) {
         MemberDAO.saveMember(mMember, null);
     }
 
-    public void startActionCancel() {
-        mActivity.finish();
-    }
+
 
     private void showDatePickDialog() {
         new DatePickerFragment().show(mActivity.getFragmentManager(), "date_picker");
@@ -124,6 +135,7 @@ public class EditMemberPresenter extends BasePresenter {
         selectDateType = ACTION_SELECT_MOVE_OUT_DATE;
         showDatePickDialog();
     }
+
 
 
     public interface EditMemberFace {
@@ -153,6 +165,13 @@ public class EditMemberPresenter extends BasePresenter {
     }
 
 
+    public void onEvent(CustomEvents.ReadContactPermissionGrantedEvent eventReadContactPermissionGranted) {
+        Intent pickContactIntent = new Intent(Intent.ACTION_PICK, Uri.parse("content://contacts"));
+        pickContactIntent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE); // Show user only contacts w/ phone numbers
+        mActivity.startActivityForResult(pickContactIntent, REQUEST_PICK_CONTACT);
+
+        EventBus.getDefault().removeStickyEvent(eventReadContactPermissionGranted);
+    }
 
 
 
