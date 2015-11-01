@@ -2,6 +2,7 @@ package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 
 import android.content.ContentProviderOperation;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.net.Uri;
 import android.os.RemoteException;
@@ -232,7 +233,14 @@ public class CalculationResultPresenter {
     }
 
     public void startActionSend() {
+        Intent smsIntent = new Intent(Intent.ACTION_SEND);
+        smsIntent.putExtra(Intent.EXTRA_TEXT, composeSMS());
+        mCallbacks.startActivity(smsIntent);
+    }
 
+    private String composeSMS() {
+        // TODO: 1/11/2015 compose sms message
+        return "Hellow";
     }
 
 
@@ -243,6 +251,8 @@ public class CalculationResultPresenter {
         void showNumberOfMembersPaying(String numMembers);
 
         void showNumberOfBillsPaid(String numBills);
+
+        void startActivity(Intent intent);
     }
 
     public static class MemberPaymentViewHolder extends RecyclerView.ViewHolder {
