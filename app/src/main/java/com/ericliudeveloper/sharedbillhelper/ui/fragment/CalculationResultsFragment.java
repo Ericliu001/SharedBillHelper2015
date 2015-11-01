@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -50,7 +53,6 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         mPresenter.refreshDisplay();
         return root;
     }
-
 
 
     private void setupViews(View root) {
@@ -106,5 +108,27 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         public int getItemCount() {
             return mPresenter.getItemCount();
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_calculation_result, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+
+
+            case R.id.action_send:
+                mPresenter.startActionSend();
+                return true;
+
+            default:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

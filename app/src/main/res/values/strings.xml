@@ -68,4 +68,5 @@
     <string name="bill">Bill</string>
     <string name="member">Member</string>
     <string name="choose_from_address_book">Add from Contacts</string>
+    <string name="send">Send</string>
 </resources>

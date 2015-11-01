@@ -231,6 +231,10 @@ public class CalculationResultPresenter {
         return memberSelections.size();
     }
 
+    public void startActionSend() {
+
+    }
+
 
     public interface CalculationResultFace {
 
