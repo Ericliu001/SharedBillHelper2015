@@ -240,7 +240,29 @@ public class CalculationResultPresenter {
 
     private String composeSMS() {
         // TODO: 1/11/2015 compose sms message
-        return "Hellow";
+
+
+
+        StringBuilder builder = new StringBuilder();
+        builder.append("Total ");
+        builder.append(billSelections.size());
+        builder.append(" bills need to pay. ");
+
+        Member member = null;
+        double amount;
+        for (int i = 0; i < memberSelections.size(); i++) {
+
+            member = memberSelections.get(i);
+            amount = memberTotalAmountArray[i];
+            builder.append(member.getFirstName());
+            if (!TextUtils.isEmpty(member.getLastName())) {
+                builder.append(" " +member.getLastName());
+            }
+            builder.append(" " +DigitUtils.convertToDollarFormat(amount) + "; ");
+        }
+
+
+        return builder.toString();
     }
 
 
