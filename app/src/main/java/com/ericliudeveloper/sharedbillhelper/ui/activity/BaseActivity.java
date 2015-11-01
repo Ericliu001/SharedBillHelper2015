@@ -15,7 +15,6 @@ import android.view.MenuItem;
 
 import com.ericliudeveloper.sharedbillhelper.R;
 import com.ericliudeveloper.sharedbillhelper.util.CustomEvents;
-import com.ericliudeveloper.sharedbillhelper.util.PermissionsUtil;
 
 import de.greenrobot.event.EventBus;
 
@@ -167,11 +166,14 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
-            case PermissionsUtil.MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
+           default: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

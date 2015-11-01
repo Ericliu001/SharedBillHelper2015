@@ -118,4 +118,12 @@ public final class CustomEvents {
 
     public static class ReadContactPermissionGrantedEvent {
     }
+
+    public static class EventActionContactChosen {
+        public final Member member;
+
+        public EventActionContactChosen(Member member) {
+            this.member = member;
+        }
+    }
 }

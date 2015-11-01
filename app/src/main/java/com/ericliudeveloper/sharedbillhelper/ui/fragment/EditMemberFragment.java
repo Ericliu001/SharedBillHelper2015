@@ -2,6 +2,7 @@ package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -149,7 +150,9 @@ public class EditMemberFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void showMemberPhoneNumber(String phone) {
-        etPhone.setText(phone);
+        if (!TextUtils.isEmpty(phone)) {
+            etPhone.setText(phone);
+        }
     }
 
     @Override

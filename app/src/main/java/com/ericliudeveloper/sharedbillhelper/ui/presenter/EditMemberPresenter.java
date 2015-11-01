@@ -115,11 +115,9 @@ public class EditMemberPresenter extends BasePresenter {
     }
 
 
-
     private void saveMemberInstanceToDB(Member mMember) {
         MemberDAO.saveMember(mMember, null);
     }
-
 
 
     private void showDatePickDialog() {
@@ -135,7 +133,6 @@ public class EditMemberPresenter extends BasePresenter {
         selectDateType = ACTION_SELECT_MOVE_OUT_DATE;
         showDatePickDialog();
     }
-
 
 
     public interface EditMemberFace {
@@ -173,6 +170,11 @@ public class EditMemberPresenter extends BasePresenter {
         EventBus.getDefault().removeStickyEvent(eventReadContactPermissionGranted);
     }
 
+    public void onEvent(CustomEvents.EventActionContactChosen eventActionContactChosen) {
+        mCallback.showMemberFirstName(eventActionContactChosen.member.getFirstName());
+        mCallback.showMemberPhoneNumber(eventActionContactChosen.member.getPhone());
+        EventBus.getDefault().removeStickyEvent(eventActionContactChosen);
+    }
 
 
     public void onEvent(CustomEvents.EventEditMember eventEditMember) {
@@ -215,8 +217,6 @@ public class EditMemberPresenter extends BasePresenter {
     public void onEvent(CustomEvents.EventWrongDatePicked eventWrongDatePicked) {
         showDatePickDialog();
     }
-
-
 
 
     private void checkIfStartDateAfterEndDate() {

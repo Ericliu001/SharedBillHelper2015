@@ -17,6 +17,9 @@ public final class PermissionsUtil {
     private PermissionsUtil(){}
 
     public static void checkReadContactsPermission(Activity activity) {
+        if (activity == null) {
+            return;
+        }
         // Here, thisActivity is the current activity
         if (ContextCompat.checkSelfPermission(activity,
                 Manifest.permission.READ_CONTACTS)
