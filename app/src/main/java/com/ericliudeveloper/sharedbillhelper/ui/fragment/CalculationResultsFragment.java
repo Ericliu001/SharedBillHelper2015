@@ -49,7 +49,7 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         View root = inflater.inflate(R.layout.fragment_calculation_results, container, false);
         setupViews(root);
 
-        mPresenter.Calculate();
+        mPresenter.calculate();
         mPresenter.refreshDisplay();
         return root;
     }

@@ -56,7 +56,7 @@ public final class MyDateUtils {
     }
 
     /**
-     * Calculate how many days this member should pay for this bill
+     * calculate how many days this member should pay for this bill
      * @param memberStartString
      * @param memberEndtring
      * @param billStartString

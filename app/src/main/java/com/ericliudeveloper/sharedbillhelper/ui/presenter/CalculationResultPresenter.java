@@ -58,7 +58,7 @@ public class CalculationResultPresenter {
         mCallbacks = callbacks;
     }
 
-    public void Calculate() {
+    public void calculate() {
         PaymentInfo.Builder infoBuilder = new PaymentInfo.Builder();
 
         infoBuilder.totalAmount(getTotalAmount());
@@ -110,7 +110,7 @@ public class CalculationResultPresenter {
     }
 
     /**
-     * Calculate how much money each member should pay for this bill
+     * calculate how much money each member should pay for this bill
      * and other necessary info
      *
      * @param bill
@@ -239,10 +239,6 @@ public class CalculationResultPresenter {
     }
 
     private String composeSMS() {
-        // TODO: 1/11/2015 compose sms message
-
-
-
         StringBuilder builder = new StringBuilder();
         builder.append("Total ");
         builder.append(billSelections.size());
