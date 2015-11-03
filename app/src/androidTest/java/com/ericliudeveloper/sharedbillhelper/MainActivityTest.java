@@ -43,8 +43,5 @@ public class MainActivityTest {
         onView(withText(R.string.member)).perform(click());
     }
 
-    @Test
-    public void onHamburgerButtonClicked(){
-        onView(withId(R.id.home)).perform(click());
-    }
+
 }
