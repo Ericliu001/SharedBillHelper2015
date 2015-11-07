@@ -1,5 +1,6 @@
 package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 
+import android.app.Activity;
 import android.content.ContentProviderOperation;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -44,6 +45,7 @@ public class CalculationResultPresenter {
 
     static PaymentInfo mInfo;
     List<Payment> mPaymentList = null;
+    private Activity context;
 
 
     public void refreshDisplay() {
@@ -235,7 +237,9 @@ public class CalculationResultPresenter {
     public void startActionSend() {
         Intent smsIntent = new Intent(Intent.ACTION_SEND);
         smsIntent.putExtra(Intent.EXTRA_TEXT, composeSMS());
-        mCallbacks.startActivity(smsIntent);
+        if (smsIntent.resolveActivity(context.getPackageManager()) != null) {
+            mCallbacks.startActivity(smsIntent);
+        }
     }
 
     private String composeSMS() {
@@ -259,6 +263,10 @@ public class CalculationResultPresenter {
 
 
         return builder.toString();
+    }
+
+    public void setContext(Activity context) {
+        this.context = context;
     }
 
 
