@@ -1,5 +1,6 @@
 package com.ericliudeveloper.sharedbillhelper.ui.presenter;
 
+import android.app.Activity;
 import android.content.ContentProviderOperation;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -44,6 +45,7 @@ public class CalculationResultPresenter {
 
     static PaymentInfo mInfo;
     List<Payment> mPaymentList = null;
+    private Activity context;
 
 
     public void refreshDisplay() {
@@ -58,7 +60,7 @@ public class CalculationResultPresenter {
         mCallbacks = callbacks;
     }
 
-    public void Calculate() {
+    public void calculate() {
         PaymentInfo.Builder infoBuilder = new PaymentInfo.Builder();
 
         infoBuilder.totalAmount(getTotalAmount());
@@ -110,7 +112,7 @@ public class CalculationResultPresenter {
     }
 
     /**
-     * Calculate how much money each member should pay for this bill
+     * calculate how much money each member should pay for this bill
      * and other necessary info
      *
      * @param bill
@@ -235,14 +237,12 @@ public class CalculationResultPresenter {
     public void startActionSend() {
         Intent smsIntent = new Intent(Intent.ACTION_SEND);
         smsIntent.putExtra(Intent.EXTRA_TEXT, composeSMS());
-        mCallbacks.startActivity(smsIntent);
+        if (smsIntent.resolveActivity(context.getPackageManager()) != null) {
+            mCallbacks.startActivity(smsIntent);
+        }
     }
 
     private String composeSMS() {
-        // TODO: 1/11/2015 compose sms message
-
-
-
         StringBuilder builder = new StringBuilder();
         builder.append("Total ");
         builder.append(billSelections.size());
@@ -263,6 +263,10 @@ public class CalculationResultPresenter {
 
 
         return builder.toString();
+    }
+
+    public void setContext(Activity context) {
+        this.context = context;
     }
 
 

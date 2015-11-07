@@ -1,6 +1,7 @@
 package com.ericliudeveloper.sharedbillhelper.ui.fragment;
 
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,7 +23,7 @@ import com.ericliudeveloper.sharedbillhelper.util.ResouceUtils;
  */
 public class CalculationResultsFragment extends BaseFragment implements CalculationResultPresenter.CalculationResultFace {
 
-    CalculationResultPresenter mPresenter;
+    CalculationResultPresenter mPresenter = new CalculationResultPresenter(this);
 
     private TextView tvSum;
     private TextView tvNumBill;
@@ -36,10 +37,9 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        mPresenter = new CalculationResultPresenter(this);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mPresenter.setContext(activity);
     }
 
     @Override
@@ -49,7 +49,7 @@ public class CalculationResultsFragment extends BaseFragment implements Calculat
         View root = inflater.inflate(R.layout.fragment_calculation_results, container, false);
         setupViews(root);
 
-        mPresenter.Calculate();
+        mPresenter.calculate();
         mPresenter.refreshDisplay();
         return root;
     }
